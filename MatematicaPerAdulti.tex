@@ -1,0 +1,1184 @@
+% !TEX TS-program = latex
+% !TEX spellcheck = it-IT
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Trim Size: 9.75in x 6.5in
+%% Text Area: 8in (include Runningheads) x 5in
+%% ws-ijgmmp.tex   :   2-9-08
+%% Tex file to use with ws-ijgmmp.cls written in Latex2E.
+%% The content, structure, format and layout of this style file is the
+%% property of World Scientific Publishing Co. Pte. Ltd.
+%% Copyright 1995, 2002 by World Scientific Publishing Co.
+%% All rights are reserved.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{pictexwd,dcpic}
+\usepackage{csquotes}
+\usepackage{nopageno}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{pictex, dcpic}
+\usepackage{color}
+%\usepackage{graphicx}
+%\numberwithin{equation}{section} % This line resets equation numbering when starting a new section.
+%\renewcommand{\theequation}{Eq. \thesection.\arabic{equation}} % This line ads "Eq." in front of your equation numbering.
+
+
+
+
+%
+%    Macros.    Version 1.2.0.beta
+%    The best use is to paste all of them into the papers
+%     1/8/2005
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			Greek		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\al{\alpha}
+\def\be{\beta}
+\def\de{\delta}
+\def\ga{\gamma}
+\def\up{\upsilon}
+\def\ep{\epsilon}
+\def\io{\iota}
+\def\te{\theta}
+\def\la{\lambda}
+\def\ze{\zeta}
+\def\om{\omega}
+\def\si{\sigma}
+\def\vp{\varphi}
+\def\vpi{\varpi}
+\def\ka{\kappa}
+\def\vs{\varsigma}
+\def\vr{\varrho}
+
+\def\De{\Delta}
+\def\Ga{\Gamma}
+\def\Te{\Theta}
+\def\La{\Lambda}
+\def\Om{\Omega}
+\def\Si{\Sigma}
+\def\Up{\Upsilon}
+
+\def\boldDe{\bf\Delta}
+\def\boldGa{\bf\Gamma}
+\def\boldTe{\bf\Theta}
+\def\boldLa{\bf\Lambda}
+\def\boldOm{\bf\Omega}
+\def\boldSi{\bf\Sigma}
+\def\boldUp{\bf\Upsilon}
+\def\boldXi{\bf\Xi}
+\def\boldPi{\bf\Pi}
+\def\boldPhi{\bf\Phi}
+\def\boldPsi{\bf\Psi}
+
+\def\boldal{\bf\al}
+\def\boldbe{\bf\be}
+\def\boldga{\bf\ga}
+\def\boldde{\bf\de}
+\def\boldep{\bf\ep}
+\def\boldze{\bf\ze}
+\def\boldeta{\bf\eta}
+\def\boldte{\bf\te}
+\def\boldio{\bf\io}
+\def\boldka{\bf\ka}
+\def\boldla{\bf\la}
+\def\boldmu{\hbox{\greekbold\char "16}}
+\def\boldnu{\hbox{\greekbold\char "17}}
+\def\boldxi{\hbox{\greekbold\char "18}}
+\def\boldpi{\hbox{\greekbold\char "19}}
+\def\boldrho{\hbox{\greekbold\char "1A}}
+\def\boldsi{\bf\si}
+\def\boldtau{\hbox{\greekbold\char "1C}}
+\def\boldup{\hbox{\greekbold\char "1D}}
+\def\boldphi{\hbox{\greekbold\char "1E}}
+\def\boldchi{\hbox{\greekbold\char "1F}}
+\def\boldpsi{\hbox{\greekbold\char "20}}
+\def\boldom{\hbox{\greekbold\char "21}}
+\def\boldvep{\hbox{\greekbold\char "22}}
+\def\boldvte{\hbox{\greekbold\char "23}}
+\def\boldvpi{\hbox{\greekbold\char "24}}
+\def\boldvrho{\hbox{\greekbold\char "25}}
+\def\boldvsi{\hbox{\greekbold\char "26}}
+\def\boldvphi{\hbox{\greekbold\char "27}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			Cal			 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \def\calA{{\hbox{\cal A}}}
+ \def\calU{{\hbox{\cal U}}}
+ \def\calB{{\hbox{\cal B}}}
+ \def\calC{{\hbox{\cal C}}}
+ \def\calI{{\hbox{\cal I}}}
+ \def\calQ{{\hbox{\cal Q}}}
+ \def\calP{{\hbox{\cal P}}}
+ \def\calL{{\hbox{\cal L}}}
+ \def\calE{{\hbox{\cal E}}}
+ \def\calW{{\hbox{\cal W}}}
+ \def\calS{{\hbox{\cal S}}}
+ \def\calF{{\hbox{\cal F}}}
+ \def\calR{{\hbox{\cal R}}}
+ \def\calO{{\hbox{\cal O}}}
+ \def\calM{{\hbox{\cal M}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			gothic		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \def\su{{\mathfrak{su}}}
+ \def\gl{{\mathfrak{gl}}}
+ \def\gotg{{\mathfrak{g}}}
+ \def\goth{{\mathfrak{h}}}
+ \def\gotm{{\mathfrak{m}}}
+ \def\gotk{{\mathfrak{k}}}
+ \def\spin{{\mathfrak{spin}}}
+ \def\slC{{\mathfrak{sl}}}
+ \def\O{{\mathfrak{O}}}
+ \def\Set{{\mathfrak{Set}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			Bbb			 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \def\one{\mathbb{I}}
+ \def\A{\mathbb{A}}
+ \def\B{\mathbb{B}}
+ \def\C{\mathbb{C}}
+ \def\D{\mathbb{D}}
+ \def\E{\mathbb{E}}
+ \def\F{\mathbb{F}}
+ \def\G{\mathbb{G}}
+ \def\H{\mathbb{H}}
+ \def\J{\mathbb{J}}
+ \def\K{\mathbb{K}}
+ \def\I{\mathbb{I}}
+ \def\L{\mathbb{L}}
+ \def\M{\mathbb{M}}
+ \def\N{\mathbb{N}}
+ \def\O{\mathbb{O}}
+ \def\P{\mathbb{P}}
+ \def\Q{\mathbb{Q}}
+ \def\R{\mathbb{R}}
+ \def\S{\mathbb{S}}
+ \def\T{\mathbb{T}}
+ \def\U{\mathbb{U}}
+ \def\V{\mathbb{V}}
+ \def\X{\mathbb{X}}
+ \def\Y{\mathbb{Y}}
+ \def\W{\mathbb{W}}
+ \def\Z{\mathbb{Z}}
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%		MathRoman		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\Tr{{\hbox{Tr}}}
+\def\Con{{\hbox{Con}}}
+\def\Aut{{\hbox{Aut}}}
+\def\Div{{\hbox{Div}}}
+\def\ad{{\hbox{ad}}}
+\def\Ad{{\hbox{Ad}}}
+\def\Re{{\hbox{Re}}}
+\def\Im{{\hbox{Im}}}
+\def\Iso{{\hbox{Iso}}}
+\def\Geo{{\hbox{Geo}}}
+\def\Int{{\hbox{Int}}}
+\def\Inv{{\hbox{Inv}}}
+\def\Spin{{\hbox{Spin}}}
+\def\SO{{\hbox{SO}}}
+\def\SU{{\hbox{SU}}}
+\def\SL{{\hbox{SL}}}
+\def\GL{{\hbox{GL}}}
+\def\det{{\hbox{det}}}
+\def\Hom{{\hbox{Hom}}}
+\def\End{{\hbox{End}}}
+\def\Euc{{\hbox{Euc}}}
+\def\Lor{{\hbox{Lor}}}
+\def\Diff{{\hbox{Diff}}}
+\def\di{{\hbox{d}}}
+\def\id{{\hbox{\rm id}}}
+\def\diag{{\hbox{diag}}}
+\def\rank{{\hbox{rank}}}
+\def\span{{\hbox{span}}}
+\def\Sim{{\hbox{Sim}}}
+
+\def\Obj{{\hbox{Obj}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%		OtherSymbols		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\ip{\hbox to4pt{\leaders\hrule height0.3pt\hfill}\vbox to8pt{\leaders\vrule width0.3pt\vfill}\kern 2pt}
+
+% inner product
+\def\QDE{\hfill\hbox{\ }\vrule height4pt width4pt depth0pt} 
+\def\del{\partial}
+\def\na{\nabla}
+\def\inter{\cap}
+\def\Vec{\mathfrak{X}}
+\def\Lie{\hbox{\LieFont \$}}
+
+\def\arr{\rightarrow}
+\def\larr{\longrightarrow}
+\def\harr{\hookrightarrow}
+\def\hlarr{\lhook\joinrel\longrightarrow}
+\def\then{\Rightarrow}
+\def\semidirect{\hbox{\Bbb \char111}}
+\def\binomial#1#2{\left(\Matrix{#1\cr #2\cr}\right)}
+
+\def\barJ{\bar J}
+
+\def\sSU{{\hbox{SU}}}
+\def\so{{so}}
+%\def\N{{{\mathbb N}}}
+
+\def\file#1{{\tt #1}}
+\def\calH{{{\cal H}}}
+\def\calJ{{{\cal J}}}
+\def\calG{{{\cal G}}}
+\def\calK{{{\cal K}}}
+\def\calD{{{\cal D}}}
+\def\scalD{{{\cal D}}}
+
+\def\Loop{{\hbox{Loop}}}
+\def\Hoop{{\hbox{Hoop}}}
+\def\Sym{{\hbox{Sym}}}
+\def\sR{{\R}}
+\def\dCor{dCor}
+\def\epm{\hbox{$^\pm$}}
+\def\dunion{\coprod}
+
+\def\nab#1{{\buildrel #1\over \na}}
+\def\frac[#1/#2]{\hbox{$#1\over#2$}}
+\def\Frac[#1/#2]{{#1\over#2}}
+\def\({\left(}
+\def\){\right)}
+\def\[{\left[}
+\def\]{\right]}
+\def\^#1{{}^{#1}_{\>\cdot}}
+\def\_#1{{}_{#1}^{\>\cdot}}
+\def\Label=#1{{\buildrel {\hbox{\fiveSerif \ShowLabel{#1}}}\over =}}
+\def\<{\kern -1pt}
+\def\Bar{\>|\>}
+\def\Dal{\hbox{\tenRelazioni  \char003}}
+
+\def\uvec#1{\vbox{\hbox{$\scriptstyle\rightharpoonup$}\vskip-9pt\hbox{$#1$}}}
+\def\dvec#1{\vtop{\hbox{$#1$}\vskip-10pt\hbox{$\scriptstyle\rightharpoondown$}}}
+\def\Cprod{\diamond}
+\def\obullet{\odot}
+
+
+
+%%%%%%%%%%%%			frames 				%%%%%%%%%%%%%%%%%%%
+
+\def\red#1{{\color{red}{#1}}}
+\def\blue#1{{\color{blue}{#1}}}
+\def\green#1{{\color{green}{#1}}}
+
+\def\Red{\color{red}}
+\def\Blue{\color{blue}}
+\def\Green{\color{green}}
+
+
+\def\frame#1{\vbox{\hrule\hbox{\vrule\vbox{\kern2pt\hbox{\kern2pt#1\kern2pt}\kern2pt}\vrule}\hrule\kern-4pt}} 
+\def\redframe#1{\red{\frame{#1}}} 
+\def\greenframe#1{\green{\frame{#1}}} 
+\def\blueframe#1{\blue{\frame{#1}}} 
+
+\def\uline#1{\underline{#1}}
+\def\uuline#1{\underline{\underline{#1}}}
+\def\Box to #1#2#3{\frame{\vtop{\hbox to #1{\hfill #2 \hfill}\hbox to #1{\hfill #3 \hfill}}}}
+
+
+
+\def\ubal{\underline{\al}\kern1pt}
+\def\obal{\overline{\al}\kern1pt}
+
+\def\ubR{\underline{R}\kern1pt}
+\def\obR{\overline{R}\kern1pt}
+\def\ubom{\underline{\om}\kern1pt}
+\def\obxi{\overline{\xi}\kern1pt}
+\def\ubu{\underline{u}\kern1pt}
+\def\ube{\underline{e}\kern1pt}
+\def\obe{\overline{e}\kern1pt}
+\def\Limit{\>{\buildrel{r\arr\infty}\over \longrightarrow}\,}
+\def\union{\cup}
+\def\Emptyset{\varnothing}
+
+
+
+
+\def\Uvec#1{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{#1}\hfil$\crcr}}}
+\def\Dvec#1{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{#1}\hfil$\crcr}}}
+
+
+%   u 
+\def\uvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+\def\dvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+%\def\uvecu{\Uvec{u}}
+%\def\dvecu{\Dvec{u}}
+
+%   be
+\def\uvecbe{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern3pt$\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{\be}\hfil$\crcr}}}
+\def\dvecbe{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern1pt$\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-10pt\nointerlineskip}
+     $\hfil\displaystyle{\be}\hfil$\crcr}}}
+
+%   n
+\def\uvecn{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{n}\hfil$\crcr}}}
+\def\dvecn{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{n}\hfil$\crcr}}}
+
+%   m
+\def\uvecm{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{m}\hfil$\crcr}}}
+\def\dvecm{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{m}\hfil$\crcr}}}
+
+%   N
+\def\uvecN{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern3pt$\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{N}\hfil$\crcr}}}
+\def\dvecN{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern0pt$\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-10pt\nointerlineskip}
+     $\hfil\displaystyle{N}\hfil$\crcr}}}
+
+%   u
+\def\uvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+\def\dvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+
+%   w
+\def\uvecw{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{w}\hfil$\crcr}}}
+\def\dvecw{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{w}\hfil$\crcr}}}
+
+%   v
+\def\uvecv{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{v}\hfil$\crcr}}}
+\def\dvecv{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{v}\hfil$\crcr}}}
+
+\def\astA{{}^\ast A}
+\def\circA{{}^\circ A}
+\def\astk{{}^\ast k}
+\def\circk{{}^\circ k}
+\def\astK{{}^\ast K}
+\def\circK{{}^\circ K}
+\def\astL{{}^\ast L}
+\def\circL{{}^\circ L}
+\def\astal{{}^\ast \al}
+\def\circal{{}^\circ \al}
+\def\astsi{{}^\ast \si}
+\def\circsi{{}^\circ \si}
+\def\aste{{}^\ast e}
+\def\circe{{}^\circ e}
+\def\astte{{}^\ast \te}
+\def\circte{{}^\circ \te}
+\def\astGa{{}^\ast \Ga}
+\def\circGa{{}^\circ \Ga}
+\def\Lie{\pounds}
+
+\long\def\Hide#1{}
+\long\def\HideMarked#1{\hfill{$\triangleright$}}
+\def\rtau{\tau}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\NormalStyle{\leftskip=0cm\rightskip=0cm\normalsize\parindent=5pt\parskip=3pt\normalbaselineskip=14pt\baselineskip=\normalbaselineskip}
+\def\AbstractStyle{\leftskip=1cm\rightskip=1cm\scriptsize\parindent=0pt\parskip=0pt\normalbaselineskip=11pt\baselineskip=\normalbaselineskip}\def\NoteStyle{\leftskip=1cm\rightskip=1cm\scriptsize\parindent=0pt\parskip=0pt\normalbaselineskip=11pt\baselineskip=\normalbaselineskip}
+
+\def\ShowLabel#1{\ref{#1}}
+
+\def\Bibliography{\begin{thebibliography}{199}\footnotesize\References}
+\def\EndBibliography{\end{thebibliography}}
+\def\bib#1#2{\bibitem{#1}#2}
+\def\Ref#1{\cite{#1}}
+
+
+\def\NewSection#1{\section{#1}}
+\def\NewSubSection#1{\subsection*{#1}}
+\def\NewAppendix#1#2{\section*{Appendix #1: #2}}
+\def\Acknowledgements{\section*{Acknowledgements}}
+\def\bs{\bigskip}
+\def\ms{\medskip}
+\def\ss{\smallskip}
+\def\ni{\noindent}
+
+\long\def\Note#1{\blockquote{\footnotesize {\bf Nota:}~#1\par}}
+\long\def\Ex#1{\blockquote{\footnotesize {\bf Esercizio:}~#1\par}}
+
+\def\eq#1{\begin{equation}#1\end{equation}}
+\def\eqLabel#1#2{\begin{equation}#1\label{#2}\end{equation}}
+
+
+\def\Cases#1{\begin{cases}#1\end{cases}}
+\def\Matrix#1{\begin{matrix}#1\end{matrix}}
+\def\Align#1{\begin{aligned}#1\end{aligned}}
+
+\def\eqs#1{\eq{\Align{#1}}}
+\def\eqsLabel#1#2{\eq{\Align{#1}\label{#2}}}
+
+
+
+
+\def\Abstract{\AbstractStyle{\bf Abstract. }}
+\def\EndAbstract{\par\NormalStyle}
+
+\def\TitleScript{}
+\def\TitleLine#1{\def\TitleScript{#1}}
+\def\MoreTitleLine#1{\edef\TitleScript{\TitleScript\\#1}}
+
+\def\AuthorScript{}
+\def\AuthorLine#1{\def\AuthorScript{#1}}
+\def\MoreAuthorLine#1{\edef\AuthorScript{\AuthorScript\\#1}}
+
+\def\AddressScript{}
+\def\AddressLine#1{\def\AddressScript{#1}}
+\def\MoreAddressLine#1{\edef\AddressScript{\AddressScript\\#1}}
+
+\date{}
+
+\def\BeginDocument{\begin{document}}
+
+\def\MakeTitle{
+\begin{center}
+{\Large\bf\sffamily\baselineskip=2pt\TitleScript}\\
+\vskip 10pt
+{\small by {\it \AuthorScript}}\\
+\vskip 10pt
+{\small \AddressScript}
+\end{center}
+\ms
+}
+
+\def\EndDocument{\end{document}}
+
+\def\Figure[#1]#2{\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[#1]{#2} }
+\def\Caption#1{\caption{#1}}
+\def\EndFigure{\end{figure}}
+
+\def\Diagram#1{\eq{
+\begindc{\commdiag}[10]
+#1
+\enddc%
+}%
+}
+
+\def\Itemize#1{\begin{itemize}#1\end{itemize}}
+\def\Item[#1]{\item[#1]}
+
+\def\AllReferences{}
+
+
+
+\def\Shrink{\small}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\BeginDocument
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\parindent=5pt
+\baselineskip=13pt
+\parskip=5pt
+
+
+
+
+
+\begin{document}
+
+\AllReferences
+
+
+%%%%%%%%%%%%%%%%%%%%% Publisher's Area please ignore %%%%%%%%%%%%%%%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Matematica per adulti}
+
+\maketitle
+
+\section*{Prima settimana}
+
+intro
+
+
+\NewSection{Giorno 1: quanti numeri?}
+
+
+
+Non so ci avete pensato, che possiamo contare per sempre. Dato un numero, posso sempre scrivere e dare un nome al successivo.
+Curiosamente non è sempre stato così.
+
+Io ricordo distintamente quando da piccolo ho realizzato la cosa. Scherzando, ma poi non tanto, dico spesso agli studenti che quella è stata la prima e unica
+esperienza spirituale della mia vita. Per questo mi ha stupito realizzare che non tutti da piccoli sono passati per quell'esperienza.
+L'ho chiesto al forum e alcuni hanno stentato a arrivare al punto, qualcuno ha dovuto essere convinto che sa il nome delnumero 66 354 427 745 367.
+In fondo è sempre bello quando il mondo ti stupisce.
+
+I romani avevano un numero finito di simboli con cui potevano scrivere un numero finito di numeri.
+Per esempio con I e V potete scrivere
+I
+II
+III
+IV
+V
+VI
+VII
+VIII.
+
+Poi per scrivere 9 dovete inventare un nuovo simbolo X.
+
+Loro avevano (a seconda del secolo) fino a un simbolo $M$ per 1000
+(poi aggiungevano barre sopra $\bar M$, $\bar{\bar M}$ per iterare la cosa ma senza cambiare il fatto 
+che arrivavano a un certo numero) e poi si dovevano fermare.
+
+Noi abbiamo lo zero, la notazione posizionale e la lingua (a parte i numeri 3, 11 e 20)
+è costruita in modo analogo.
+Conti fino a 10 poi 
+10-n arrivi fino a  20, 
+20-n arrivi fino a 30, 40, 50, ..., cento.
+
+Poi si ricomincia con 1cento-nn, 2-cento--nn, ..., 9-cento--99.
+
+Poi viene 1000 e si ricomincia 1-mille-nnn, 2-mille-nnn, ... nnn-mille-nnn.
+Poi viene 1 milione e si ricomincia, 1-milione-nnnnnn, fino a nnn-mille-nnn-milioni-nnnnnn,
+poi viene 1miliardo e si ricomincia fino a  nnn-milioni-nnn-mila-nnn-miliardi-nnn-milioni-nnn-mila-nnn.
+
+Voi potete dire che dieci cento mille milione miliardi funzionano come i romani.
+E forse è questo che trae in inganno i bambini, in fondo chi ha bisogno di contare fino a 1 miliardo?
+
+Ma qui viene la novità, 1000-milioni-di-miliardi non hanno un nome vero 
+(ce l'hanno perché la barbarie non ha limite ma non ne abbiamo bisogno).
+
+Si chiamano 
+1 miliardo-di-miliardi 
+
+E si ricomincia. E poi 
+1-milione di miliardi di miliardi-nnnnnnnnn
+e così finché avete voglia.
+
+
+
+\NewSection{Giorno 2: cardinali, ordinali, numerali}
+
+
+
+\Abstract
+Esistono infiniti numeri naturali.
+\EndAbstract
+
+\bs
+
+Che differenza c'è tra numeri {\it cardinali}, {\it ordinali} e {\it numerali}?
+
+I cardinali servono per contare gli oggetti (zero, uno, due, ...),
+gli ordinali servono per l'ordine (primo, secondo, terzo, ...) definiscono maggiore e minore, le operazioni di somma e prodotto in $\N$.
+
+I numerali sono diversi modi di rappresentare un numero: 11 si può scrivere 11 in base 10, 1011 in binario, $B$ in esadecimale, $X$ in romano.
+Quando i carcerati contano i giorni sul muro della cella le 4 stanghette verticali tagliate da una stanghetta obliqua sono un numerale per 5.
+
+Non ci occupiamo di numerali, sono solo rappresentazioni.
+Esistono cardinali (uno, due, tre, ...) e ordinali (primo, secondo, terzo, ...).
+
+Il problema è che finché parliamo di numeri finiti, cardinali e ordinali sono in corrispondenza 1-a-1.
+Ok dovremo dare definizioni per bene. Lo faremo.
+Ma se è così, serve uno solo dei 2 l'altro non serve.
+
+MA quando consideriamo insiemi infiniti i numeri ordinali sono molti di più.
+Quindi gli ordinali sono molto meglio.
+Ci torniamo in modo più preciso ma ci vuole pazienza che ci va un po'.
+
+Per ora stiamo ancora a partire! 
+Per essere sinceri questi primi giorni servono a far capire che ci sono un sacco di problemi, anzi che più si scava e peggio è.
+Ancora non abbiamo detto COSA è un numero naturale.
+
+Qui i matematici si dividono in 2. Metà predilige le proprietà, le enuncia
+e se non si cura di cosa sia un numero. L'altra metà definisce cosa è un numero naturale
+(in genere come classe di equivalenza di insiemi finiti)
+e poi usando questa rappresentazione definire le operazioni (eg somma e prodotto)
+e per dimostrare le proprietà (eg commutativa, associativa, ...).
+
+Siccome stiamo facendo turismo e nessuno ha fretta di arrivare, percorriamo entrambe le strade, ok?
+
+Prima strada.
+Nell'800 Peano ha dato i seguenti assiomi per i numeri naturali.
+
+\quad
+1) 0 è un numero naturale.
+
+\quad
+2) esiste una funzione $s: \N\arr \N$ e diciamo che $s(n)$ è il successore di $n$.
+
+\quad
+3) se $x$ diverso da $y$ allora $s(x)$ è diverso da $s(y)$
+
+\quad
+4) $s(x)$ non è mai 0 qualunque sia $x$
+
+\quad
+5) [Principio di induzione]
+
+\qquad
+   se $U$ è un sottoinsieme di $\N$ e
+  
+\qquad\quad
+        a) $0 \in U$
+  
+\qquad\quad
+        b) se $n\in U$ allora $s(n) \in U$
+  
+\qquad
+   allora $U=\N$
+
+Questi assiomi, con un bel po' di lavoro permettono di dimostrare OGNI proprietà dei numeri naturali (che sappiamo dimostrare altrimenti).
+
+
+
+Se conveniamo che non c'è un numero più grande di tutti (no "$\infty$" non è un numero naturale se lo fosse, sapreste fare "$\infty+1$"), 
+l'insieme dei numeri è infinito (in-finito) perché non posso finire di contare?
+
+Per ora lasciate perdere cosa sia un numero, quello che conta è che sono infiniti, che hanno un nome, 
+e che potremo fare operazioni coi numeri.
+
+
+
+\NewSection{Giorno 3: somme e prodotto}
+
+
+
+Definiamo i numeri in $\N$
+
+$0$
+
+$1=s(0)$
+
+$2=s(1)= s(s(0))$
+
+$3=s(2)= s(s(s(0)))$
+
+$4=s(3)= s(s(s(s(0))))$
+
+$5=s(4)= s(s(s(s(s(0)))))$
+
+$6=s(5)= s(s(s(s(s(s(0))))))$
+
+$7=s(6)= s(s(s(s(s(s(s(0)))))))$
+
+$8=s(7)= s(s(s(s(s(s(s(s(0))))))))$
+
+e avanti così.
+
+Definiamo la {\it somma} $a+b$ con le proprietà
+
+\quad    $a+0=a$
+
+\quad    $a+(s(b)) = s(a+b) = (a+b)+1$
+
+Se devo fare
+ $$
+    5+3=5+s(s(s(0)))= s(5+s(s(0)))=s(s(5+s(0)))=s(s(s(5))) + 0 = s(s(s(5)))
+$$
+che è definito come 8.
+
+Definiamo la {\it prodotto} $ab$:
+
+\quad   $a\cdot 1 = a$
+
+\quad   $a\cdot s(b) = a\cdot b+a$
+
+Se devo fare
+$$
+   3\cdot 2 = 3\cdot s(1) = 3\cdot 1+3 = 3+3 = 6
+$$
+$$
+   2\cdot 3 = 2\cdot s(s(1)) = 2\cdot s(1)+2 = (2\cdot 1+2)+2 = (2+2)+2 = 4+2 = 6
+$$
+
+
+Poi ci mettiamo con santa pazienza e dimostriamo le proprietà.
+
+$$
+\Align{
+&  	a+0 = 0+a =a \cr                
+&  	(a+b)+c = a+(b+c)\cr           
+&  	a+b = b+a\cr                   
+&  	a1=1a=a  \cr                 
+&  	(ab)c = a(bc)\cr           
+&  	ab = ba \cr                  
+& 	(a+b)c=ac + bc\cr
+}
+\qquad
+\Align{
+&  	\hbox{ 0 elemento neutro della somma}\cr                
+&  	\hbox{ associativa della somma}\cr           
+&  	\hbox{ commutativa della somma}\cr                   
+&  	\hbox{ 1 elemento neutro del prodotto}\cr                 
+&  	\hbox{ associativa del prodotto}\cr           
+&  	\hbox{ commutativa del prodotto }\cr                  
+& 	\hbox{ distributiva della somma rispetto al prodotto}\cr 	
+}
+$$          
+
+Non credo siano importanti i dettagli ma se vuoi ne dimostriamo qualcuna.
+
+
+
+\NewSection{Giorno 4: insiemi}
+
+
+\Abstract
+Fin qui non abbiamo ancora fatto nulla. Abbiamo solo scoperto che:
+
+1) i numeri naturali sono infiniti 
+ (quindi anche in prima elementare non si può parlare solo di roba finita anche se faccio 2+3).
+ Cioè si può ma secondo me non si capisce cosa si lascia fuori e si lascia fuori il meglio.
+
+2) esisteranno 2 tipi di numeri (cardinali e ordinali). 
+Finché consideriamo numeri finiti non fa differenza, uno vale l'altro. 
+Se consideriamo gli infiniti, invece, gli ordinali sono più fondamentali e "di più" dei cardinali.
+
+3) i cardinali sono per contare le cose, gli ordinali per essere messi in fila (0, 1, 2, 3, ...).
+Coi numeri finiti fate entrambe le cose, con quelli infiniti molti ordinali diversi hanno la stessa cardinalità.
+
+4) Abbiamo fatto gli assiomi di Peano per i numeri naturali.
+Questi permettono di definire le operazioni di somma e prodotto, di dimostrare un sacco di cose,
+ma non ci dicono cosa sono i numeri naturali.
+Negli approcci assiomatici uno non dice cosa sono le cose, dice le proprietà e usa solo quelle.
+
+5) per un approccio non-assiomatico abbiamo bisogno di dire cosa è un insieme (e poi funzioni e relazioni).
+Questo è un vero casino (sempre a causa degli insiemi infiniti).
+\EndAbstract
+
+\bs
+
+Insiemi:
+prima cosa da dire è che gli insiemi possono avere {\it elementi}.
+Per dire che 3 è un numero naturale, chiamiamo $\N$ l'insieme dei numeri naturali e diciamo $3 \in \N$, che si legge 3 appartiene a $\N$.
+
+Seconda cosa esiste un insieme senza elementi. 
+Si chiama l'insieme vuoto, lo chiamiamo $\Emptyset$.
+Siccome 2 insiemi sono uguali a meno che non produca un elemento che sta in uno ma non nell'altro, 
+esiste un solo insieme vuoto o se preferite ogni insieme vuoto e uguale all'altro.
+
+Come ho detto un insieme finito è la lista senza ripetizione dei suoi elementi.
+I numeri primi minori di 10 sono l'insieme $P=\{2, 3, 5, 7\}$.
+Quanti elementi ha? (ah! non potete rispondere perché ancora non abbiamo definito la cardinalità di un insieme 
+e pure coi numeri andiamo ancora maluccio.)
+
+Quando si passa agli insiemi infiniti, si è pensato (direi nell'800) di definirli dando una proprietà $P(x)$
+che quando è vera per $x$ allora $x$ appartiene a $A$ ($x\in A$), quando è falsa, allora $x$ non appartiene all'insieme $A$ ($x\not\in A$).
+
+Ad esempio i numeri pari corrispondono alla proprietà    $P(n)$: esiste $k\in N$ tale che $n=2k$.
+
+per $n=0$, esiste $k=0$ tale che $2\cdot0=0$, quindi 0 è pari.
+
+per $n=1$, non esiste $k\in \N$ tale che $2k=1$, quindi 1 non è pari. 
+
+(ovviamente bisognerebbe dimostrare che non esiste, mi credete?)
+
+per $n=2$, esiste $k=1$ tale che $2\cdot 1=2$, quindi 2 è pari.
+
+per $n=6$, esiste $k=3$ tale che $2\cdot 3=6$, quindi 6 è pari.
+
+[sto usando i numeri naturali di Peano per fare gli esempi]
+
+L'insieme dei numeri pari $A=\{n\in \N: P(n)\}$ lo indichiamo pure in modo più impreciso come $A=\{0,2, 4, ..., 2k, ...\}$ come se fosse un elenco.
+Lo indichiamo pure con $2\N$, ma sono solo syntax sugar.
+
+L'unico piccola crepa nel nostro castello di buone intenzioni è che ci sono delle proprietà (antinomie) 
+che non definiscono dei buoni insiemi.
+
+
+
+\Note{
+per gli informatici, quello che faccio è che definisco un linguaggio formale e una grammatica per scrivere enunciati e proposizioni.
+Dico proprio con una context free grammar.
+L'idea è che poi voglio definire un insieme come gli elementi che rendono vera una proposizione.
+Purtroppo non si riesce ad escludere le antinomie a livello sintattico. 
+Cioè si può ma si è costretti a tipizzare fortemente il linguaggio e bisogna gerarchizzare i tipi molto più rigorosamente di come fate voi nei linguaggi di oggi.
+A quel punto dichiaro equivalenti 2 proposizioni che sono sempre vere o false sugli stessi oggetti e un insieme è una proposizione modulo equivalenti.
+Gli assiomi di Peano in buona sostanza sono una tale proposizione e definiscono l'insieme $\N$ 
+(quando scrivo  "per ogni $k \in \N$", sto dichiarando il tipo di $k$).
+}
+
+
+
+\NewSection{Giorno 5: operazioni tra insiemi}
+
+
+Ora che sappiamo cosa è un insieme (o almeno facciamo finta) possiamo definire un po' di operazioni.
+
+Dati 2 insiemi $A$ e $B$ definiamo l'{\it unione}, scriviamo $A \union B$ che è l'insieme 
+che contiene tutti gli elementi $x$ che sono in $A$ o in $B$ 
+(o in entrambi ma sono elementi dell'unione una volta sola visto che $A \union B$ è un insieme 
+e nessun insieme può contenere 2 volte uno stesso elemento).
+
+Dati 2 insiemi $A$ e $B$ definiamo l'{\it intersezione}, scriviamo $A \inter B$ che è l'insieme 
+che contiene tutti gli elementi $x$ che sono in $A$ e in $B$ 
+(cioè gli elementi comuni a $A$ e $B$).
+
+Il {\it prodotto} $A \times B$ è l'insieme delle coppie $(a, b)$ con il primo elemento $a \in A$ e 
+il secondo $b \in B$. In pratica
+$$
+A \times B = \{(a, b): a\in A, b\in B\}
+$$
+
+\Note{come puoi immaginare ora che sai come funziona la testa dei matematici prima o poi vorremo 
+fare operazioni tra infiniti insiemi. Per ora ci accontentiamo.}
+
+
+\Note{un altro casino è che possiamo fare $(A \times B) \times C$ che in teoria avrebbe come elementi 
+coppie $((a, b), c)$ ma facciamo finta che non ce ne accorgiamo e che $A \times B \times C$ contenga terne $(a, b, c)$.
+sia $A \times B \times C$, che $(A \times B) \times C$ che $A \times (B \times C)$ contengono le terne $(a, b, c)$.}
+
+\Ex{Cosa contiene $\N \times \Emptyset$?}
+
+Se ogni elemento di A è anche elemento di B allora A è un {\it sottoinsieme} di B e scriviamo $A \subset B$.
+Ovviamente $\Emptyset$ è sottoinsieme di ogni insieme $B$ ($\Emptyset \subset B$ per qualunque $B$).
+Ovviamente per ogni insieme $B$, $B \subset B$, cioè $B$ è sempre sottoinsieme di se stesso.
+
+Dato $A$ un sottoinsieme di $B$ ($A \subset B$) possiamo definire il complemento di $A$ in $B$,
+che è l'insieme $B-A$ che contiene tutti gli elementi $x \in B$ tale che non sono elementi di $A$,
+cioè:
+ $$
+    B-A = \{x\in B: x\not\in A\subset B\}  
+ $$
+    
+\Note{sui libri lo trovi anche definito quanto $A$ non è sottoinsieme ma a me piace di più così al momento.
+
+}
+
+\Note{qui è uno dei posti dove i tipi importano. Se ho $P$, insieme dei primi minori di 10, 
+cioè $P=\{2, 3, 5, 7\}$ e prendessi l'insieme delle cose che non stanno in $P$ oltre a 6, in $-P$ ci troverei pure una mela, hookii, me e te.
+invece faccio $\N-P$ e ci trovo tutti {\bf i numeri} che non sono in $P$. $\N$ funziona come un tipo.}
+
+
+Dato un insieme $A$, $P(A)$ è l'insieme di tutti i sui sottoinsiemi, si chiama l'{\it insieme delle parti}.
+Se $A = \{0, 1, 2\}$ allora 
+$$
+P(A) = \{\Emptyset, \{0\}, \{1\}, \{2\}, \{0,1\}, \{0,2\}, \{1,2\}, A\}
+$$
+ha 8 elementi, ops {\it avrà} 8 elementi.
+
+\Note{$\{1\}$ e 1 sono due cose diverse. $1 \in A$ è un elemento di $A$. $\{1\}$ invece è un sottinsieme di $A$ che contiene un solo elemento.
+Abbiamo $1\in \{1\} \subset A$.  Non si può scrivere né $1 \subset A$ né $\{1\} \in A$.
+
+}
+
+\Note{anche che $\Emptyset$ è un oggetto, un elemento dell'insieme delle parti $P(A)$.
+
+}
+
+\Ex{quanti elementi ha $P(\Emptyset)$?}
+
+\Note{siccome gli insiemi sono definiti con delle proposizioni $P(x)$ non ti sfuggirà che l'unione intersezione e complemento
+di insiemi corrisponde agli operatori logici  $.or.$, $.and.$, $.not.$ tra le corrispondenti proposizioni.
+[In buona sostanza logica booleana e insiemistica sono la stessa cosa.]
+
+}
+
+
+\section*{Seconda settimana}
+
+intro
+
+\NewSection{Giorno 6: relazioni e funzioni}
+
+
+
+Introduciamo 2 concetti molto importanti per dopo.
+
+Dati 2 insiemi $A$ e $B$,
+chiamiamo {\it relazione} da $A$ a $B$ un sottoinsieme $R\subset A\times B$.
+Diciamo che $a\in A$ è in relazione con $b\in B$ se e solo se $(a, b)\in R$
+
+Esempio: definiamo una relazione su $\N$ (che significa da $\N$ a $\N$)
+che descrive la divisibilità. 
+Diciamo che $(k, n)\in R\subset \N\times \N$ (che "$k$ divide $n$" e scriviamo $k|n$) se il numero naturale $k$ divide esattamente $n$.
+Ad esempio abbiamo $1|10$, $2|10$, $5|10$, $10|10$, ma non $3|10$.
+Possiamo quindi pensare alla relazione $|$ come il sottoinsieme 
+$$
+I=\{(k, n)\in \N\times \N: \hbox{ esiste $q\in \N: n=qk$}\}
+$$
+
+Ci interessano 3 tipi di relazioni:
+
+1) relazioni di equivalenza su un insieme $A$
+
+2) relazioni di ordine su un insieme $A$
+
+3) le funzioni da un insieme $A$ a un insieme $B$ (che può essere uguale a o diverso da $A$)
+
+Una relazione di equivalenza $\sim$ è una relazione con le seguenti proprietà (li\-be\-ra\-mente ispirate da =)
+
+1) $x\in A: x\sim x$  (ogni elemento di $A$ è in relazione con se stesso)
+
+2) $x, y\in A:$ se $x\sim y$ allora anche $y\sim x$ (se $x$ è un relazione con $y$ allora anche $y$ è in relazione con $x$)
+
+3) $x, y\in A:$ se  $x\sim y$ e  $y\sim z$ allora anche $x\sim z$.
+
+\Note{La relazione di divisibilità gode della proprietà 1 (per ogni $n\in \N: n|n$).
+Gode pure della proprietà 3)  ($k|n|m$ allora $k|m$).
+Ma non gode della proprietà 2) ($3|6$ na non $6|3$).
+Quindi non è una relazione di equivalenza.
+}
+
+\Ex{definiamo la relazione di equivalenza su $\N$. Diciamo che $n=_{(3)}k$ 
+se esistono $q, p\in \N$ e $r\in \{0, 1, 2\}$ tale che  $n= 3q+r$ e $k= 3p+r$. 
+Ad esempio $7/3$ ha resto 1, $10/3$ ha resto 1, quindi abbiamo che $7=_{(3)} 10$.
+Siccome $12/3$ ha resto 0, non $12\not=_{(3)} 10$.
+È facile convincersi che questa relazione d'equivalenza separa $\N$ in tre sottoinsiemi:
+
+$R_0=\{n\in \N: \hbox{resto di $n/3$ è $0$}\}$, cioè dei numeri che si dividono esattamente per $3$.
+
+$R_1=\{n\in \N: \hbox{resto di $n/3$ è $1$}\}$, cioè dei numeri che hanno resto 1 quando li dividete per $3$.
+
+$R_2=\{n\in \N: \hbox{resto di $n/3$ è $2$}\}$, cioè dei numeri che hanno resto 2 quando li dividete per $3$.
+
+Ogni numero naturale sta in uno e solo uno tra $R_0$, $R_1$, e $R_2$.
+In altre parole, l'unione $R_0 \union R_1\union R_2 = \N$ e
+$R_0\inter R_1=\Emptyset$,
+$R_0\inter R_2=\Emptyset$,
+$R_1\inter R_2=\Emptyset$.
+
+
+Questi sottoinsiemi $R_0$, $R_1$, $R_2$, si chiamano le classi di equivalenza della relazione $k=_{(3)}n$.
+Potete rimpiazzare $3$ con ogni numero naturale $k$ che definisce $k$ classi di equivalenza a seconda del resto
+$r=0,1, ..., k-1$.}
+
+\Note{Questa costruzione è piuttosto generica. Ogni volta che voglio dividere un insieme $A$ in classi di equivalenza,
+lo fate definendo una relazione di equivalenza in modo da spezzare l'insieme $A$ nelle classi di equivalenza desiderate.
+Le 3 classi di equivalenza $R_0$, $R_1$, $R_2$, tengono conto dei possibili resti e trascurano il rapporto.
+Abbiamo che $10= 3\cdot 3+1$ e $7=3\cdot2+1$, quindi $10=_{(3)}7$ perché hanno lo stesso resto anche se il rapporto con 3 è diverso
+(3 e 2, rispettivamente). 
+Le relazioni di equivalenza sono di preciso un modo di considerare equivalenti elementi diversi che però hanno 
+in comune alcune caratteristiche (il resto), e considerare ininfluenti le altre (il rapporto).
+}
+
+
+Delle relazioni di ordine ce ne occupiamo dopo, che ce ne sono tipi sottilmente diversi.
+
+Invece definiamo una funzione $f:A\arr B$ una relazione tra $A$ e $B$ tale che 
+per ogni $a\in A$ esiste uno e in solo elemento $b\in B$ tale che $(a, b)$ sono in relazione.
+Se $(a, b)$ sono un relazione scriviamo $b=f(a)$ e diciamo che $b$ è l'immagine di $a$ attraverso la funzione $f$.
+Per riassumere tutto ciò, scriviamo una funzione $f: A\arr B: a \mapsto f(a)$
+per dire pure che la funzione $f$ associa a $a$ l'elemento $f(a)=b$.
+
+ 
+\Note{A questo punto probabilmente vi chiedete perché uno deve fare le cose così complicate invece di dire che
+una funzione è $y=3x+1$, tu mi dai un valore $x$ e io uso la funzione per calcolarmi il valore di $y$.
+Il problema è che poi uso funzioni in contesti diversi (coi numeri ma pure tra insiemi di spazi, di equazioni, ...).
+In questo modo, facciamo il lavoro una volta sola anche se serve un po' di sforzo iniziale ad abituarsi useremo molto di più questi concetti che i numeri!}
+
+Esempi di funzioni $f:\N\arr \N$ considerate la funzione $s:\N\arr \N: n\mapsto n+1$ 
+che ad ogni numero naturale associa il suo successivo. Questo è la funzione che compare negli assiomi di Peano.
+Solo bisogna sapere fare $n+1$ cioè aver definito la somma in $\N$. Gli assiomi di Peano sono emunciati prima di dire come si fa la somma.
+Abbiamo definito la somma su $\N$ usando la funzione $s:\N\arr \N$ invece che usare la somma per definire $s$.
+
+Sono anche funzioni $f:\N\arr\N: n\mapsto 2n$, $f:\N\arr\N: n\mapsto n^2$, mentre non è una funzione
+$\sqrt{\ }:\N\arr \N: n\mapsto \sqrt{n}$. Perché non è una buona funzione?
+
+\Note{Guardate che a questo tipo di domande si risponde facilmente andando a prendere la definizione e capendo perché non funziona.
+Una funzione per un matematico è esattamente quello che c'è scritto nella definizione. Se un matematico definisce un cane come un quadrupede, 
+allora per lui un gatto è un cane.
+}
+
+Una funzione $f:A\arr B$ è detta biettiva se oltre al fatto che ad ogni elemento $a\in A$ corrisponde una e una sola immagine $f(a)\in B$
+(se no $f$ non è neanche una funzione) vale pure che per ogni $b\in B$ esiste un solo elemento $a\in A$ tale che $f(a)=b$ (cioè se esiste una e una sola {\it controimmagine} di $b$)
+
+
+\Ex{
+$f:\N\arr\N: n\mapsto 2n$, $s:\N\arr \N: n\mapsto n+1$, $f:\N\arr\N: n\mapsto n^2$   
+non sono biettive. Perché?
+
+Per rispondere dovete trovare un numero naturale $b$ che non è prodotto come immagine da nessun $a\in \N$
+oppure che è prodotto come immagine da più di un numero. }
+
+
+\Ex{definiamo i numeri pari $P=\{n\in \N: \hbox{ esiste $k\in \N: n=2k$}\}$.
+La mappa $f: \N\arr P: n\mapsto 2n$ è una funzione? È biettiva?
+}
+
+
+Ora abbiamo gli ingredienti per definire la cardinalità degli insiemi e dire cosa significa contare.
+La prossima volta.
+
+
+
+\NewSection{Giorno 7: che stai a contare?}
+
+
+
+Se ti do una scatola di caramelle e ti chiedo quante caramelle contiene tu che fai?
+
+Tiro a indivinare. Apri la scatola prendi una caramella e conti 1, prendi un'altra caramella e conti 2, ...,
+prendi la 13ma caramella e conti 13. Non ci sono più caramelle e dici che nella scatola c'erano 13 caramelle.
+
+Ora lasciami fare una domandina. Che hai fatto in tutto ciò se non istituire una funzione biettiva tra le caramelle e il sottoinsieme $I_{13}=\{1, 2, 3, \dots, 12, 13\}\subset \N$?
+
+Contare {\it significa} stabilire una funziona bilineare tra un insieme da contare (la scatola di caramelle) e un sottoinsieme finito di $\N$.
+
+Definizione: dati 2 insiemi $A$ e $B$, diciamo che hanno la stessa {\it cardinalità} se esiste una funzione biettiva $f:A\arr B$.
+
+Avere la stessa cardinalità è una relazione di equivalenza sugli insiemi (e pure sugli insiemi infiniti).
+Le classi di equivalenza rispetto a questa relazione di equivalenza sono, ad esempio, tutti gli insiemi con 17 elementi.
+Esiste una classe di equivalenza ogni $n\in\N$, fatta di tutti gli insiemi finiti con $n$ elementi.
+
+Le classi di equivalenza {\it sono} una rappresentazione dei numeri naturali. Il numero $17\in\N$ è identificato con tutti gli insiemi finiti con 17 elementi.
+
+Dobbiamo notare 2 cose: primo, il numero è per definizione astratto, non importa se conti mele, pere, colori o unicorni.
+Secondo, la definizione di avere la stessa cardinalità si estende per costruzione anche agli insiemi infiniti.
+
+Gli insiemi che hanno la stessa cadinalità di $\N$ sono detti {\it numerabili}. Il numero cardinale corrispondente si chiama $\aleph_0$ (letto {\it aleph-zero}).
+Ovviamente, un insieme numerabile è in corrispondenza biunivoca con $\N$, quindi  $\aleph_0\not\in\N$ perché non può essere in corrispondenza con un sottoinsieme finito di $\N$.
+Sono i sottoinsiemi {\it finiti} di $\N$ che definiscono gli elementi di $\N$. 
+
+\Ex{sono più i numeri naturali o i numeri pari? 
+
+[Siate certi di considerare la mappa $f:\N\arr 2\N: n\mapsto 2n$.
+(È biettiva? Quindi?)]
+}
+
+\Ex{Se consideriamo $A=\N\union \{a\}$. È numerabile? Chi ha maggiore cardinalità, $\N$ o $A$?}
+
+\Note{notate che gli assiomi di Peano definiscono i numerali naturali, dicono che 0 è il primo, che esiste sempre il successivo e che il successivo e sempre un numero nuovo, che continuano per sempre a comparire numeri nuovi e che tutti i naturali sono ottenuti come il successivo di un numero naturale. Questo definisce già un (buon) ordine di $\N$.
+
+Poi definiamo la cardinalità dei numeri naturali che si estende agli insiemi numerabili.
+}
+
+Ora prima di definire per bene il buon ordine andiamo in vacanza in montagna all'Hilbert hotel.
+
+
+\NewSection{Giorno 8: l'hotel di Hilbert (numerabile)}
+
+
+
+L'hotel Hilbert è un albergo in un'amena località montana non meglio precisata che ha $\aleph_0$ stanze.
+Un giorno l'albergo risulta completo al momento della cena.
+
+Nel mezzo della notte tempestosa un nuovo cliente bussa alla porta cercando una stanza per passare la notte al sicuro.
+In un primo momento il portiere risponde che sono al completo poi, mosso a compassione per il nuovo venuto, pensandoci un po' ha un'idea e trasmette in tutte le camere il seguente messaggio:
+
+{\it Stiamo affrontando un'emergenza, chiediamo ad ogni cliente a seguire le seguenti istruzioni:
+Se state occupando la nella stanza $k$, vi preghiamo di prendere la vostra roba e trasferirvi nella stanza $k+1$.
+In cambio, riceverete uno sconto del 10\% sul conto.}
+
+Dopo di ciò, la stanza $0$ è rimasta vuota visto che nessuno ci si è trasferito a fronte del suo occupante che ora dorme seneramente nella stanza $1$.
+Il nuovo cliente quindi viene sistemato della stanza $0$, non prima di essersi offerta a pagare di tasca sua il mancato incasso dovuto allo sconto.
+A questo proposito, il portiere ha gentilmente declinato l'offerta argomentando che malgrado le tariffe molto basse dell'albergo e lo sconto, l'incasso totale non sarebbe diminuto finché l'albergo fosse risultato completo o, per quel che conta, anche avesse avuto un numero finito di stanze vuote, o comunque con un numero numerabile di stanze occupate (ad esempio solo quelle pari).
+
+\ms
+Più tardi nella notte, un'altra infinita comitiva si presenta alla porta chiedendo una stanza per evitare la tempesta.
+A quel punto il portiere trasmette il seguente messaggio:
+  
+{\it Mi spiace disturbarvi ancora ma stiamo affrontando una nuova emergenza.
+Vi chiediamo gentilmente di alzarvi, prendere le vostre cose, e se state nella stanza $k$ trasferitevi nella stanza $2k+1$.
+In cambio, riceverete un ulteriore sconto del 10\%.}
+
+Ciò ha reso disponibili tutte le stanze pari che così hanno potuto essere destinate alla comitiva giunta nella notte.
+Sembra che l'hotel di Hilbert non possa esaurire le stanze, [Ma può, come vedremo.]
+
+
+\bs
+Se ci pensate, tutta la storiella dice che la cosa particolare dell'albergo con $\aleph_0$ stanze è che le posso numerare coi numeri naturali $\N$.
+Tuttavia le sole stanze pari, quelle dispari da sole, e tutte le stanze hanno la stessa cardinalità.
+Non ci credete?
+
+Allora controllate che la mappa $f:\N\arr P: n\mapsto 2n$, 
+dove 
+$$
+P=\{0, 2, 4, \dots, 2k, \dots\}
+$$ 
+è biettiva,
+così come la mappa $g:\N\arr D: n\mapsto 2n+1$, dove 
+$$
+D=\{1, 3, 5, \dots, 2k+1, \dots\}
+$$
+
+Ok se ci pensate, magari dite:  {\it e grazie dai sono entrambe infinite quindi sono tanti quanti}.
+Se è così ripetete con me: {\it la natura è malevola e non perde occasione di rendere le cose semplici meravigliosamente complicate}.
+Avete in parte ragione ma vedremo che ci sono infiniti e infiniti (se no perché la cardinalità di $\N$ l'avrei chiamata $\aleph_0$? Perché mi avanzava uno 0 
+o perché alla fine mi servirà una cosa più grande $\aleph_1$, poi una più grande $\aleph_2$, \dots?).
+
+Ma ora non possiamo occuparcene, prima dobbiamo definire i numeri interi, quelli razionali, quelli reali e vedremo che la cardinailtà dei numeri reali è più grande di quella di $\N$, cioè che i numeri reali sono una infinità non numerabile. 
+
+E vi sembra possibile quella sia la fine della storia?
+No, eh, vedete che la natura è malevola?
+
+Prossime tappe: relazioni di ordine e buon ordine, così possiamo definire una rappresentazione (un modello) per i numeri ordinali.
+Poi ci dobbiamo occupare di definire i numeri interi, i razionali e i reali, estendendo le operazioni e definendone altre (ad esempio: la sottrazione, la divisione, le radici quadrate).
+A quel punto siamo arrivati ai tempi di Pitagora (che, non lui, diciamo la sua scuola, ha scoperto che $\sqrt{2}$ non è razionale).
+
+Per questa strada estenderemo 2 volte l'hotel di Hilbert. A quel  punto il finale di Interstellar vi sembrerà banalotto.
+
+
+
+
+
+
+
+
+
+
+\EndDocument
+\end
+
+
