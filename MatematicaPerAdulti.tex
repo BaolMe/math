@@ -556,12 +556,12 @@
 
 \maketitle
 
-\section*{Prima settimana}
+\NewSection{Prima settimana}
 
 intro
 
 
-\NewSection{Giorno 1: quanti numeri?}
+\section*{Giorno 1: quanti numeri?}
 
 
 
@@ -617,7 +617,7 @@ e così finché avete voglia.
 
 
 
-\NewSection{Giorno 2: cardinali, ordinali, numerali}
+\section*{Giorno 2: cardinali, ordinali, numerali}
 
 
 
@@ -700,7 +700,7 @@ e che potremo fare operazioni coi numeri.
 
 
 
-\NewSection{Giorno 3: somme e prodotto}
+\section*{Giorno 3: somme e prodotto}
 
 
 
@@ -781,7 +781,7 @@ Non credo siano importanti i dettagli ma se vuoi ne dimostriamo qualcuna.
 
 
 
-\NewSection{Giorno 4: insiemi}
+\section*{Giorno 4: insiemi}
 
 
 \Abstract
@@ -861,7 +861,7 @@ Gli assiomi di Peano in buona sostanza sono una tale proposizione e definiscono 
 
 
 
-\NewSection{Giorno 5: operazioni tra insiemi}
+\section*{Giorno 5: operazioni tra insiemi}
 
 
 Ora che sappiamo cosa è un insieme (o almeno facciamo finta) possiamo definire un po' di operazioni.
@@ -936,11 +936,11 @@ di insiemi corrisponde agli operatori logici  $.or.$, $.and.$, $.not.$ tra le co
 }
 
 
-\section*{Seconda settimana}
+\NewSection{Seconda settimana}
 
 intro
 
-\NewSection{Giorno 6: relazioni e funzioni}
+\section*{Giorno 6: relazioni e funzioni}
 
 
 
@@ -1063,7 +1063,7 @@ La prossima volta.
 
 
 
-\NewSection{Giorno 7: che stai a contare?}
+\section*{Giorno 7: che stai a contare?}
 
 
 
@@ -1107,7 +1107,7 @@ Poi definiamo la cardinalità dei numeri naturali che si estende agli insiemi nu
 Ora prima di definire per bene il buon ordine andiamo in vacanza in montagna all'Hilbert hotel.
 
 
-\NewSection{Giorno 8: l'hotel di Hilbert (numerabile)}
+\section*{Giorno 8: l'hotel di Hilbert (numerabile)}
 
 
 
@@ -1170,11 +1170,224 @@ A quel punto siamo arrivati ai tempi di Pitagora (che, non lui, diciamo la sua s
 Per questa strada estenderemo 2 volte l'hotel di Hilbert. A quel  punto il finale di Interstellar vi sembrerà banalotto.
 
 
+\section*{Giorno 9: relazioni d'ordine}
+
+Così come abbiamo visto che le relazioni di equivalenza catturano la nostra intuizione di uguaglianza sotto certi aspetti (2 persone diverse possono essere diverse ma uguali sotto la relazione d'equivalenza "sono alte uguali" oppure "pesano uguale" oppure "hanno lo stesso sesso"), le {\it relazioni d'ordine} catturano la nostra intuizione di ordine in un insieme.
+A noi interessano principalmente gli ordini totali e i buoni ordini, ma ci sono diverse gradazioni di grigio e non conviene puntare dritto all'obiettivo, conviene fare lo sforzo di catalogare i diversi tipi di relazione d'ordine.
+
+Definizione: un {\it preordine} su un insieme $A$ è una relazione $\le$ che soddisfa la proprietà  per ogni $x, y, z\in A$
+$$
+\Align{
+&x\le x\cr
+&\hbox{se   $x\le y$ e $y\le z$ allora $x\le z$ }
+}\qquad
+\Align{
+\hbox{(riflessiva)}\cr
+\hbox{(transitiva)}\cr
+}
+$$
+
+\Note{le relazioni di equivalenza soddisfano la proprietà riflessiva e la proprietà transitiva, quindi sono preordini.
+Non è vero il viceversa: non tutti i preordini sono relazioni di equivalenza perché non è richiesta la proprietà simmetrica.
+
+Quindi la strada giusta dovrebbe essere definire i preordini e poi le relazioni di equivalenza come particolare preordini che hanno anche la proprietà simmetrica.
+Siccome dobbiamo tenere a mente un sacco di proprietà e abbiamo un numero finito di neuroni dovremmo abituarci a riorganizzare continuamente la nostra conoscenza in questo modo.
+Questa è una cosa che ci insegna la matematica anche se non ci interessa essere matematici: la conoscenza {\it deve} essere continuamente coccolata e riorganizzata mentre cresce, se no ci bastava Wikipedia.
+
+Questa è, secondo me, {\it una} ragione per provare ad insegnare matematica per 13 anni a tutta la popolazione anche se evidentemente con scarsissimi risultati.
+Tra parentesi questo secondo me indica che lo scopo della scuola pubblica, quella dell'obbligo, non è insegnare cose ai bambini. 
+I bambini sono costretti ad andare a scuola, come i carcerati sono costretti a stare in carcere. Non puoi chiedere a un carcerato di stare 13 anni in carcere e pure imparare a dare il bianco alla cella, al massimo puoi {\it consentirgli} di dare il bianco alla cella. La scuola dell'obbligo ha il compito di esporre tutta la popolazione al maggior numero di cose possibile e {\it consentire} loro di sviluppare i loro interessi in qualcuna di queste materie. Possibilmente di raggiungere un livello civile di navigazione in quelle discipline che non interessano.
+}
+
+Definizione: un {\it ordine parziale} è un preordine con la proprietà antisimmetrica
+$$
+\hbox{se $x\le y$ e $y\le x$ allora $x=y$}
+$$
+
+\Ex{Dato un insieme $A$ e l'insieme $P(A)$ delle sue parti, diciamo che un sottoinsieme $S_1\in P(A)$  di $A$ è {\it incluso} in un  sottoinsieme $S_2\in P(A)$, e scriviamo $S_1\subset S_2$
+se e solo se $S_1$ è anche un sottoinsieme di $S_2$. 
+
+L'inclusione è un ordine parziale di $P(A)$. 
+
+Ogni sottoinsieme è contenuto in se stesso (riflessiva).
+In più se $S_1\subset S_2$ e $S_2\subset S_3$ allora $S_1\subset S_3$ (transitiva, quindi è un preordine).
+
+Infine se $S_1\subset S_2$ significa che tutti gli elementi di $S_1$ sono anche elementi di $S_2$, e anche se $S_2\subset S_1$ significa che tutti gli elementi di $S_2$ sono anche elementi di $S_1$, allora $S_1$ e $S_2$ hanno gli stessi elementi, quindi sono lo stesso sottoinsieme (antisimmetrica).
+
+Quindi l'inclusione è un ordine parziale.
+}
+
+Definizione: un {\it ordine totale} è un ordine parziale che in più ha la proprietà di comparazione,
+dati $x, y\in A$ si ha che $x\le y$ oppure $y\le x$.
+
+\Note{L'inclusione è una ordine parziale che non è totale (due sottoinsiemi possono essere tali da non essere inclusi né $S_1\subset S_2$ né $S_2\subset S_1$).
+
+I numeri naturali sono ordinati totalmente dalla relazione $n_1\le n_1$ che è un ordine totale in $\N$.
+
+Per la cronaca dobbiamo definire tutto, quindi pure cosa significa $n_1\le n_2$.
+Se definiamo i numeri naturali con gli assiomi di Peano, diciamo che $n_1\le n_2$ dicendo che valgono le seguenti proprietà
+$$
+n\le n
+\qquad\qquad
+n\le s(n)
+$$
+
+Se vogliamo dimostrare che $3\le 5$ non dobbiamo fare altro che notare che $5= s(s(3))$, quindi
+$$
+3 \le s(3) \le s(s(3)) = 5
+$$
+quindi $3\le 5$ per la proprietà transitiva.
+}
+
+Un {\it buon ordine} di $A$ è un ordine totale tale che ogni sottoinsieme $S$, non-vuoto di $A$ ha un elemento minimo, cioè più piccolo (rispetto all'ordine totale che stiamo considerando su $A$) di tutti gli altri elementi di $S$.
+L'insieme dei numeri naturali $\N$ con l'ordine $\le$ è ben ordinato. 
+Prendete un qualunque sottoinsieme non vuoto di $\N$ in esso esiste sempre un minimo. 
+
+\Note{Notate che non è vero che esiste sempre un massimo (abbiamo già detto che in $\N$, che è un sottoinsieme non-vuoto di $\N$, non esiste un numero più grande di tutti gli altri).
+
+Se vi gira la testa, non vi preoccupate è come per chi vive al mare andare sulle Ande, è scarsità di ossigeno dopo un paio di giorni (o masticando foglie di coca) passa.
+Sì, stiamo dicendo che {\it ogni} sottoinsieme non-vuoto di $\N$ ha un minimo anche se i sottoinsiemi di $\N$ sono in numero infinito, anche se alcuni sottoinsieme di $\N$ sono infiniti.
+Ok, dovremmo dimostrarlo ma per quello hanno inventato le dimostrazioni, perché consentono di dimostrare infinite cose (nessun pari maggiore di $3$ è primo, e grazie si divide per 2 oltre che per 1 e per $n$).
+
+Ok non abbiamo ancora detto cosa è un primo, ma lo sapete. Ma questo vi conferma che la paranoia principale del matematici è non fare ragionamenti circolari.
+Non assumere cose senza dimostrazione e definizione che alla fine renda sbagliato il ragionamento. Per questo, per fare le cose per bene bisogna andare piano, dare gli assiomi dare le definizioni, dimostrare i teoremi e poi magari dare degli esempi. Non si può fare come stiamo facendo qui, dare gli esempi prima usando cose che non sono state definite. È pericoloso.
+
+Poi quindi capite perché i matematici bestemmiano quando gli si dice {\it eh ma la matematica è astratta, non puoi parlare come mangi e fare un esempio di quello che mi stai dicendo così capisco?} 
+
+La risposta dovrebbe essere: {\it no ora non posso darti degli esempi, prima dimostriamo i teoremi poi tra 3 giorni ti faccio un esempio! Non me ne frega nulla della tua intuizione, se potevi intuire cosa era uno spazio di Hilbert, significa che stai pensando a un esempio con certe proprietà, è pericoloso avere in mente un esempio perché facilita aggiungere proprietà che magari il tuo esempio ha ma non tutti gli spazi di Hilbert e quando dimostri i teoremi è pericoloso avere delle proprietà in mente perché si finisce per sparare stronzate.}
+
+A proposito, sui principia matematica di Russell il teorema $1+1=2$ è marcato col numero 10mila e qualcosa. Diecimila e rotti teoremi prima di sapere che 1+1=2.
+La matematica è lenta.
+}
 
 
 
 
+\section*{Giorno 10: odinali e albergo MultiHilbert}
 
+Dati due insiemi $(A, \le)$ e $(B\le)$ bene ordinati, diciamo che hanno la stessa {\it lunghezza}
+se esiste una mappa biettiva $f:A\arr B$ che preserva l'ordine, cioè che se $a_1\le a_2$ allora $f(a_1)\le f(a_2)$.
+Questa è una relazione di equivalenza e possiamo considerare classi di equivalenza di insiemi bene ordinati che hanno la stessa liunghezza.
+
+Ognuna di queste classi è un {\it ordinale}. 
+L'ordinale degli insiemi di 3 elementi coincide con gli insiemi di cardinalità 3, quindi l'ordinale 3 e il cardinale 3 sono rappresentati dalla stessa classe di insiemi
+pur avendo definizione diversa.
+
+L'insieme dei numeri naturali $\N$ è bene ordinato quindi determina un ordinale $\om_0$ infinito, che ha cadinalità $\aleph_0$. 
+Se consideriamo l'insieme $\N_{+2}=\N \union \{a, b\}$ con il buon ordine dato da  $n\in\N: n\le a\le b$, allora $\N_{+2}$ definisce un altro ordinale $\om_0+2$
+(esistono mappe biettive tra $\N$ e $\N_{+2}$, ma non mappe biettive che preservino l'ordine). Tuttavia la cardinalità di $\N$ e $\N_{+2}$ è la stessa ed è sempre $\aleph_0$.
+Quindi ci sono più ordinali diversi di cardinali diversi.
+
+Un ordinale è detto {\it ordinale limite} se non ha un {\it precedente} ad esempio $\om_0$ è un ordinale limite, mentre $\om_0+1$ ha $\om_0$ come precedente perché
+$s(\om_0)= \om_0+1$.
+
+Gli ordinali soddisfano gli assiomi di Peano.
+In particolare, se abbiamo un insieme che è ordinale $K=\{1, 2, \dots, k\}\subset \N$ possiamo definire il successivo $K+1=\{1, 2, \dots, k, k+1\}\subset \N$
+
+A questo punto: plot twist!
+Esiste una cosa che si chiama {\it assioma della scelta}:
+
+\Note{
+Dato un insieme $X$ e ogni famiglia $A_\al\subset X$ di sottoinsiemi etichettati da $\al\in I$, esiste sempre una funzione $\si:I\arr X: \al\mapsto \si(\al)\in A_\al$
+che sceglie un elemento $\si(\al)$ in ogni sottoinsieme $A_\al$ della famiglia.
+
+Occhio che la famiglia può essere finita, infinita (numerabile o non numerabile).
+Ad esempio, se prendiamo $I=\R$ e $A_x=\{(x, y): y\in \R, x\in I\}\subset \R\times \R$ allora esiste una funzione $\si:\R\arr \R:x\mapsto \si(x)$.
+Vi sembra ovvio? Beh da un lato questo è il motivo per cui è un assioma, dall'altro è perché non avete idea di quanto può essere infinito un insieme infinito.
+E comunque per scegliere la funzione $\si$ ci vorrebbe infinito tempo visto che devo scegliere infiniti elementi $\si(\al)\in A_\al$ e in generale ogni $A_\al$ può essere fatto a modo suo.
+}
+
+Con l'assioma della scelta si può dimostrare che su ogni insieme esiste un buon ordine.
+Questo significa che potete ordinare $\Q$ (o $\R$) in modo che ogni sottoinsieme abbia un minimo! 
+E se ci pensate un attimo non avete la più pallida idea di come questo ordinamento sia fatto.
+
+Ora se ogni insieme $X$ ha (almeno) un buon ordinamento, significa che ogni coppia $(X, \le)$ (ogni insieme ben ordinato) definisce un ordinale.
+Quindi ad esempio pure $\R$ definisce un ordinale.
+
+\ni\ms{\bf Teorema:} la cardinalità di $[0,1)$ è più grande della cardinalità di $\N$.
+
+\Note{
+Se $I=[0,1)$ avesse la cardinalità di $\N$, sarebbe numerabile, cioè esisterebbe una mappa biettiva $\la:\N\arr I$, il che significa che potrei elencare gli elementi di $I$
+facendo una lista $(\la(0), \la(1), \la(2), \dots)$. Questa lista sarebbe una cosa tipo
+$$
+\Align{
+&0 \mapsto 0.277394776559\dots \cr
+&1 \mapsto 0.000473656649\dots \cr
+&2 \mapsto 0.9983664756349\dots \cr
+&3 \mapsto 0.1227365549000\dots \cr
+&\quad\dots\cr
+}
+$$
+ma si può sempre costruire un numero $x\in I$ che non sta nella lista (quindi la funzione $\la$ non può essere biettiva).
+Basta prendere $x=0.d_1 d_2 d_3 d_4\dots$
+dove $d_1$ è una cifra diversa dalla prima cifra di $\la(0)$,
+dove $d_2$ è una cifra diversa dalla seconda cifra di $\la(1)$,
+dove $d_3$ è una cifra diversa dalla terza cifra di $\la(2)$,
+e avanti così.
+
+Il numero così costruito è diverso da tutti i numeri nella lista per almeno una cifra.
+}
+
+Ok, ci sono delle cosucce da sistemare ma in sostanza questo si chiama dimostrazione {\it diagonale di Cantor}.
+I punti di $I$ sono infiniti, ma sono di più dei punti di $\N$.
+Tra l'altro non si può dimostrare né che ci siano, né che non ci siano infiniti più grandi di $\N$ ma più piccoli di $\R$.
+Pure questo è un assioma della matematica. Usualmente si assume che non ce ne siano e si definisce $\aleph_1$ la cadinalità di $\R$.
+Questo assioma si chiama {\it ipotesi del continuo}.
+
+Tra l'altro poi le funzioni $f:\R\arr\R$ sono infinite di una cadinalità più grande e si assume siano $\aleph_2$ e evanti così.
+
+
+Quindi voi potete contare 
+$$
+0\>
+1\>
+ 2\>
+  3\> 
+  \dots\>
+  \om_0\>
+  \om_0+1\>
+  \om_0+2\>
+  \om_0+3\>
+  \dots\>
+  2\om_0\>
+  \dots\>
+  3\om_0\>
+   \dots\>
+ 4 \om_0\>
+  \dots\>
+ (\om_0)^2
+  \dots\>
+ (\om_0)^3
+  \dots\>
+  \dots\>
+$$
+Ma siccome pure $\R$ definisce un ordinale prima o poi incontro un ordinale che non è più numerabile (che si chiama il {\it primo ordinale non numerabile},
+che scriviamo $\om_1$,
+perché gli ordinali non numerabili sono un sottoinsieme dei numerabili e quindi devono avere un minimo).
+Poi si continua a contare fino ad arrivare a $\R$ (e tutti gli ordinali da $\om_0$ a $\R$ hanno necessariamnete cardinalità $\aleph_1$ per l'ipotesi del continuo.)
+
+
+Mal di testa?
+
+Ora possiamo rifare la storiella dell'albergo di MultiHilbert.
+Quello di prima è solo il piano terra che ha $\om_0$ camere, poi c'è il primo piano con le camere da $\om_0+1$ a $2\om_0$.
+E via così per tutti i piani numerabili.
+
+Questo ha sempre $\aleph_0$ stanze tante quante le camere dell'albergo originale.
+
+Poi abbiamo la dependance $\aleph_1$ che comincia con la stanza $\om_1$ e pure lei ha infiniti piani infiniti.
+
+Poi la dependance $\om_2$ (il primo ordinale di cardinalità $\aleph_2$) e avanti così all'infinito. 
+
+\Note{quando Cantor ha scritto sta roba (intorno al 1850), il suo maestro Kronecher, ha detto che era pazzo. 
+Questi si chiamano numeri transfiniti di Cantor.
+Oggi non c'è dubbio che Cantor avesse ragione. È tutto ben definito, tutto dimostrabile, tutto certificato.
+
+Detto questo, Cantor aveva manie di persecuzione, forse era bipolare e passava 6 mesi fuori e sei mesi dentro il manicomio.}
+
+\NewSection{Terza settimana}
+
+intro
 
 
 
