@@ -120,6 +120,7 @@
  \def\calB{{\hbox{\cal B}}}
  \def\calC{{\hbox{\cal C}}}
  \def\calI{{\hbox{\cal I}}}
+ \def\Card{{\hbox{Card}}}
  \def\calQ{{\hbox{\cal Q}}}
  \def\calP{{\hbox{\cal P}}}
  \def\calL{{\hbox{\cal L}}}
@@ -1385,9 +1386,465 @@ Oggi non c'è dubbio che Cantor avesse ragione. È tutto ben definito, tutto dim
 
 Detto questo, Cantor aveva manie di persecuzione, forse era bipolare e passava 6 mesi fuori e sei mesi dentro il manicomio.}
 
+
+
+
 \NewSection{Terza settimana}
 
-intro
+Ora torniamo ai numeri naturali finiti $\N$.
+La situazione è abbastanza tipica della matematica. Abbiamo una formulazione assiomatica che fissa solo pochi fatti (esiste $0\in \N$, ogni numero $n\in \N$ ha un successivo $s(n)
+\in \N$, procedendo di successivo in successivo si vedono sempre numeri nuovi, tutti i numeri naturali si raggiungono da $0$ procedendo verso il successivo).
+Da questo solo possiamo dimostrare tutto quello che sappiamo sui numeri naturali e definire le operazioni (in questo caso somma e prodotto).
+
+Poi abbiamo un modello basato su insiemi dei numeri naturali (i numeri naturali corrispondono a classi di insiemi con lo stesso numero di elementi, cioè la stessa cardinalità).
+Più o meno possiamo definire la somma come la cardinalità dell'unione (disgiunta) e la moltiplicazione come la cardinalità del prodotto cartesiano.
+Possiamo ordinare i numeri naturali.
+
+Forse vale la pena di menzionare che in quasi tutte le teorie degli insiemi si assume che esista l'insieme vuoto $\Emptyset$.
+E l'insieme vuoto è tutto quello che serve. Esso rappresenta il numero $0=\Emptyset \in \N$.
+Definiamo il successivo di $n\in \N$, l'insieme $s(n)= n \union \{n\}$.
+Quindi 
+$0=\Emptyset$,
+$1=s(0)=\{\Emptyset\}=\{0\}$,
+$2=s(1)=\{\Emptyset, \{\Emptyset\}\}=\{0,1\}$,
+$3=s(2)=\{\Emptyset, \{\Emptyset\}, \{\Emptyset, \{\Emptyset\}\}\}=\{0,1,2\}$, \dots.
+
+Questo fa il servizio che deve fare, perché $\Emptyset$, $\{\Emptyset\}$, $\{\Emptyset, \{\Emptyset\}\}$, \dots sono tutti insiemi diversi,
+(tanto è vero che hanno cardinalità diversa)
+ 
+I numeri naturali sono fatti per contare cose che non possono essere spezzate: le uova, i coniglietti, i compagni di scuola,  le caramelle.
+Per questa ragione è demenziale proporre una immagine come la retta dei numeri che ha infiniti punti tra 2 e 3 che uno deve fare finta di non vedere.
+Tanto più che esiste una immagine mentale che è fatta esattamente di cose che non possono essere divise: una scala.
+Esiste un mezzo gradino? Non mi pare.
+Quindi i numeri naturali sono una scala infinita che parte da terra (0), e da ogni gradino ($n$) potete passare al prossimo gradino ($s(n)=n+1$).
+Niente Escher, salendo non si passa sui gradini dove eravate già stati. 
+
+Dai tempi dei Sumeri, i numeri sono astratti: 2 galline e 2 caramelle sono lo stesso 2. Hanno inventato i numeri proprio per prescindere da quello che si conta.
+Non importa cosa c'è nell'insieme conta solo la cardinalità.
+ 
+Ora concentriamoci sulle operazioni definite in $\N$.
+
+\section*{Giorno 11: somma}
+
+Abbiamo definito la somma a seguito degli assiomi di Peano.
+Quando pensiamo ai numeri naturali come insiemi
+dati 2 insiemi finiti $A_n$ e $A_k$ di cardinalità $n$ e $k$ definiamo l'unione disgiunta
+$$
+A_n \coprod A_k = (\{1\}\times A_n)\union (\{2\}\times A_k)
+$$
+Un elemento dell'unione disgiunta è o nella forma $(1, a)$ con $a\in A_n$ oppure $(2, b)$ con $b\in A_k$.
+In questo modo se $a\in A_n\inter A_k$ esistono 2 elementi $(1, a)$ e $(2, a)$ nell'unione disgiunta.
+
+\Note{
+Ricordate che un insieme non può contenere 2 volte lo stesso elemento quindi se vogliamo 2 copie dobbiamo truccarle perché non siano lo stesso elemento.}
+
+La somma $n+k$ è il numero che rappresenta la cardinalità di $A_n \dunion A_k$.
+
+Siccome tra $A_n\dunion A_k$ e $A_k\dunion A_n$ esiste una mappa biettiva ($i:(1, a)\mapsto (2, a)$ e $i:(2, b)\mapsto (1, b)$), cioè hanno la stessa 
+cardnalità, segue che $n+k=k+n$, cioè la proprietà commutativa.
+
+Lo stesso vale per $A\dunion (B\dunion C) \simeq (A\dunion B)\dunion C $ che corrisponde alla mappa biettiva $i:(a, (b, c))\mapsto ((a,b), c)$
+che mostra la proprietà associativa: 
+$$n+(k+h)= (n+k)+h$$
+
+Siccome $\Emptyset \dunion A\simeq \{2\}\times A \simeq A$, si ha che $0+n=n+0 =a$, cioè $0$ è elemento neutro per la somma.
+
+Quindi abbiamo una operazione {\it somma} che prende 2 numeri naturali $n, m\in\N$ e gli associa un nuovo numero $n+m\in \N$.
+La somma si può fare sempre qualunque siano i numeri da cui si parte e i matematici amano le funzioni che non possono tornare errore (come sanno gli informatici che hanno usato qualche linguaggio funzionale).
+La somma alla fine ha solo queste proprietà:
+
+ammette elemento neutro 0
+
+è associativa
+
+è commutativa.
+
+\ms 
+La sottrazione ha un ruolo ancillare perché non sempre si può fare ($5-8\not\in \N$). È importante cominciare a saper calcolare le sottrazioni ma in $\N$ hanno poco ruolo, sarebbe meglio introdurle dopo in $\Z$. Ma quando scriviamo $n-m= c\in \N$ stiamo cercando $c\in\N$ tale che $m+c=n$. 
+
+Sia la somma che la sottrazione possono facilmente essere calcolati in $\N$, se ci avvaliamo della not6azione posizionale.
+Ogni numero si scrive come sequenza di cifre e la posizione della cifra nella sequenza denota unità, decine, centinaia, migliaia, ....
+Ad esempio 5023 significa che abbiamo 3 unità, 2 decine 0 centinaia e 5 migliaia.
+L'algoritmo per la somma è basato nel prendere 2 cifre, commarle e romperle in decine e unità.
+Se prendo 2 e 3 ottengo 5 unità e 0 decine.
+Se prendo 9 e 3 ottengo 2 unità e 1 decina.
+Se prendo 9 e 9 ottengo 8 unità e 1 decina.
+
+Se devo sommare 5263 + 2669, parto dalle cifre delle unità (3 e 9, le combino e ottengo 2 unità e 1 decina, annoto 2 per le unità nel risultato e riporto 1 decina). 
+
+Poi passo alle decine (6 e 6, le combino e attengo 2 unità e 1 decina, più ilriporto precedente fa 2 unità e 1 decina).
+Annoto 3 nelle decine e riporto 1centinaia.
+
+Poi passo alle centinaia (2 e 6, 8 unità (+ 1 riporto 9) e 0 decine) segno 9 centinaia e non riporto migliaia.
+
+Poi passo alle migliaia (5 e 2, 7 unità e 0 decine) segno 7 migliaia.
+
+Risultato 7932.
+
+
+Bisogna solo imparare le somme delle cifre (le tabelline per la somma) e non dimenticarsi dei riporti.
+Per il resto l'algoritmo è quello che fate per sommare i numeri sul pallottoliere che infatti è uno strumento per simulare la notazione posizionale.
+
+Altra storia per le proprietà associativa e  commutative che invece bisogna {\it dimostrare}.
+Non basta dire che 2+3=3+2 come non basta dire che 2+2=2*2 per dimostrare che $n+n=n*n$ o che $16/64=1/4$ per dimostrare che $37/74=3/4$
+
+Per la sottrazione, prima realizziamo che se  vogliamo fare $n-m$ deve essere $n\ge m$ poi se questo è vero procediamo al contrario della somma, se serve prestando una decina.
+
+ 5263 - 2669 = 2594
+
+e si verifica che infatti 2669 + 2594 = 5263.
+
+Bon così, assicuratevi solo di convincervi che potete sempre sommare 2 numeri naturali e togliere un naturale $k$ più piccolo a qualunque naturale $n\ge k$.
+Lo potete fare in base 10, in base 3, in base 97.
+Più la base è grossa più sono grosse le tabelline da ricordare, più sono piccole e più sono i riporti (o i prestiti).
+
+Tutto l'algoritmo è solo completa la decina.
+Se dovete sommare 5 numeri potete ordinarli in modo da semplificare il completamento delle decine (3+5+2+7+5+8= 3+7+2+8+5+5=30).
+
+Un'ultima cosa, notate che possiamo scrivere $3+5+7$ solo perché sappiamo che $(3+5)+7= 3+(5+7)$. Se la somma non fosse associativa siccome abbiamo definito solo la somma di 2 numeri, dovremmo specificare le parentesi per dire in quale ordine ci aspettiamo di fare le operazioni. 
+Siccome la somme è associativa e commutativa possiamo sottintendere le paretesi e l'ordine degli addendi che tanto il risultato non cambia.
+Quindi $3+5+7= (3+7)+5=15$.
+
+Come sempre le proprietà possono essere usate pure al contrario:
+$7+5= (5+2)+5= (5+5)+2= 12$ con un po' di taglia e cuci e completa la decina.
+
+ \section*{Giorno 12: prodotto}
+
+Pure il prodotto è definito usando gli assiomi di Peano. 
+Ma quando pensiamo ai numeri come insiemi possiamo definire il prodotto come la cardinalità del prodotto cartesiamo.
+$$
+2*3 = \Card(\{0,1\}\times \{0,1,2\})
+=\Card(\{(0,0), (0,1), (0,2), (1,0), (1,1), (1,2)\})=6
+$$
+Anche se $\{0,1\}\times \{0,1,2\}$ e $\{0,1,2\}\times \{0,1\}$ sono insiemi diversi, la loro cardinalità è la stessa (sotto la mappa biettiva $(a, b)\mapsto (b, a)$).
+Quindi il prodotto è commutativo
+
+Stessa cosa per $A\times (B\times C)$ e $(A,\times B)\times C$, il primo contiene roba tipo $(a, (b, c))$ il secondo roba tipo $((a, b), c)$.
+Ma possiamo definire una mappa biettiva $(a, (b, c))\mapsto ((a, b), c)$ che dimostra che $\Card(A\times (B\times C)) =\Card((A,\times B)\times C)$
+e quindi la proprietà associativa del prodotto $(ab)c= a(bc)$.
+
+Poi se prendiamo $1=\{0\}$, quando facciamo 
+$$1*3=\Card(\{0\}\times \{0,1,2\})=\Card( \{(0,0),(0,1),(0,2)\})
+$$
+Di nuovo, $\{0\}\times A$ e $A$ sono insiemi diversi ma hanno la stessa cardinalità, quindi $1*n=n*1=n$.
+Quindi $1$ è elemento neutro per il prodotto.
+
+\Ex{dimostrate che $0*n=0$, per qualunque $n\in \N$.
+
+Suggerimento: scrivete il prodotto cartesiano $\Emptyset\times A$}
+
+
+In più avete la proprietà distributiva $(a+b)c= ac+bc$.
+
+\Note{
+che si dimostra trovando una mappa biettiva tra $(A\dunion B)\times C$ e $(A\times C)\dunion (B\times C)$...}
+
+Fine della storia sulle operazioni definite in $\N$. O quasi.
+Il punto è che da qui in avanti la rappresentazione di numeri e operazioni in termini di insiemi non ci serve più possiamo astrarre e procedere solo usando le proprietà delle operazioni.
+
+Ad esempio, dalla proprietà distributiva, mettiamo $a=1=b$ e otteniamo $2n=n+n$ che è la definizione che si dà alle elementari. 
+Mettiamo $a=1$ e $b=2$  e otteniamo $3n=n+n+n$ e avanti così.
+
+Un altro giochino  carino è il seguente teorema: l'elemento neutro 0 della somma è unico.
+
+\Note{
+Supponiamo che esista in altro elemento neutro $a$.
+Se scriviamo $a+0$, siccome 0 `è elemento neutro abbiamo $a+0=a$.
+Ma siccome pure $a$ è elemento neutro abbiamo anche $a+0=0$.
+Quindi abbiamo $a=a+0=0$, cioè $a=0$, cioè ogni ``altro'' elemento neutro coincide con quello vecchio.
+}
+
+Potremmo pure dare una dimostrazione basata sugli insiemi dello stesso fatto, ma questa dimostrazione è più intelligente. Perché?
+
+Perché, siccome usa solo la proprietà dell'elemento neutro $a+0=0+a=a$ e questa proprietà è condivisa da tutti gli elementi neutri (1 del prodotto, la funzione $f(x)=0$ rispetto alla somma delle funzioni $f:A\arr \R$) la stessa dimostrazione dimostra che 1 è l'unico elemento neutro del prodotto, e l'unicità dell'elemento neutro del gruppo delle rotazioni, dello 0 in ogni spazio vettoriale,
+di $0+i0\in \C$.
+
+
+
+\NewSubSection{Algoritmo per il prodotto}
+
+Alle elementari abbiamo fatto pure l'algoritmo per eseguire il prodotto in $\N$. 
+Se dobbiamo fare $1238*326$ in pratica usiamo questo trucco (di nuovo basato sulla notazione posizionale)
+$$
+1238*326= 1238(3*100+2*10+6)
+=1238*3*100+1238*2*10+1238*6
+$$
+Quindi se sappiamo moltiplicare un numero naturale per una cifra (e sappiamo che moltiplicare per 100 significa aggiungere 00 alla coda si un numero) sappiamo calcolarlo.
+
+Per la moltiplicazione di  un numero naturale per una cifra usiamo lo stesso trucco
+$$
+\Align{1238*3=& 1*3*1000+ 2*3*100 + 3*3*10+8*3
+=\cr
+=& 3*1000+ 6*100 + 9*10+24= 3690+24= 3714
+}
+$$
+
+In sostanza l'algoritmo che utilizziamo alle elementari è solo per minimizzare le cose che bisogna ricordare per tanto tempo durante l'esecuzione (vi dice dove scrivere i riporti mentre calcolate le somme parziali). A parte questo state facendo quello che fate qui sopra.
+
+Di nuovo, può essere laborioso ma potete moltiplicare qualunque coppia di numeri naturali, basta che sappiate moltiplicare le cifre (tabelline) e fare le somme.
+
+
+
+
+\NewSubSection{Divisione e resto}
+
+Come per la sottrazione la divisione in $\N$ ha un ruolo ancillare.
+Due numeri naturali $n, k\in \N$ si possono dividere solo se $n$ è multiplo di $k$, cioè se esiste in $q\in\N$ tale che $n=qk$ e allora $k$ divide $n$ (abbiamo convenuto di scrivere $k|n$)
+e scriviamo $n:k=q$ (con resto $r=0$).
+
+In pratica se scriviamo che $n:k=q$ stiamo solo dicendo che $q\in \N$ è quel numero che moltiplicato per $k$ dà $n$, cioè che $q*k=n$. 
+In altre parole la divisione esatta è inversa al prodotto.
+
+Possiamo essere più liberali e mostrare che per ogni coppia di numeri naturali $n, k\in \N$, esistono (e sono unicamente determinati) 2 numeri $q\in\N$ e $r\in \{0, 1, \dots, k-1\}$ tale che
+$n=qk+r$. 
+Lo chiamiamo il {\it teorema dello Zecchino d'oro} ({\it 44 gatti in fila per 6 col resto di 2}) e $q$ lo chiamiamo il quoziente di $n:k$, $r$ lo chiamiamo il resto di $n:k$ che indichiamo anche con 
+$r=n \mod k$ (che leggiamo $n$ modulo $k$).
+
+\Note{L'operazione che associa a $(n, k)$ i numeri $(q, r)$ è ben definita. Se chiedete a me i microprocessori dovrebbero implementare questa, non i floating points.}
+
+
+\NewSubSection{Algoritmo di divisione}
+Se ho 2 numeri $n$ e $k$ e voglio dividere $n:k$ comincio a cercare il più grande $q_1$ tale che $q_1*k\le n$.
+Quindi definisco $n_1= n-q_1*k$. Se $n_1\in \{0, 1, \dots, k-1\}$ abbiamo finito se no
+cerchiamo il più grande $q_2$ tale che $q_2*k\le n_1$. Quindi definiamo $n_2=n_1-q_2*k$ e avanti così finché $r=n_{l}= n_{l-1}-q_l*k\in \{0, 1, \dots, k-1\}$ che è quindi il resto.
+Abbiamo che 
+$$
+\Align{
+n=& q_1*k+n_1
+=  q_1*k+q_2*k + n_2
+=\dots =\cr
+=& q_1*k+q_2*k +\dots + q_l*k+r
+= (q_1+q_2 +\dots + q_l)*k+r
+= q*k+r
+}
+$$
+quindi il quoziente è $q=q_1+q_2 +\dots + q_l$ e il resto è $r$.
+
+Come per la sottrazione l'algoritmo delle elementari è solo un modo per organizzare il calcolo senza dover ricordare (o capire) troppe cose.
+
+\NewSubSection{Divisibilità e numeri primi}
+
+Ora che sappiamo cosa significa dividere esattamente $k|n$ ($k$ divide $n$) possiamo notare che certi numeri $2, 3, 5, 7, \dots$ hanno esattamente 2 divisori ($1$ e loro stessi).
+Li chiamiamo {\it numeri primi}.
+Un'altra definizione equivalente è che se un numero primo $p$ divide un prodotto $ab$, siccome non potete spezzare $p$ in un prodotto, allora $p$ o divide $a$ o divide $b$.
+Quindi possiamo dire che $p\not =1$ è primo se e solo se
+$$
+p|ab \then p|a \hbox{ .or. } p|b
+$$
+Notate che 1 non è un primo perché non ha esattamente 2 divisori ne ha 1 solo.
+
+Fate una bella cosa, scrivere i numeri da 2 a 10 su un foglio e poi disegnare una freccia tra $a$ e $b$ se $a|b$.
+Ottenete dei grafi disconnessi, uno per ogni numero primo tra 2 a 10.
+
+Ogni numero naturale $n$ si può scrivere in maniera unica come prodotto di numeri primi (per avere l'unicità della decomposizione abbiamo escluso 1 dai primi).
+
+I numeri primi sono infiniti.
+
+\Note{
+Supponiamo che i numeri primi siano in numero finito cioè $\{2, 3, 5, ...., p_n\}$.
+Quindi $p_n$ dovrebbe essere il primo più grande di tutti.
+Sfortunatamente $p= 2*3*5*\dots* p_n+1$ è primo ($p \mod p_k =1$, quindi $p_k$ non divide $p$) ed è più grande di $p_k$ che quindi non è il primo più grande di tutti.
+}
+
+
+
+
+\section*{Giorno 13: numeri interi}
+
+Ora che sappiamo vita, morte e miracoli (somma, prodotto e divisione con resto) di $\N$ dobbiamo scoprire i numeri interi.
+Il punto è il {\it riciclo}: non voglio tutte le volte ripartire da assiomi se posso evitarli. 
+Se potessi evitarli gli assiomi sono sempre da evitare visto che arrivano senza dimostrazione.
+
+Il punto è che possiamo definire i numeri interi (positivi e negativi) senza introdurre nuovi assiomi e le operazioni tra numeri interi (compresa la sottrazione) usando solo naturali e le loro operazioni.
+
+\Note{
+Ma prima, perché ho bisogno dei numeri negativi? 
+Perché senza 5-8 non lo posso fare. Coi numeri negativi la sottrazione diventa una buona operazione che posso sempre fare e che diventa l'inversa della somma.
+In altre parole imparo a risolvere le equazioni del tip $x+a=b$ qualunque siano $a$ e $b$. 
+
+Questo pattern si ripeterà più volte. Inventiamo nuovi numeri per risolvere problemi in modo più generale. Varrà per le frazioni $\Q$ ($ax+b=c$) per i numeri reali ($x^2=2$)
+per i numeri complessi $x^2=-1$. 
+}
+
+Consideriamo le coppie di numeri naturali $(a, b)\in \N\times \N$.
+Diciamo che 2 coppie sono equivalenti $(a, b)\sim (c,d)$ se $a+d=b+c$.
+Questa è una relazione di equivalenza (dimostrare le proprietà che definiscono le relazioni di equivalenza).
+Definiamo un {\it numero intero} una classe di equivalenza $[(a, b)]$ che contiene tutte le coppie nella forma $(a+k, b+k)$ che infatti risultano equivalenti a $(a, b)$.
+L'insieme di tutti i numeri interi si denota con $\Z$.
+
+La {\it somma} di 2 numeri interi si definisce come $[(a, b)]+ [(c, d)]= [(a+c, b+d)]$.
+
+\Note{ Il risultato non dipende dal rappresentante scelto per i numeri interi, infatti, siano $(a+k, b+k)$ e $(c+h, d+h)$ altri rappresentanti la somma sarebbe
+$$
+[(a+k+d+h, b+k+c+h)]=[(a+d+(k+h), b+c+(k+h))]=[(a+d, b+c)]
+$$
+}
+
+Definiamo il {\it prodotto} in $\Z$ come
+$$
+[(a, b)][(c, d)]= [(ac+bd, bc+ad)]
+$$
+
+\Note{
+Tra tutti i numeri interi possiamo scegliere un sottoinsieme $[(a, 0)]$. Se riscriviamo le operazioni per questi numeri interi abbiamo che essi rappresentano correttamente i numeri naturali.
+$$
+[(a, 0)]+[(b,0)]= [(a+b, 0)]
+\qquad
+[(a, 0)][(b,0)]= [(ab, 0)]
+$$
+Quindi identifichiamo $i:\N\arr \Z:a\mapsto [(a, 0)]$.
+}
+
+Possiamo sempre scegliere per un numero intero un rappresentante specifico:
+Se $a\ge b$ scegliamo $[(a, b)]= [(a-b, 0)]$, se $a<b$ scegliamo $[(0, b-a)]$.
+E quindi inventiamo una notazione:
+denotiamo $[(a, 0)]=a\in \N\subset \Z$ e $[(0, a)]=-a\in \Z$.
+
+E come mai questo dovrebbe avere a che fare con i numeri interi?
+
+\Note{Esempio: calcolare $[(a, 0)]+ [(0, a)]=[(a, a)]=[(0,0)]$.
+Quindi $[(0,a)]$ è un numero intero che sommato con $[(a, 0)]$ dà 0. 
+
+Notate che la sottrazione è una somma di numeri interi:
+$a-b= [(a, 0)]+[(0,b)]$
+e per calcolare una {\it sottrazione} dobbiamo solo in generale fare 2 somme in $\N$.
+}
+
+
+I numeri interi contengono i numeri naturali $i:\N\arr\Z:a\mapsto [(a, 0)]$ e le operazioni definite sui naturali continuano a funzionare
+$$
+i(a)+i(b) \mapsto [(a, 0)]+[(b, 0)]=[(a+b, 0)]\mapsto i(a+b)
+$$ 
+$$
+i(a) i(b) \mapsto [(a, 0)][(b, 0)]=[(ab, 0)]\mapsto i(ab)
+$$ 
+
+\Ex{ calcolare $1 (-1)$ e $(-1)(-1)$.
+$$
+1 (-1)= [(1, 0)][(0,1)]= [(0, 1)]= -1
+\qquad
+(-1) (-1)= [(0, 1)][(0,1)]= [(1, 0)]= 1
+$$
+Salmodiate: {\it meno per più fa meno, meno per meno fa più}.
+}
+
+Se sapete moltiplicare i numeri naturali, sapete pure moltiplicare i numeri interi.
+
+Abbiamo anche che
+$$
+(-1)[(a, b)]= [(b, a)]= 
+$$
+quindi 
+$$
+[(a, b)]= [(a,0)]+ [(0, b)]= [(a,0)]+ (-1)[(b, 0)]= a-b
+$$
+quindi il numero intero $[(a, b)]$ coincide col numero intero $a-b$, $a$ è la parte positiva, $b$ la parte negativa.
+
+In $\Z$ l'operazione di somma funziona molto meglio che in $\N$. Se in $\N$ non era sempre possibile, ora per qualunque $k\in \Z$ esiste un $-k\in \Z$ tale che $k-k=0$,
+$-k$ si chiama {\it l'opposto di $k$} oppure l'inverso rispetto alla somma.
+
+Quando abbiamo che un insieme (in questo caso $\Z$) ha una operazione (in questo caso $+:\Z\times\Z\arr \Z$, che risulta associativa, commutativa, esiste l'elemento neutro $0$,
+e ogni elemento $k$ ha un opposto $-k$. Quando è così questo si chiama un gruppo commutativo.
+Gruppi commutativi ce ne sono tanti e siccome in ogni gruppo commutativo usiamo solo le proprietà che ne fanno un gruppo commutativo, se so risolvere l'equazione $x+a=b$
+in un gruppo so risolverla in tutti i gruppi. Da qui l'astrazione di risolvere l'equazione senza neanche sapere se $a$ e $b$ sono numeri interi, frazioni, vettori, funzioni continue, operatori su spazi di Hilbert o rotazioni del piano, tanto è uguale.
+
+Quindi in $\Z$ c'è una sottrazione $a-b$ ben definita, che però è diventata la somma di $a$ con $-b$.
+La divisione è sempre brutta perché $6:4$ continua a non avere un risultato in $\Z$.
+
+\section*{Giorno 14: numeri razionali}
+
+Ora giochiamo lo stesso gioco per definire i numeri razionali $\Q$ su cui abbiamo che anche la divisione è ben definita.
+
+\Note{ Da piccoli vi hanno detto che una frazione è una roba che si scrive 
+con 2 numeri interi $n, d\in \Z$ (con $d\not=0$) e si scrive $\frac[n/d]$.
+
+Poi vi hanno insegnato a sommare e moltiplicare le frazioni. E lì è spesso per molti  finito il mondo.
+Il fatto è  che è antipatico definire le cose così perché $\frac[n/d]$ è il numerale di un numero razionale.
+Invece noi che siamo uomini di mondo, prima definiamo i numeri razionali e poi introduciamo le frazioni come notazione per rappresentare i razionali.
+Come abbiamo introdotto la notazione $-a=[(0, a)]$ per rappresentare i numeri negativi.
+}
+
+Consideriamo le coppie di numeri interi $(a, b)\in \Z\times\(\Z-\{0\}\)$, con $b\not=0$.
+Dichiariamo equivalenti 2 coppie $(a, b)\sim (c, d)$ se e solo se $ad=cb$.
+
+Un numero razionale è una classe di equivalenza $[(a, b)]$ che è un sottoinsieme che contiene tutte le coppie $[(a, b)] =\{ (ak, bk): k\in \Z-\{0\}\}$.
+L'insieme dei numeri razionali si scrive come $\Q$.
+
+Sui numeri razionali definite la somma e il prodotto come 
+$$
+[(a,b)]+[(c,d)]= [(ad+bc, bd)]
+\qquad
+[(a,b)][(c,d)]= [(ac, bd)]
+$$
+Quindi se sapete sommare e moltiplicare numeri interi, sapete farlo pure per le frazioni.
+
+Potete definire la mappa $i:\Z\arr \Q: a\mapsto [(a, 1)]$, che rappresenta i numeri interi come razionali preservando le operazioni
+$$
+\Align{
+&i(a) + i(b)=  [(a, 1)]+  [(b, 1)]=  [(a+b, 1)]= i(a+b)
+\cr
+&i(a) i(b)=  [(a, 1)]  [(b, 1)]=  [(ab, 1)]= i(ab)
+}
+$$
+come prima abbiamo mostrato che i numeri naturali erano particolari numeri interi.
+ 
+Se prendete $[(a, 1)]\in \Q$ e lo moltiplicate per $[(1,a)]$ otteniamo $[(a, 1)][(1, a)]=[(a, a)]=[(1,1)]$.
+Quindi $[(1,a)]$ è quel numero in $\Q$ che moltiplicato per il numero intero $a$ (pensato come numero razionale) dà 1.
+Questo si chiama il {\it reciproco} di $a$, o l'inverso rispetto al prodotto.
+
+Ora che sappiamo operare in $\Q$ con somma e prodotto, sono entrambe associative e commutative, entrambe ammettono elemento neutro $[0, 1]$ e $[(1,1)]$
+ed entrambe ammettono inverso (tranne per il reciproco di 0), $-[(a, b)]=[(-a, b)]$ e $[(a, b)]^{-1}= [(b, a)]$ e in più vale in generale la proprietà distributiva della somma rispetto alla moltiplicazione, allora diciamo che $\Q$ è un {\it campo}.
+
+In un campo se abbiamo l'equazione $AX+B=C$ possiamo risolverla come 
+$$
+AX+B=C
+\qquad
+AX=C-B
+\qquad
+X=A^{-1}(C-B)
+$$
+ 
+Infine diciamo che il numero razionale $[(a, b)]$ si può scrivere come $\frac[a/b]$.
+In $\Q$ abbiamo la divisione ben definita (a parte che non si può dividere per 0), nel senso che 
+la divisione di $\frac[a/b]$ e $\frac[c/d]$ è quel numero $q\in Q$ tale che $q \frac[c/d] =\frac[a/b]$.
+Se scriviamo $q= n/m$ possiamo espandere quest'ultima condizione
+$$
+\frac[n/m] \frac[c/d] = \frac[nc/md]=\frac[a/b]
+$$
+che è vera se e e solo se $ncb= amd$ che è vera se $n=ad$ e $m=cb$  (infatti $adcb= acbd$).
+Quindi abbiamo la divisione
+$$
+\Frac[{\frac[a/b]}/{\frac[c/d]}]={\frac[a/b]}{\frac[d/c]}
+= \frac[ad/bc]
+$$ 
+
+Abbiamo anche il principio di semplificazione per le frazioni 
+$\frac[ak/bk]= \frac[a/b]$ sempre quando $k\not=0$.
+
+
+Se ci pensate, avete ora quasi tutto quello che avete fatto alle elementari e qualcosa delle medie. Tutto quello che vi serve per risolvere qualunque equazione lineare in $\Q$.
+Abbiamo un bel contesto in cui sommare e dividere numeri in modo generale.
+Come si sa dai tempi di Pitagora, non sappiamo ancora risolvere le radici quadrate di tutti i numeri razionali.
+Ad esempio non sappiamo risolvere in $\Q$ l'equazione $x^2=2$.
+
+E questo è fastidioso, nel senso che abbiamo un campo $\Q$ possiamo scrivere un'equazione in $\Q$ che però non possiamo risolvere in $\Q$
+(come nei naturali possiamo scrivere $x+3=0$ ma non possiamo risolverla, e come negli interi possiamo scrivere $3x=2$ ma non possiamo risolverla).
+La situazione migliora a ogni giro (possiamo risolvere $x+3=0$ in $\Z$ e  $3x=2$ in $\Q$) ma sempre troviamo nuove equazioni che non possono essere risolte dove sono definite.
+
+E notate che non abbiamo ancora parlato di virgola, la frazione $3/2$ per noi è una frazione e ancora neanche sappiamo cosa significa $1.5$, tantomeno che $3/2=1.5$.
+Anche senza saperlo abbiamo risolto tutte le equazioni lineari.
+
+Lasciatemi aggiungere una cosa: Il gruppo $(\Z, +)$ è abbastanza semplice, logicamente possiamo dimostrare che è un ambiente scevro da contraddizioni e in cui possiamo decidere di ogni proposizione se è vera o falsa. Già per $(\Q, +, *)$ vale il teorema di G\"odel, cioè possiamo {\it dimostrare} che ci sono proposizioni indecidibili (una delle quali è che il sistema formale è coerente, un'altra è il problema dell'arresto).
+Non siamo neanche in 4 elementare e siamo già esposti al teorema di indecidibilità di G\"odel!
+
+Che volete farci: {\it la natura è malevola} pure quando parlavamo di numeri naturali eravamo comunque esposti agli infiniti visto che i numeri naturali sono infiniti.  
+
+Mi piace chiudere ricordando che in greco {\it máthema} è {\it ciò che si impara}, per dire che chi dice che la matematica è naturale banfa.
+La matematica si deve imparare perché non è lo stato naturale se no le scimmie sarebbero matematiche.
+
+
+
+
 
 
 
