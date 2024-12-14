@@ -4,6 +4,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[italian]{babel}
+\usepackage{tikz} % LATEX
+\usetikzlibrary {automata}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Trim Size: 9.75in x 6.5in
@@ -937,6 +940,7 @@ di insiemi corrisponde agli operatori logici  $.or.$, $.and.$, $.not.$ tra le co
 }
 
 
+\newpage
 \NewSection{Seconda settimana}
 
 intro
@@ -1388,7 +1392,7 @@ Detto questo, Cantor aveva manie di persecuzione, forse era bipolare e passava 6
 
 
 
-
+\newpage
 \NewSection{Terza settimana}
 
 Ora torniamo ai numeri naturali finiti $\N$.
@@ -1647,6 +1651,22 @@ Sfortunatamente $p= 2*3*5*\dots* p_n+1$ è primo ($p \mod p_k =1$, quindi $p_k$ 
 }
 
 
+\Note{
+Supponiamo per assurdo che i numeri primi siano in numero finito cioè $\{2, 3, 5, ...., p_n\}$.
+Quindi $p_n$ dovrebbe essere il primo più grande di tutti.
+Sfortunatamente se definiamo $a= 2*3*5*\dots* p_n+1$,
+esso o è primo ($a \mod p_k =1$, quindi $p_k$ non divide $p$) ed è più grande di $p_k$ che quindi non è il primo più grande di tutti.
+Oppure $a$ non è primo, quindi ammette un divisore. Scomponendo $p$ in fattori primi si prova un divisore $p$ di $a$, cioè $p|a$.
+Ma per quanto detto sopra $p$ non può essere nessuno dei primi minori o uguali a $p_n$, quindi sarebbe necessariamente più grande di $p_n$.
+
+In entrambi i casi è una contraddizione col fatto che $p_n$ è il più grande dei primi. 
+Dato un insieme finito di primi uno può sempre trovare un primo più grande di tutti gli elementi dell'insieme, quindi l'insieme dei primi deve necesssariamente essere infinito.
+}
+
+
+
+Quale dimostrazione vi convince di più?
+
 
 
 \section*{Giorno 13: numeri interi}
@@ -1842,6 +1862,159 @@ Che volete farci: {\it la natura è malevola} pure quando parlavamo di numeri na
 Mi piace chiudere ricordando che in greco {\it máthema} è {\it ciò che si impara}, per dire che chi dice che la matematica è naturale banfa.
 La matematica si deve imparare perché non è lo stato naturale se no le scimmie sarebbero matematiche.
 
+
+
+\section*{Giorno 15: numeri decimali}
+
+Tra i razionali ce ne sono di particolare per cui possiamo usare una notazione diversa. Ad esempio
+$$
+\frac[12/10]= 1.2
+\qquad
+\frac[314/100]= 3.14
+\qquad
+\frac[66666/10000]= 6.6666
+$$
+sono numeri razionali che hanno un denominatore che è una potenza di 10. 
+Il carattere $.$ ci informa di quale potenza di 10 si tratta.
+Questi numerali si chiamano {\it notazione decimale}.
+
+Se volete sommare $1.2$ e $3.14$ sappiamo già farlo
+$$
+1.2 + 3.14 = \frac[12/10] + \frac[314/100]
+ = \frac[120/100] + \frac[314/100]
+ =\frac[434/100] = 4.34
+$$
+E questo è semplicemente il motivo per cui alle elementari ci tenevano tanto a farci allineare a destra i numeri da sommare,
+oltre alle cose tipo {\it sommate i numeri come se non ci fosse la virgola e poi rimettetela a posto}.
+Lo stesso vale per la moltiplicazione
+$$
+1.2 * 3.14 = \frac[12/10]  \frac[314/100]
+= \frac[12* 314/1000] 
+= \frac[3768/1000] = 3.768
+$$
+
+\Note{Ditemi se è  così pure per voi, ma io ricordo che quando abbiamo fatto da piccoli i numeri decimali, i decimali all'inizio non erano approssimazioni di qualcosa (e.g.~di numeri irrazionali).
+Quando si scriveva $1.2$ era $1.2$, era esattamente $\frac[12/10]$, non l'arrotondamento di $1.2005$. Gli arrotondamenti sono venuti dopo.
+Quindi, all'inizio, il punto era esattamente di estendere le operazioni e gli algoritmi per calcolarle ai numeri con la virgola. 
+Quindi mi pare sia {\it esattamente} quello che abbiamo fatto qui.
+} 
+
+Ovviamente, questa non è neppure matematica davvero. 
+È una cosa che riguarda i numerali e il fatto che siamo affezionati alla base 10. 
+Anche se lo rifate in una base qualsiasi, stiamo sempre parlando di un modo fantasioso di scrivere alcune frazioni particolare.
+Quando avete 
+$\frac[1/4]$ questo possiamo scriverlo esattamente in forma decimale $\frac[1/4]=\frac[25/100]= 0.25$
+oppure $\frac[30/4]=\frac[750/100]= 7.5$.
+
+Ma ci sono altri numeri razionali che non si possono scrivere in forma decimale.
+Ad esempio, $\frac[1/3]$ non può essere scritto esattamente in forma decimale (con un numero finito di cifre decimali)
+perché posso moltiplicare 3 per qualunque cosa ma non potrà mai essere potenza di 10.
+
+\Note{
+Se devo avere $3a = 10^k = 2^k 5^k$, siccome 3 è primo deve dividere $3|2^k$ oppure $3|5^k$ e nessuno dei 2 può essere.
+Quindi qualunque sia $a$, $3a$ non può essere una potenza di 10. 
+}
+
+In altre parole, i razionali sono meglio dei decimali ($\frac[1/3]$, $\frac[1/7]$ non hanno una espressione esatta decimale).
+Oltretutto, quali frazioni non hanno espressione decimale esatta dipende dalla base che usiamo.
+
+\Note{
+in base 3 i numeri {\it terziali} sono $\frac[(201)_3/ (100)_3]=(2.01)_3= \frac[ 19/ 9] = 2*3^0+0*\frac[1/3]+ \frac[1/9]$ si scrive in forma terziale come $(2.01)_3$ e ovviamente conveniamo di sottintendere la base 10
+(e di usare la notazione decimale per le basi).
+
+In forma terziale abbiamo $\frac[1/3]=(0.1)_3$ che è esatta e non periodica mentre lo stesso $\frac[1/3]$ è periodico come numero decimale.
+}
+
+Anche se, in fondo è quindi una faccenda di notazione numerale, è interessante vedere perché e quali numeri sono periodici in base 10.
+
+La risposta può essere cercata nel fatto che quando si dividono 2 numeri interi si ottiene un resto e da lì le cifre decimali in successione.
+Si ottengono dei cicli di cifre che possono intrappolarci per sempre.
+Per esempio, quando prendiamo un numero e lo dividiamo per 2 il resto può essere 0 o 1 e a seconda del resto che troviamo ad un certo punto poi proseguiamo seguendo le linee del grafico
+\begin{equation}
+\begin{tikzpicture}[shorten >=1pt,node distance=2cm,auto]
+ % \draw[help lines] (0,0) grid (3,2);
+  \node[state] (n0)                      	{$0$};
+  \node[state] (n1) [right of=n0]  {$1$};
+  \path[->] (n1) edge   node        {5} (n0)
+                (n0)  edge [loop left] node        {} ();
+ \end{tikzpicture}
+ \end{equation}
+ Quindi da dovunque partiamo arriviamo ad una sequenza infinita di zeri, cioè le frazioni $\frac[n/2]$ non sono periodiche.
+ 
+ Quando dividiamo per 3 il resto può essere 0 o 1 o 2 e a seconda del resto che troviamo seguiamo
+\begin{equation}
+ \begin{tikzpicture}[shorten >=1pt,node distance=2cm,auto]
+ % \draw[help lines] (0,0) grid (3,2);
+  \node[state] (n0)                      	{$0$};
+  \node[state] (n1) [below right of=n0]  {$1$};
+  \node[state] (n2) [below left of=n0]  {$2$};
+  \path[->] (n1)  edge [loop right] node  {3} ()
+  		(n2)  edge [loop left] node  {6} ()
+                (n0)  edge [loop above] node  {} ();
+ \end{tikzpicture}
+ \end{equation}
+Quindi o un numero si divide per 3 oppure il risultato è periodico con periodo di una cifra sola, o 3 o 6.
+
+Se dividiamo per 4 abbiamo resto 0,1,2 o 3 e seguiamo le regole
+\begin{equation}
+ \begin{tikzpicture}[shorten >=1pt,node distance=2cm,auto]
+ % \draw[help lines] (0,0) grid (3,2);
+  \node[state] (n0)                      	{$0$};
+  \node[state] (n1) [below right of=n0]  {$1$};
+  \node[state] (n3) [below left of=n0]  {$3$};
+  \node[state] (n2) [below left of=n1]  {$2$};
+  \path[->] (n1)  edge node  {2} (n2)
+  		(n2)  edge node  {5} (n0)
+  		(n3)  edge node  {7} (n2)
+                (n0)  edge [loop above] node  {} ();
+ \end{tikzpicture}
+ \end{equation}
+quindi ancora nessun numero periodico.
+
+Ci sono cose bellissime da scoprire, ad esempio dividendo per 7 abbiamo
+\begin{equation}
+ \begin{tikzpicture}[shorten >=1pt,node distance=2cm,auto]
+ % \draw[help lines] (0,0) grid (3,2);
+  \node[state] (n0)                      		{$0$};
+  \node[state] (n1) [right of=n0] {$1$};
+  \node[state] (n3) [below  right of=n1] {$2$};
+  \node[state] (n2) [below   of=n3] {$3$};
+  \node[state] (n6) [below left   of=n2] {$6$};
+  \node[state] (n4) [above  left of=n6] {$4$};
+  \node[state] (n5) [above of=n4] {$5$};
+  \path[->] (n1)  edge node  {1} (n3)
+  		(n3)  edge node  {4} (n2)
+  		(n2)  edge node  {2} (n6)
+  		(n6)  edge node  {8} (n4)
+  		(n4)  edge node  {5} (n5)
+  		(n5)  edge node  {7} (n1)
+                (n0)  edge [loop above] node  {} ();
+ \end{tikzpicture}
+ \end{equation}
+ Quindi dividendo un numero per 7 o si divide esattamente, oppure ha sempre un periodo di 6 cifre,
+ che sono sempre prese nel ciclo $(142857)$, cioè con lo stesso ordine solo iniziando da un punto qualunque.
+
+
+Tutto ciò ha un certo fascino, può essere un buon esercizio sulle divisioni.
+
+Quindi, riassumendo, come prima -3 e le frazioni, i decimali sono una notazione per denotare un po' di numeri.
+Ma i razionali $\Q$ sono comunque un insieme ben fatto di numeri su cui fermarsi.
+I numeri reali hanno bisogno di qualche nozione di limite infinito, quindi li rimandiamo.
+Per ora ci riteniamo soddisfatti da $\Q$ su cui sappiamo sommare e moltiplicare e quindi sottrarre e dividere in modo generico (a parte la non esistenza della divisione per 0). 
+
+A proposito, quanti sono i numeri razionali?
+Come mai Pitagora ha realizzato che qualcosa non era descritto da un numero razionale?
+Ci sono numeri peggiori dei numeri irrazionali?
+
+
+\newpage
+
+\NewSection{Quarta settimana}
+
+
+Dobbiamo ancora finire qualche cosa sui numeri razionali (parlare di forma canonica (detto semplificare le frazioni), dimostrare che esistono numeri irrazionali e numeri trascendenti).
+Poi farei na pausa, visto che a spanne abbiamo finito il programma delle elementari, e parlerei un po' di sistemi formali, modelli e dimostrazioni.
+Poi abbiamo già accennato alle equazioni e quindi ripartiremo da lì.
 
 
 
