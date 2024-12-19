@@ -1,0 +1,767 @@
+% !TEX TS-program = latex
+% !TEX spellcheck = it-IT
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{tikz} % LATEX
+\usetikzlibrary {automata}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Trim Size: 9.75in x 6.5in
+%% Text Area: 8in (include Runningheads) x 5in
+%% ws-ijgmmp.tex   :   2-9-08
+%% Tex file to use with ws-ijgmmp.cls written in Latex2E.
+%% The content, structure, format and layout of this style file is the
+%% property of World Scientific Publishing Co. Pte. Ltd.
+%% Copyright 1995, 2002 by World Scientific Publishing Co.
+%% All rights are reserved.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{pictexwd,dcpic}
+\usepackage{csquotes}
+\usepackage{nopageno}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{pictex, dcpic}
+\usepackage{color}
+%\usepackage{graphicx}
+%\numberwithin{equation}{section} % This line resets equation numbering when starting a new section.
+%\renewcommand{\theequation}{Eq. \thesection.\arabic{equation}} % This line ads "Eq." in front of your equation numbering.
+
+
+
+
+%
+%    Macros.    Version 1.2.0.beta
+%    The best use is to paste all of them into the papers
+%     1/8/2005
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			Greek		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\al{\alpha}
+\def\be{\beta}
+\def\de{\delta}
+\def\ga{\gamma}
+\def\up{\upsilon}
+\def\ep{\epsilon}
+\def\io{\iota}
+\def\te{\theta}
+\def\la{\lambda}
+\def\ze{\zeta}
+\def\om{\omega}
+\def\si{\sigma}
+\def\vp{\varphi}
+\def\vpi{\varpi}
+\def\ka{\kappa}
+\def\vs{\varsigma}
+\def\vr{\varrho}
+
+\def\De{\Delta}
+\def\Ga{\Gamma}
+\def\Te{\Theta}
+\def\La{\Lambda}
+\def\Om{\Omega}
+\def\Si{\Sigma}
+\def\Up{\Upsilon}
+
+\def\boldDe{\bf\Delta}
+\def\boldGa{\bf\Gamma}
+\def\boldTe{\bf\Theta}
+\def\boldLa{\bf\Lambda}
+\def\boldOm{\bf\Omega}
+\def\boldSi{\bf\Sigma}
+\def\boldUp{\bf\Upsilon}
+\def\boldXi{\bf\Xi}
+\def\boldPi{\bf\Pi}
+\def\boldPhi{\bf\Phi}
+\def\boldPsi{\bf\Psi}
+
+\def\boldal{\bf\al}
+\def\boldbe{\bf\be}
+\def\boldga{\bf\ga}
+\def\boldde{\bf\de}
+\def\boldep{\bf\ep}
+\def\boldze{\bf\ze}
+\def\boldeta{\bf\eta}
+\def\boldte{\bf\te}
+\def\boldio{\bf\io}
+\def\boldka{\bf\ka}
+\def\boldla{\bf\la}
+\def\boldmu{\hbox{\greekbold\char "16}}
+\def\boldnu{\hbox{\greekbold\char "17}}
+\def\boldxi{\hbox{\greekbold\char "18}}
+\def\boldpi{\hbox{\greekbold\char "19}}
+\def\boldrho{\hbox{\greekbold\char "1A}}
+\def\boldsi{\bf\si}
+\def\boldtau{\hbox{\greekbold\char "1C}}
+\def\boldup{\hbox{\greekbold\char "1D}}
+\def\boldphi{\hbox{\greekbold\char "1E}}
+\def\boldchi{\hbox{\greekbold\char "1F}}
+\def\boldpsi{\hbox{\greekbold\char "20}}
+\def\boldom{\hbox{\greekbold\char "21}}
+\def\boldvep{\hbox{\greekbold\char "22}}
+\def\boldvte{\hbox{\greekbold\char "23}}
+\def\boldvpi{\hbox{\greekbold\char "24}}
+\def\boldvrho{\hbox{\greekbold\char "25}}
+\def\boldvsi{\hbox{\greekbold\char "26}}
+\def\boldvphi{\hbox{\greekbold\char "27}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			Cal			 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \def\calA{{\hbox{\cal A}}}
+ \def\calU{{\hbox{\cal U}}}
+ \def\calB{{\hbox{\cal B}}}
+ \def\calC{{\hbox{\cal C}}}
+ \def\calI{{\hbox{\cal I}}}
+ \def\calQ{{\hbox{\cal Q}}}
+ \def\calP{{\hbox{\cal P}}}
+ \def\calL{{\hbox{\cal L}}}
+ \def\calE{{\hbox{\cal E}}}
+ \def\calW{{\hbox{\cal W}}}
+ \def\calV{{\hbox{\cal V}}}
+ \def\calS{{\hbox{\cal S}}}
+ \def\calF{{\hbox{\cal F}}}
+ \def\calR{{\hbox{\cal R}}}
+ \def\calO{{\hbox{\cal O}}}
+ \def\calM{{\hbox{\cal M}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			gothic		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \def\su{{\mathfrak{su}}}
+ \def\gl{{\mathfrak{gl}}}
+ \def\gotg{{\mathfrak{g}}}
+ \def\goth{{\mathfrak{h}}}
+ \def\gotm{{\mathfrak{m}}}
+ \def\gotk{{\mathfrak{k}}}
+ \def\spin{{\mathfrak{spin}}}
+ \def\slC{{\mathfrak{sl}}}
+ \def\O{{\mathfrak{O}}}
+ \def\Set{{\mathfrak{Set}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			Bbb			 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \def\one{\mathbb{I}}
+ \def\A{\mathbb{A}}
+ \def\B{\mathbb{B}}
+ \def\C{\mathbb{C}}
+ \def\D{\mathbb{D}}
+ \def\E{\mathbb{E}}
+ \def\F{\mathbb{F}}
+ \def\G{\mathbb{G}}
+ \def\H{\mathbb{H}}
+ \def\J{\mathbb{J}}
+ \def\K{\mathbb{K}}
+ \def\I{\mathbb{I}}
+ \def\L{\mathbb{L}}
+ \def\M{\mathbb{M}}
+ \def\N{\mathbb{N}}
+ \def\O{\mathbb{O}}
+ \def\P{\mathbb{P}}
+ \def\Q{\mathbb{Q}}
+ \def\R{\mathbb{R}}
+ \def\S{\mathbb{S}}
+ \def\T{\mathbb{T}}
+ \def\U{\mathbb{U}}
+ \def\V{\mathbb{V}}
+ \def\X{\mathbb{X}}
+ \def\Y{\mathbb{Y}}
+ \def\W{\mathbb{W}}
+ \def\Z{\mathbb{Z}}
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%		MathRoman		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\Tr{{\hbox{Tr}}}
+\def\Con{{\hbox{Con}}}
+\def\Aut{{\hbox{Aut}}}
+\def\Div{{\hbox{Div}}}
+\def\ad{{\hbox{ad}}}
+\def\Ad{{\hbox{Ad}}}
+\def\Re{{\hbox{Re}}}
+\def\Im{{\hbox{Im}}}
+\def\Card{{\hbox{Card}}}
+\def\Iso{{\hbox{Iso}}}
+\def\Geo{{\hbox{Geo}}}
+\def\Int{{\hbox{Int}}}
+\def\Inv{{\hbox{Inv}}}
+\def\Spin{{\hbox{Spin}}}
+\def\SO{{\hbox{SO}}}
+\def\SU{{\hbox{SU}}}
+\def\SL{{\hbox{SL}}}
+\def\GL{{\hbox{GL}}}
+\def\det{{\hbox{det}}}
+\def\Hom{{\hbox{Hom}}}
+\def\End{{\hbox{End}}}
+\def\Euc{{\hbox{Euc}}}
+\def\Lor{{\hbox{Lor}}}
+\def\Diff{{\hbox{Diff}}}
+\def\di{{\hbox{d}}}
+\def\id{{\hbox{\rm id}}}
+\def\diag{{\hbox{diag}}}
+\def\rank{{\hbox{rank}}}
+\def\span{{\hbox{span}}}
+\def\Sim{{\hbox{Sim}}}
+
+\def\Obj{{\hbox{Obj}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%		OtherSymbols		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\ip{\hbox to4pt{\leaders\hrule height0.3pt\hfill}\vbox to8pt{\leaders\vrule width0.3pt\vfill}\kern 2pt}
+
+% inner product
+\def\QDE{\hfill\hbox{\ }\vrule height4pt width4pt depth0pt} 
+\def\del{\partial}
+\def\na{\nabla}
+\def\inter{\cap}
+\def\Vec{\mathfrak{X}}
+\def\Lie{\hbox{\LieFont \$}}
+
+\def\arr{\rightarrow}
+\def\larr{\longrightarrow}
+\def\harr{\hookrightarrow}
+\def\hlarr{\lhook\joinrel\longrightarrow}
+\def\then{\Rightarrow}
+\def\semidirect{\hbox{\Bbb \char111}}
+\def\binomial#1#2{\left(\Matrix{#1\cr #2\cr}\right)}
+
+\def\barJ{\bar J}
+
+\def\sSU{{\hbox{SU}}}
+\def\so{{so}}
+%\def\N{{{\mathbb N}}}
+
+\def\file#1{{\tt #1}}
+\def\calH{{{\cal H}}}
+\def\calJ{{{\cal J}}}
+\def\calA{{{\cal A}}}
+\def\calV{{{\cal V}}}
+\def\calG{{{\cal G}}}
+\def\calP{{{\cal P}}}
+\def\calK{{{\cal K}}}
+\def\calD{{{\cal D}}}
+\def\scalD{{{\cal D}}}
+
+\def\Loop{{\hbox{Loop}}}
+\def\Hoop{{\hbox{Hoop}}}
+\def\Sym{{\hbox{Sym}}}
+\def\sR{{\R}}
+\def\dCor{dCor}
+\def\epm{\hbox{$^\pm$}}
+\def\dunion{\coprod}
+
+\def\nab#1{{\buildrel #1\over \na}}
+\def\frac[#1/#2]{\hbox{$#1\over#2$}}
+\def\Frac[#1/#2]{{#1\over#2}}
+\def\({\left(}
+\def\){\right)}
+\def\[{\left[}
+\def\]{\right]}
+\def\^#1{{}^{#1}_{\>\cdot}}
+\def\_#1{{}_{#1}^{\>\cdot}}
+\def\Label=#1{{\buildrel {\hbox{\fiveSerif \ShowLabel{#1}}}\over =}}
+\def\<{\kern -1pt}
+\def\Bar{\>|\>}
+\def\Dal{\hbox{\tenRelazioni  \char003}}
+
+\def\uvec#1{\vbox{\hbox{$\scriptstyle\rightharpoonup$}\vskip-9pt\hbox{$#1$}}}
+\def\dvec#1{\vtop{\hbox{$#1$}\vskip-10pt\hbox{$\scriptstyle\rightharpoondown$}}}
+\def\Cprod{\diamond}
+\def\obullet{\odot}
+
+
+
+%%%%%%%%%%%%			frames 				%%%%%%%%%%%%%%%%%%%
+
+\def\red#1{{\color{red}{#1}}}
+\def\blue#1{{\color{blue}{#1}}}
+\def\green#1{{\color{green}{#1}}}
+
+\def\Red{\color{red}}
+\def\Blue{\color{blue}}
+\def\Green{\color{green}}
+
+
+\def\frame#1{\vbox{\hrule\hbox{\vrule\vbox{\kern2pt\hbox{\kern2pt#1\kern2pt}\kern2pt}\vrule}\hrule\kern-4pt}} 
+\def\redframe#1{\red{\frame{#1}}} 
+\def\greenframe#1{\green{\frame{#1}}} 
+\def\blueframe#1{\blue{\frame{#1}}} 
+
+\def\uline#1{\underline{#1}}
+\def\uuline#1{\underline{\underline{#1}}}
+\def\Box to #1#2#3{\frame{\vtop{\hbox to #1{\hfill #2 \hfill}\hbox to #1{\hfill #3 \hfill}}}}
+
+
+
+\def\ubal{\underline{\al}\kern1pt}
+\def\obal{\overline{\al}\kern1pt}
+
+\def\ubR{\underline{R}\kern1pt}
+\def\obR{\overline{R}\kern1pt}
+\def\ubom{\underline{\om}\kern1pt}
+\def\obxi{\overline{\xi}\kern1pt}
+\def\ubu{\underline{u}\kern1pt}
+\def\ube{\underline{e}\kern1pt}
+\def\obe{\overline{e}\kern1pt}
+\def\Limit{\>{\buildrel{r\arr\infty}\over \longrightarrow}\,}
+\def\union{\cup}
+\def\Emptyset{\varnothing}
+
+
+
+
+\def\Uvec#1{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{#1}\hfil$\crcr}}}
+\def\Dvec#1{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{#1}\hfil$\crcr}}}
+
+
+%   u 
+\def\uvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+\def\dvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+%\def\uvecu{\Uvec{u}}
+%\def\dvecu{\Dvec{u}}
+
+%   be
+\def\uvecbe{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern3pt$\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{\be}\hfil$\crcr}}}
+\def\dvecbe{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern1pt$\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-10pt\nointerlineskip}
+     $\hfil\displaystyle{\be}\hfil$\crcr}}}
+
+%   n
+\def\uvecn{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{n}\hfil$\crcr}}}
+\def\dvecn{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{n}\hfil$\crcr}}}
+
+%   m
+\def\uvecm{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{m}\hfil$\crcr}}}
+\def\dvecm{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{m}\hfil$\crcr}}}
+
+%   N
+\def\uvecN{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern3pt$\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{N}\hfil$\crcr}}}
+\def\dvecN{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern0pt$\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-10pt\nointerlineskip}
+     $\hfil\displaystyle{N}\hfil$\crcr}}}
+
+%   u
+\def\uvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+\def\dvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+
+%   w
+\def\uvecw{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{w}\hfil$\crcr}}}
+\def\dvecw{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{w}\hfil$\crcr}}}
+
+%   v
+\def\uvecv{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{v}\hfil$\crcr}}}
+\def\dvecv{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{v}\hfil$\crcr}}}
+
+\def\astA{{}^\ast A}
+\def\circA{{}^\circ A}
+\def\astk{{}^\ast k}
+\def\circk{{}^\circ k}
+\def\astK{{}^\ast K}
+\def\circK{{}^\circ K}
+\def\astL{{}^\ast L}
+\def\circL{{}^\circ L}
+\def\astal{{}^\ast \al}
+\def\circal{{}^\circ \al}
+\def\astsi{{}^\ast \si}
+\def\circsi{{}^\circ \si}
+\def\aste{{}^\ast e}
+\def\circe{{}^\circ e}
+\def\astte{{}^\ast \te}
+\def\circte{{}^\circ \te}
+\def\astGa{{}^\ast \Ga}
+\def\circGa{{}^\circ \Ga}
+\def\Lie{\pounds}
+
+\long\def\Hide#1{}
+\long\def\HideMarked#1{\hfill{$\triangleright$}}
+\def\rtau{\tau}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\def\NormalStyle{\leftskip=2cm\rightskip=0cm\normalsize\parindent=5pt\parskip=3pt\normalbaselineskip=14pt\baselineskip=\normalbaselineskip}
+%\def\AbstractStyle{\leftskip=3cm\rightskip=1cm\scriptsize\parindent=0pt\parskip=0pt\normalbaselineskip=11pt\baselineskip=\normalbaselineskip}
+%\def\NoteStyle{\leftskip=3cm\rightskip=1cm\scriptsize\parindent=0pt\parskip=0pt\normalbaselineskip=11pt\baselineskip=\normalbaselineskip}
+
+\def\ShowLabel#1{\ref{#1}}
+
+\def\Bibliography{\begin{thebibliography}{199}\footnotesize\References}
+\def\EndBibliography{\end{thebibliography}}
+\def\bib#1#2{\bibitem{#1}#2}
+\def\Ref#1{\cite{#1}}
+
+
+\def\NewSection#1{\section{#1}}
+\def\NewSubSection#1{\subsection*{#1}}
+\def\NewAppendix#1#2{\section*{Appendix #1: #2}}
+\def\Acknowledgements{\section*{Acknowledgements}}
+\def\bs{\bigskip}
+\def\ms{\medskip}
+\def\ss{\smallskip}
+\def\ni{\noindent}
+
+\long\def\Note#1{\blockquote{\footnotesize {\bf Nota:}~#1\par}}
+\long\def\Ex#1{\blockquote{\footnotesize {\bf Esercizio:}~#1\par}}
+
+\def\eq#1{\begin{equation}#1\end{equation}}
+\def\eqLabel#1#2{\begin{equation}#1\label{#2}\end{equation}}
+
+
+\def\Cases#1{\begin{cases}#1\end{cases}}
+\def\Matrix#1{\begin{matrix}#1\end{matrix}}
+\def\Align#1{\begin{aligned}#1\end{aligned}}
+
+\def\eqs#1{\eq{\Align{#1}}}
+\def\eqsLabel#1#2{\eq{\Align{#1}\label{#2}}}
+
+
+
+
+\def\Abstract{\AbstractStyle{\bf Abstract. }}
+\def\EndAbstract{\par\NormalStyle}
+
+\def\TitleScript{}
+\def\TitleLine#1{\def\TitleScript{#1}}
+\def\MoreTitleLine#1{\edef\TitleScript{\TitleScript\\#1}}
+
+\def\AuthorScript{}
+\def\AuthorLine#1{\def\AuthorScript{#1}}
+\def\MoreAuthorLine#1{\edef\AuthorScript{\AuthorScript\\#1}}
+
+\def\AddressScript{}
+\def\AddressLine#1{\def\AddressScript{#1}}
+\def\MoreAddressLine#1{\edef\AddressScript{\AddressScript\\#1}}
+
+\date{}
+
+\def\BeginDocument{\begin{document}}
+
+\def\MakeTitle{
+\begin{center}
+{\Large\bf\sffamily\baselineskip=2pt\TitleScript}\\
+\vskip 10pt
+{\small by {\it \AuthorScript}}\\
+\vskip 10pt
+{\small \AddressScript}
+\end{center}
+\ms
+}
+
+\def\EndDocument{\end{document}}
+
+\def\Figure[#1]#2{\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[#1]{#2} }
+\def\Caption#1{\caption{#1}}
+\def\EndFigure{\end{figure}}
+
+\def\Diagram#1{\eq{
+\begindc{\commdiag}[10]
+#1
+\enddc%
+}%
+}
+
+\def\Itemize#1{\begin{itemize}#1\end{itemize}}
+\def\Item[#1]{\item[#1]}
+
+\def\AllReferences{}
+
+
+
+\def\Shrink{\small}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\BeginDocument
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\parindent=5pt
+\baselineskip=13pt
+\parskip=5pt
+
+
+
+
+
+\begin{document}
+
+\AllReferences
+
+
+%%%%%%%%%%%%%%%%%%%%% Publisher's Area please ignore %%%%%%%%%%%%%%%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Giorno 18: logica del prim'ordine}
+
+Anche se non lo sappiamo, abbiamo un esempio di sistema assiomatico (gli assiomi di Peano per i numeri naturali) di un modello (i numeri naturali come cardinalità degli insiemi finiti).
+Forse vale la pena di discutere un po' la semantica di tutto ciò.
+
+\Note{Alcune cose che dirò sulla semantica della matematica sono opinioni personali. Quando quello che dico non è necessariamente condiviso provo a segnalarlo.}
+
+Prima di dire cosa è un sistema assiomatico, serve un ambiente in cui sistemarlo. 
+E questo ambiente, che chiamiamo {\it sistema formale}, è piuttosto familiare a chi fa informatica.
+Poi specializziamo i sistemi formali in particolare al calcolo proposizionale (o logica proposizionale) e alla logica del prim'ordine.
+
+\Note{Entrambi questi sistemi formali sono stati sviluppati per automatizzare il ragionamento nella seconda metà dell'1800.
+Ci sono tante varianti ma alla fine in genera si usa quello che presentiamo come logica del prim'ordine.
+}
+
+Un {\it sistema formale} è fatto di:
+
+un insieme finito chiamato {\it alfabeto} $\calA$ di caratteri, 
+
+di liste di caratteri dette {\it parole}, che formano un vocabolario $\calV$, 
+
+di frasi formate di parole secondo una ({\it context free}) grammatica.
+
+\ms
+
+Le frasi conformi alla grammatica si chiamano {\it predicati} o {\it proposizioni} a seconda del sistema formale che utilizziamo (vedi sotto).
+
+Infine, abbiamo una lista di {\it regole di produzione}. 
+Ogni regola di produzione è formata da $(n+1)$-predicati $(f_0, f_1, f_2, \dots, f_n)$.
+I predicati $(f_1, f_2, \dots, f_n)$ si chiamano {\it premesse} o {\it ipotesi} della regola, mentre $f_0$ è detta {\it conseguenza} oppure {\it tesi}.
+Una regola di produzione si indica come $[ f_1, f_2, \dots, f_n\arr f_0]$.
+
+Le regole di produzione sono scelte in modo da automatizzare il ragionamento seguendo i principi della logica classica 
+(o talvolta pure variazioni ad esempio la logica a più valori o altre varianti).
+
+\Note{Un insieme di proposizioni è detto {\it chiuso} se quando contiene tutte le premesse di una regola di produzione, contengono pure la sua tesi.
+Quindi se uno fornisce un insieme $\calP$ di proposizioni (assiomi), si può cercare di chiudere l'insieme $[\calP]$ 
+applicando le regole di produzioni e aggiungendo le corrispondenti tesi.}
+
+A noi interessano principalmente 2 esempi, che spiegano in modo semplice la definizione di sistema formale. 
+Prima consideriamo la {\it logica proposizionale} e poi la {\it logica del prim'ordine} che in un certo senso è lo standard usato di solito.
+
+Cominciamo con la logica proposizionale. 
+Si intende che le proposizioni siano frasi (ad esempio nel linguaggio naturale) a cui si può attribuire un valore di verità, cioè sono o vere o false.
+Non tutte le frasi sono così, {\it vai a cagare} o {\it vuoi più bene a mamma o a papà?} non sono proposizioni, 
+{\it 10=3} o {\it Socrate è un uomo} sono proposizioni. Le proposizioni semplici (atomiche, che non contengono sotto-proposizioni sensate) si indicano con lettere latine maiuscole $A, B, \dots, P, Q, \dots$. Le proposizioni si possono poi combinare con i connettori logici, se $A$ e $B$ sono proposizioni, lo sono pure
+$$
+(A).and.(B)
+\qquad
+.not.(A)
+\qquad
+(A).or.(B)
+\qquad
+\dots
+$$
+Come sanno gli informatici tutti i connettori logici si possono definire utilizzando solo $(A).nand.(B) :=.not.( (A).and.(B))$.
+Ad esempio, possiamo definire $.not.$ e $.or.$ come
+$$
+.not.(A)=(A).nand.(A)
+\qquad
+(A).or.(B)=   ( .not.( A )) .nand. ( .not. (B) )
+$$
+\Note{Potete controllare che questa definizione definisce $.or.$ davvero.
+\begin{center}
+\begin{tabular}{ccc}
+$A$  & $B$ &  $(A).or.(B)$ \\
+v & v &   v \\
+v & f & v \\
+f & v &  v \\
+f & f &  f 
+\end{tabular}
+\end{center}
+
+Forse bisogna specificare che esiste pure un operatore $(A)\then(B)$ che è definito come $(.not.(A)).or.(B)$.
+Va detto perché siamo abituati a vederlo come una cosa logica che invece è definito come un operatore logico
+\begin{center}
+\begin{tabular}{ccc}
+$A$  & $B$ &  $(A)\then(B)$ \\
+v & v &   v \\
+v & f & v \\
+f & v &  f \\
+f & f &  v
+\end{tabular}
+\end{center}
+
+In pratica $(A)\then(B)$ è falso solo se $B$ è vero senza che lo sia $A$ che se ci pensate è l'unico caso in cui possiamo 
+escludere che $B$ sia implicato da $A$ (se $A$ è vero deve essere vero pure $B$, se $A$ è falso allora $B$ è libero di fare quello che vuole).
+
+}
+ 
+Il riassunto è che potete creare tutti gli operatori logici che volete a partire dal $.nand.$ solamente.
+Quindi se la grammatica specifica che 
+$$
+[Proposition] \arr [Proposition] .nand. [Proposition] 
+$$ 
+allora possiamo combinare proposizioni con ogni operatore logico.
+
+Per noi $.not.(A)$, $(A).and.(B)$, $(A).or.(B)$, $(A)\then(B)$, \dots sono proposizioni se $A$ e $B$ lo sono.  
+
+
+Le regole di produzione sono 
+$$
+[ (P)\then(Q), P  \arr Q]
+\hbox to 6cm{\hfill (modus ponens)}
+$$
+da leggere: se $(P)\then(Q)$ e $P$ sono in $[\calP]$ allora è $Q$ in $[\calP]$.
+
+Esempi delle altre regole sono
+$$
+\Align{
+[ (P)\then(Q), .not.(Q)  \arr .not.(P)]&   \hbox to 5cm{\hfill (modus tollens)}\cr
+[ (P).or.(Q), .not.(P)  \arr Q]&   \hbox to 5cm{\hfill}\cr
+[P, Q \arr (P).and.(Q)] &\cr
+\dots&
+}
+$$
+
+Le regole di produzione sono abbastanza numerose (in fondo definiscono implicitamente tutti i connettori logici che sono $2^4=16$ tanti quante le tabelle di verità).
+Ma il punto è la proprietà che si usa per sceglierle. Controllate pure, ma tutte sono valide indipendentemente dai valori di verità delle proposizioni che contengono.
+In fondo se per giudicare se un ragionamento è corretto dovessimo sapere si cosa sta parlando non servirebbe la logica basterebbe applicare gli operatori logici.
+
+\Note{Prendiamo come esempio il modus tollens $[ (P)\then(Q), .not.(Q)  \arr .not.(P)]$. Compaiono 2 proposizioni $P$ e $Q$ che possono essere entrambe, indipendentemente, vere o false.
+\begin{center}
+\begin{tabular}{cc}
+$P$  	& $Q$		\\
+v 	& v 		\\
+v 	& f 		\\
+f 	& v 		\\
+f 	& f 		
+\end{tabular}
+\qquad\qquad
+\begin{tabular}{ccc}
+ $(P)\then(Q)$	& 	$.not.(Q)$	& $.not.(P)$	\\
+  v 			&		f	&	f\\
+  f 			&		v	&	f\\
+  v 			&		f	&	v\\
+  v 			&		v	&	v
+\end{tabular}
+\end{center}
+Vedete che se le 2 premesse sono vere allora è vera pure la tesi.
+
+Proviamo pure con $[P, Q \arr (P).and.(Q)]$
+\begin{center}
+\begin{tabular}{cc}
+$P$  	& $Q$		\\
+v 	& v 			\\
+v 	& f 			\\
+f 	& v 			\\
+f 	& f 					
+\end{tabular}
+\qquad\qquad
+\begin{tabular}{ccc}
+$P$  	& $Q$	& $(P).and.(Q)$	\\
+v 	& v 		&  v 				\\
+v 	& f 		&  f 				\\
+f 	& v 		&  f 				\\
+f 	& f 		&  f 				
+\end{tabular}
+\end{center}
+Di nuovo se le premesse sono vere allora la tesi è vera.
+
+Come ho detto, non ho bisogno di sapere se le proposizioni sono vere o false. Diciamo che una regola è {\it valida} se e solo se la conseguenza è vera quando sono vere tutte le premesse
+(non necessariamente quando sono vere $P$ e $Q$ che sono contenute nelle premesse).
+}
+
+Essere un ragionamento valido quindi non dice nulla del valore delle proposizioni che vi compaiono. 
+In particolare, se abbiamo una premessa certamente falsa ($(A).and.(.non.(A))$) possiamo ricavare da questa in modo valido qualunque proposizione.
+
+
+Se consideriamo un insieme chiuso $[\calP]$, se abbiamo che $A$ e $.not.(A)$ sono in $[\calP]$ allora l'insieme (o gli assiomi $\calP$ da cui deriva) è detto incoerente.
+Un sistema di assiomi  è quindi  {\it coerente} se non consente di ricavare due proposizioni contraddittorie.
+
+
+Se di ogni proposizione $A$ possiamo ricavare $A$ o $.not.(A)$ allora il sistema si dice {\it completo}.
+
+Se nessun assioma può essere derivato dagli altri, il sistema si dice {\it indipendente}.
+
+\ms
+
+La {\it logica del prim'ordine} è un'estensione della logica proposizionale. Ha 2 ingredienti in più:
+
+le variabili (indicate con lettere minuscole $x, y, \dots$) da cui i predicati $P(x)$ possono dipendere,
+
+i quantificatori (per ogni $x$ ed esiste un $x$) che si può anteporre a un predicato per ottenere proposizioni.
+
+
+\Note{
+($P$: {\it 7 è primo}) è una proposizione, ($P(x)$: {\it x è primo}) è un predicato. Non possiamo dire se $P(x)$ è vera o falsa finché non sappiamo chi è $x$.
+$P=P(7)$ è una proposizione, ma anche $\exists x: P(x)$ è una proposizione che afferma che esiste (almeno) un numero primo, mentre $\forall x:P(x)$
+è una proposizione (falsa) che afferma che tutti i numeri naturali sono primi.
+In genere le variabili $x, y$ sono elementi di un insieme (e.g.~$x\in \N$) che è l'ambito in cui stiamo lavorando.
+}
+
+Sia la logica proposizionale che la logica del prim'ordine hanno 2 scopi, quello di rappresentare i ragionamenti (come lo spartito rappresenta la musica)
+e quello di definire i ragionamenti validi, cioè quelli che garantiscono che {\it se sono vere le ipotesi allora è vera pure la tesi}.
+
+Il prossimo passo è specificare quest'ambito (la logica del prim'ordine) i sistemi assiomatici e i modelli.
+
+
+
+\EndDocument
+\end
+
+
