@@ -129,6 +129,7 @@
  \def\calL{{\hbox{\cal L}}}
  \def\calE{{\hbox{\cal E}}}
  \def\calW{{\hbox{\cal W}}}
+ \def\calV{{\hbox{\cal V}}}
  \def\calS{{\hbox{\cal S}}}
  \def\calF{{\hbox{\cal F}}}
  \def\calR{{\hbox{\cal R}}}
@@ -562,7 +563,19 @@
 
 \NewSection{Prima settimana}
 
-intro
+Cominciamo a parlare di numeri, i numeri naturali (0,1,2,3, \dots) quelli che si usano per contare.
+Questo è qualcosa di elementare che come tutte le cose elementari sono costruiti su abissi insondati.
+
+Nel video {\it 50 secoli in 50 minuti} si parla dello sconosciuto genio che ha realizzato che 2 occhi, 2 lepri, 2 dita, 2 noci erano sempre la stessa cosa.
+I numeri da prima della storia sono una cosa astratta che non dipende da cosa contate.
+
+Poi i numeri sono collegati a doppio file con l'infinito, non si può separare il contabile con quello che non può essere contato.
+E se si vuole definire precisamente i numeri naturali abbiamo 2 strade, quella assiomatica che per definizione non ha significato, oppure gli insiemi che sono un altro abisso costruito su un abisso insondato, la logica matematica.
+
+Poi se definiamo i numeri naturali in qualche modo il resto diventa più semplice. Ora abbiamo una cosa su cui costruire il resto.
+Se volete questa è la challenge della matematica del 1800, trovare delle basi solide su cui costruire la matematica stessa.
+
+
 
 
 \section*{Giorno 1: quanti numeri?}
@@ -2017,6 +2030,887 @@ Poi farei na pausa, visto che a spanne abbiamo finito il programma delle element
 Poi abbiamo già accennato alle equazioni e quindi ripartiremo da lì.
 
 
+
+\section*{Giorno 16: cardinalità dei numeri razionali}
+
+Quanti sono i numeri razionali? Qual è la cardinalità di $\Q$?
+
+Vediamo. Ogni numero razionale è rappresentato da una coppia di interi, siccome $[(-n, d)]=[](n, -d)$ sono lo stesso numero razionale possiamo pensarli come punti a coordinate intere (o come vettori a componenti intere) del mezzo piano superiore.
+
+\Note{non guardate sotto il tappeto, c'è qualcosa che sbava là sotto!}
+
+\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[width=6cm]{QN.eps} 
+   \caption{I numeri razionali come punti del piano e ordinamento}
+\end{figure}
+
+Poi fate una spirale come quella in figura e ordinate i pallini che incontrate nell'ordine in cui li incontrate.
+In pratica state costruendo una mappa $i:\N\arr \Q$. Siccome prima o poi passate per tutti i numeri razionali la mappa e biettiva e quindi $\N$ e $\Q$ hanno la stessa cardinalità.
+La cardinalità di $\Q$ è infatti $\aleph_0$, i numeri razionali sono numerabili.
+
+Notate che l'ordinamento che state definendo non è l'usuale ordinamento $q\le q'$ che non è un buon ordinamento, mentre quello che definisce la lista è (come quello di $\N$) un buon ordinamento. 
+
+L'ordinamento di un insieme non è parte dell'insieme, uno {\it definisce} un ordinamento su un insieme e le definizioni sono libere, in un paese civile uno definisce le cose che vuole, basta che la definizione sia ben data.
+Quindi $\Q$ può vestire ordinamenti diversi in situazioni diverse come voi potete cambiarvi la gonna senza smettere di essere voi.
+
+Immaginate l'hotel di Hilbert con le stanze chiamate con nomi in $\Q$ e ordinate secondo l'ordinamento usuale lungo un corridoio.
+Tra qualunque 2 stanze $q_1$ e $q_2$ ci sarebbero infinite camere $q$ con $q_1\le q\le q_2$ che darebbe all'hotel un aspetto molto più inquietante, vero?
+
+\Note{Ok, tutto qui, basta che non mi chiediate a quale ordinale corrisponde il buon ordinamento che avete definito su $\Q$.
+Se ci pensate la risposta è facile, avete tutto quello che serve per rispondere.
+[per essere chiaro quando ho cominciato a scrivere questa frase non sapevo la risposta, volevo evitarla anche se stava davanti a me in piena luce.]
+}
+
+
+\section*{Giorno 17: numeri irrazionali (e trascendenti)}
+
+Per il teorema di Pitagora, la lunghezza $d$ della diagonale di un quadrato è legata alla lunghezza $l$ del lato dalla relazione $d^2= 2 l^2$.
+Ma che numero è $x=\frac[d/l]$ che deve soddisfare $x^2=2$?
+
+\Note{Qui vi ho introdotto $x$ come una quantità geometrica apposta per non farvi dire semplicemente {\it non esiste soluzione}.
+La diagonale avrà una certa lunghezza, giusto?
+}
+
+Ora mostriamo che non esiste nessun numero razionale $x=\frac[n/d]$ che soddisfa $x^2=2$. Abbiamo bisogno di un paio di ingredienti: intanto 2 è primo.
+
+Secondo, se $2|n^2$ allora $4|n^2$.
+
+\Note{
+Se $2|n^2= nn$ allora, siccome $2$ è primo, $2|n$, cioè esiste un intero $k$ tale che $n=2k$, quindi $n^2=4k^2$, quindi $4|n^2$.
+}
+
+Terzo, possiamo supporre che $n$ e $d$ non hanno fattori comuni, se $k|n$ allora non $k|d$.
+
+\Note{Se $k|n$ e $k|d$ possiamo semplificare la frazione e alla fine eliminare ogni fattore comune. Siccome basta eliminare i fattori primi comuni per eliminare qualunque fattore comune  si dice che 
+possiamo assumere che $n$ e $d$ sono {\it coprimi}.}
+
+Se $x^2=\frac[n^2/d^2]=2$ allora deve essere $n^2= 2d^2$ tra interi.
+
+Quindi la nostra dimostrazione comincia con: supponiamo per assurdo che esista un numero razionale $x=\frac[n/d]$ con $n, d$ due interi coprimi tale che $x^2=2$, cioè
+$n^2= 2d^2$.
+
+Siccome $n^2=2d^2$, allora $2|n^2$, quindi $4|n^2$. Quindi esiste un intero $m$ tale che $n= 2m$ e quindi $4m^2=2d^2$ che semplificando un 2 diventa $2m^2=d^2$.
+Quindi $2|d^2$, quindi $4|d^2$, quindi $2|d$ quindi esiste un intero $c$ tale che $d=2c$.
+Quindi $d=2c$ è pari ($2|d$) e pure $n=2m$ ($2|n$) è pari.
+Quindi, contrariamente a quanto ipotizzato, $n$ e $d$ hanno un fattore comune $2$, non possono essere coprimi.
+
+L'unica via d'uscita (ma dovete essere convinti che l'ipotesi per assurdo è {\it l'unica} assunzione che abbiamo fatto) è che non è vero che $x$ è razionale.
+
+
+\ms
+Ora la storiella finisce che siccome la diagonale ha una lunghezza, ma questa non può essere razionale, devono esistere numeri (e.g.~$\sqrt{2}$) che non sono razionali.
+Per ora non siamo in grado di definirli (sono i numeri reali, dentro i numeri reali ci sono anche i numeri razionali, mentre i numeri reali che non sono razionali si chiamano {\it irrazionali}).
+
+\Note{I numeri irrazionali sono numeri che non si possono scrivere esattamente come con espressioni decimale. Vero. Ma pure $\frac[1/3]$ non può essere scritto esattamente in forma decimale, eppure e razionale. I numeri irrazionali sono numeri che non possono essere scritti come frazioni,  $\frac[1/3]$ può, $\sqrt{2}$ no.} 
+
+Il numero irrazionale $\sqrt{2}$ è quindi la soluzione irrazionale dell'equazione $x^2=2$ che è un'equazione a coefficienti razionali (questa addirittura a coefficienti interi!).
+Questo è particolarmente fastidioso. Abbiamo definito i numeri razionali $\Q$ e con questi possiamo scrivere equazioni $x^2=2$ che non hanno soluzioni in $\Q$.
+Se la pensate così alzate le spalle e andate a fare merenda. Che problema può essere avere una equazione che non ha soluzione? Anche $x^2+1=0$ non ha soluzioni (neanche reali)
+e questo è perfettamente naturale visto che $1+x^2 \ge 1$ di certo non può essere $1+x^2=0$!  
+Pure l'equazione $3+ 0x=2$ non ha soluzione, ci certo $3= 3+0x$ non è uguale a $2$!
+
+\Note{Un altro esempio di equazione senza soluzioni: $0x=1$. Che è il motivo per cui non abbiamo ammesso la frazione $\frac[1/0]$ tra i razionali.}
+
+Non ci sarebbe nulla di strano ad avere equazioni che non hanno soluzioni. 
+Se non fosse che come ho detto all'inizio che $d=\sqrt{2}$ è la lunghezza della diagonale di un quadrato di lato $l=1$.
+Siccome faccio fatica a dire che questa quantità non esiste ho {\it scoperto} i numeri irrazionali, non li {\it invento}!
+
+\Note{Ok, vi sto ammaliando di parole, il mio discorso è pubblicità, visto che posso anche dire che le equazioni senza soluzione esistono, quindi {\it invento} i numeri razionali, per dare un senso all'equazione che altrimenti non avrebbe soluzione. Ma il punto è proprio questo: entrambi i punti di vista sono difendibili e criticabili. Quindi non sono problemi veri sono solo opinioni linguistiche e retoriche!
+
+Tra l'altro gli esempi di altre equazioni senza soluzioni li ho scelti apposta. L'equazione $x^2+1=0$ decidiamo di risolverla comunque e definisce i numeri complessi, mentre l'equazione $0x=1$
+decidiamo di non risolverla e lasciamo $\frac[1/0]$ fuori dai razionali e da ogni altro insieme numerico che definiamo. Perché questo razzismo?
+
+Perché se ammetto i numeri complessi posso estendere le operazioni e ottengo un {\it campo} più vasto dei numeri reali, mentre se ammetto $\frac[1/0]$ tra i numeri non riesco ad estendere in maniera ragionevole le operazioni aritmetiche. Non sono io che decido cosa scoprire, non so come gli alieni chiamano i campi, possono non averli ancora scoperti (e allora dubito siano in grado di costruire navi interstellari) oppure avere qualcosa di più generale (come noi abbiamo i campi che di sicuro sono inconcepibili ai romani). Ma se parlano di campi pure loro scoprono i numeri complessi e e reali, e i quaternioni (che sono solo un corpo visto che il prodotto non è commutativo).
+
+Tra parentesi è falso che i campi sono inconcepibili per i romani! Ulrich {\it è un romano} e ha scoperto i campi come noi potremo scoprire quello che gli alieni avanzati usano al posto.}
+
+
+Comunque approfittiamone per dare 2 nomi (che finora non ne abbiamo dati abbastanza). Pure $\pi$ è irrazionale (non che sia facile da dimostrare).
+Peggio ancora non è soluzione di nessuna equazione che potete scrivere usando solo coefficienti in $\Q$ (che è ancora peggio da dimostrare). 
+Quindi tra gli irrazionali, i numeri che non sono soluzioni di equazioni in $\Q$ come $\pi$, sono detti {\it trascendenti}.
+
+Abbiamo già discusso (argomento diagonale di Cantor) che i numeri reali non sono numerabili (sono $\aleph_1$ per l'ipotesi del continuo).
+
+Ora pensateci, gli irrazionali sono tanti quanti le equazioni che potete scrivere in $\Q$ che hanno un numero finito di coefficienti in $\Q$, cioè lasciatemelo dire male sono numerabili come $\Q$
+(che andrebbe dimostrato che qui si cammina sulle sabbie mobili).
+Quelli che rompono sono i trascendenti. Quasi tutti i numeri reali sono trascendenti nel senso che la cardinalità dei numeri irrazionali non trascendenti dovrebbe essere $\aleph_0$
+sono i trascendenti i colpevoli per $\aleph_1$.
+
+\Note{
+come vi sembra ora il tesseract di Interstellar/Marvel?
+}
+
+
+\section*{Giorno 18: logica del prim'ordine}
+
+Anche se non lo sappiamo, abbiamo un esempio di sistema assiomatico (gli assiomi di Peano per i numeri naturali) di un modello (i numeri naturali come cardinalità degli insiemi finiti).
+Forse vale la pena di discutere un po' la semantica di tutto ciò.
+
+\Note{Alcune cose che dirò sulla semantica della matematica sono opinioni personali. Quando quello che dico non è necessariamente condiviso provo a segnalarlo.}
+
+Prima di dire cosa è un sistema assiomatico, serve un ambiente in cui sistemarlo. 
+E questo ambiente, che chiamiamo {\it sistema formale}, è piuttosto familiare a chi fa informatica.
+Poi specializziamo i sistemi formali in particolare al calcolo proposizionale (o logica proposizionale) e alla logica del prim'ordine.
+
+\Note{Entrambi questi sistemi formali sono stati sviluppati per automatizzare il ragionamento nella seconda metà dell'1800.
+Ci sono tante varianti ma alla fine in genera si usa quello che presentiamo come logica del prim'ordine.
+}
+
+Un {\it sistema formale} è fatto di:
+
+un insieme finito chiamato {\it alfabeto} $\calA$ di caratteri, 
+
+di liste di caratteri dette {\it parole}, che formano un vocabolario $\calV$, 
+
+di frasi formate di parole secondo una ({\it context free}) grammatica.
+
+\ms
+
+Le frasi conformi alla grammatica si chiamano {\it predicati} o {\it proposizioni} a seconda del sistema formale che utilizziamo (vedi sotto).
+
+Infine, abbiamo una lista di {\it regole di produzione}. 
+Ogni regola di produzione è formata da $(n+1)$-predicati $(f_0, f_1, f_2, \dots, f_n)$.
+I predicati $(f_1, f_2, \dots, f_n)$ si chiamano {\it premesse} o {\it ipotesi} della regola, mentre $f_0$ è detta {\it conseguenza} oppure {\it tesi}.
+Una regola di produzione si indica come $[ f_1, f_2, \dots, f_n\arr f_0]$.
+
+Le regole di produzione sono scelte in modo da automatizzare il ragionamento seguendo i principi della logica classica 
+(o talvolta pure variazioni ad esempio la logica a più valori o altre varianti).
+
+\Note{Un insieme di proposizioni è detto {\it chiuso} se quando contiene tutte le premesse di una regola di produzione, contengono pure la sua tesi.
+Quindi se uno fornisce un insieme $\calP$ di proposizioni (assiomi), si può cercare di chiudere l'insieme $[\calP]$ 
+applicando le regole di produzioni e aggiungendo le corrispondenti tesi.}
+
+A noi interessano principalmente 2 esempi, che spiegano in modo semplice la definizione di sistema formale. 
+Prima consideriamo la {\it logica proposizionale} e poi la {\it logica del prim'ordine} che in un certo senso è lo standard usato di solito.
+
+Cominciamo con la logica proposizionale. 
+Si intende che le proposizioni siano frasi (ad esempio nel linguaggio naturale) a cui si può attribuire un valore di verità, cioè sono o vere o false.
+Non tutte le frasi sono così, {\it vai a cagare} o {\it vuoi più bene a mamma o a papà?} non sono proposizioni, 
+{\it 10=3} o {\it Socrate è un uomo} sono proposizioni. Le proposizioni semplici (atomiche, che non contengono sotto-proposizioni sensate) si indicano con lettere latine maiuscole $A, B, \dots, P, Q, \dots$. Le proposizioni si possono poi combinare con i connettori logici, se $A$ e $B$ sono proposizioni, lo sono pure
+$$
+(A).and.(B)
+\qquad
+.not.(A)
+\qquad
+(A).or.(B)
+\qquad
+\dots
+$$
+Come sanno gli informatici tutti i connettori logici si possono definire utilizzando solo $(A).nand.(B) :=.not.( (A).and.(B))$.
+Ad esempio, possiamo definire $.not.$ e $.or.$ come
+$$
+.not.(A)=(A).nand.(A)
+\qquad
+(A).or.(B)=   ( .not.( A )) .nand. ( .not. (B) )
+$$
+\Note{Potete controllare che questa definizione definisce $.or.$ davvero.
+\begin{center}
+\begin{tabular}{ccc}
+$A$  & $B$ &  $(A).or.(B)$ \\
+v & v &   v \\
+v & f & v \\
+f & v &  v \\
+f & f &  f 
+\end{tabular}
+\end{center}
+
+Forse bisogna specificare che esiste pure un operatore $(A)\then(B)$ che è definito come $(.not.(A)).or.(B)$.
+Va detto perché siamo abituati a vederlo come una cosa logica che invece è definito come un operatore logico
+\begin{center}
+\begin{tabular}{ccc}
+$A$  & $B$ &  $(A)\then(B)$ \\
+v & v &   v \\
+v & f & v \\
+f & v &  f \\
+f & f &  v
+\end{tabular}
+\end{center}
+
+In pratica $(A)\then(B)$ è falso solo se $B$ è vero senza che lo sia $A$ che se ci pensate è l'unico caso in cui possiamo 
+escludere che $B$ sia implicato da $A$ (se $A$ è vero deve essere vero pure $B$, se $A$ è falso allora $B$ è libero di fare quello che vuole).
+
+}
+ 
+Il riassunto è che potete creare tutti gli operatori logici che volete a partire dal $.nand.$ solamente.
+Quindi se la grammatica specifica che 
+$$
+[Proposition] \arr [Proposition] .nand. [Proposition] 
+$$ 
+allora possiamo combinare proposizioni con ogni operatore logico.
+
+Per noi $.not.(A)$, $(A).and.(B)$, $(A).or.(B)$, $(A)\then(B)$, \dots sono proposizioni se $A$ e $B$ lo sono.  
+
+
+Le regole di produzione sono 
+$$
+[ (P)\then(Q), P  \arr Q]
+\hbox to 6cm{\hfill (modus ponens)}
+$$
+da leggere: se $(P)\then(Q)$ e $P$ sono in $[\calP]$ allora è $Q$ in $[\calP]$.
+
+Esempi delle altre regole sono
+$$
+\Align{
+[ (P)\then(Q), .not.(Q)  \arr .not.(P)]&   \hbox to 5cm{\hfill (modus tollens)}\cr
+[ (P).or.(Q), .not.(P)  \arr Q]&   \hbox to 5cm{\hfill}\cr
+[P, Q \arr (P).and.(Q)] &\cr
+\dots&
+}
+$$
+
+Le regole di produzione sono abbastanza numerose (in fondo definiscono implicitamente tutti i connettori logici che sono $2^4=16$ tanti quante le tabelle di verità).
+Ma il punto è la proprietà che si usa per sceglierle. Controllate pure, ma tutte sono valide indipendentemente dai valori di verità delle proposizioni che contengono.
+In fondo se per giudicare se un ragionamento è corretto dovessimo sapere si cosa sta parlando non servirebbe la logica basterebbe applicare gli operatori logici.
+
+\Note{Prendiamo come esempio il modus tollens $[ (P)\then(Q), .not.(Q)  \arr .not.(P)]$. Compaiono 2 proposizioni $P$ e $Q$ che possono essere entrambe, indipendentemente, vere o false.
+\begin{center}
+\begin{tabular}{cc}
+$P$  	& $Q$		\\
+v 	& v 		\\
+v 	& f 		\\
+f 	& v 		\\
+f 	& f 		
+\end{tabular}
+\qquad\qquad
+\begin{tabular}{ccc}
+ $(P)\then(Q)$	& 	$.not.(Q)$	& $.not.(P)$	\\
+  v 			&		f	&	f\\
+  f 			&		v	&	f\\
+  v 			&		f	&	v\\
+  v 			&		v	&	v
+\end{tabular}
+\end{center}
+Vedete che se le 2 premesse sono vere allora è vera pure la tesi.
+
+Proviamo pure con $[P, Q \arr (P).and.(Q)]$
+\begin{center}
+\begin{tabular}{cc}
+$P$  	& $Q$		\\
+v 	& v 			\\
+v 	& f 			\\
+f 	& v 			\\
+f 	& f 					
+\end{tabular}
+\qquad\qquad
+\begin{tabular}{ccc}
+$P$  	& $Q$	& $(P).and.(Q)$	\\
+v 	& v 		&  v 				\\
+v 	& f 		&  f 				\\
+f 	& v 		&  f 				\\
+f 	& f 		&  f 				
+\end{tabular}
+\end{center}
+Di nuovo se le premesse sono vere allora la tesi è vera.
+
+Come ho detto, non ho bisogno di sapere se le proposizioni sono vere o false. Diciamo che una regola è {\it valida} se e solo se la conseguenza è vera quando sono vere tutte le premesse
+(non necessariamente quando sono vere $P$ e $Q$ che sono contenute nelle premesse).
+}
+
+Essere un ragionamento valido quindi non dice nulla del valore delle proposizioni che vi compaiono. 
+In particolare, se abbiamo una premessa certamente falsa ($(A).and.(.non.(A))$) possiamo ricavare da questa in modo valido qualunque proposizione.
+
+
+Se consideriamo un insieme chiuso $[\calP]$, se abbiamo che $A$ e $.not.(A)$ sono in $[\calP]$ allora l'insieme (o gli assiomi $\calP$ da cui deriva) è detto incoerente.
+Un sistema di assiomi  è quindi  {\it coerente} se non consente di ricavare due proposizioni contraddittorie.
+
+
+Se di ogni proposizione $A$ possiamo ricavare $A$ o $.not.(A)$ allora il sistema si dice {\it completo}.
+
+Se nessun assioma può essere derivato dagli altri, il sistema si dice {\it indipendente}.
+
+\ms
+
+La {\it logica del prim'ordine} è un'estensione della logica proposizionale. Ha 2 ingredienti in più:
+
+le variabili (indicate con lettere minuscole $x, y, \dots$) da cui i predicati $P(x)$ possono dipendere,
+
+i quantificatori (per ogni $x$ ed esiste un $x$) che si può anteporre a un predicato per ottenere proposizioni.
+
+
+\Note{
+($P$: {\it 7 è primo}) è una proposizione, ($P(x)$: {\it x è primo}) è un predicato. Non possiamo dire se $P(x)$ è vera o falsa finché non sappiamo chi è $x$.
+$P=P(7)$ è una proposizione, ma anche $\exists x: P(x)$ è una proposizione che afferma che esiste (almeno) un numero primo, mentre $\forall x:P(x)$
+è una proposizione (falsa) che afferma che tutti i numeri naturali sono primi.
+In genere le variabili $x, y$ sono elementi di un insieme (e.g.~$x\in \N$) che è l'ambito in cui stiamo lavorando.
+}
+
+Sia la logica proposizionale che la logica del prim'ordine hanno 2 scopi, quello di rappresentare i ragionamenti (come lo spartito rappresenta la musica)
+e quello di definire i ragionamenti validi, cioè quelli che garantiscono che {\it se sono vere le ipotesi allora è vera pure la tesi}.
+
+Il prossimo passo è specificare quest'ambito (la logica del prim'ordine) i sistemi assiomatici e i modelli.
+
+
+\section*{Giorno 19: sistemi assiomatici}
+
+Un sistema assiomatico è costituito da:
+
+{\it termini indefiniti}: un insieme di parole assunte senza definizione.
+
+{\it assiomi}: un insieme di enunciati assunti senza dimostrazione.
+
+{\it un sistema formale}: per derivare nuovi enunciati da quelli noti, in genere assumiamo la logica del prim'ordine.
+
+{\it definizioni}: si possono definire nuovi termini fornendone una definizione univoca in termini di assiomi, termini primitivi e teoremi disponibili ad un dato momento per evitare circoli viziosi.
+
+{\it teoremi}:  sono enunciati che possono essere scritti in termini di termini primitivi, assiomi, definizioni e teoremi disponibili ad un cero momento.
+ Un teorema deve essere derivato da assiomi e teoremi per mezzo delle regole di produzione della logica del prim'ordine.
+ Una tale derivazione si chiama dimostrazione.
+ 
+ \Note{ Un teorema non è un enunciato, è un enunciato {\it con una dimostrazione}.
+ La logica del prim'ordine è usata esattamente come canone per derivare nuovi enunciati da quelli noti (assiomi o teoremi).
+ La derivazione è esattamente una lista di enunciati prodotti usando le regole di produzione specificati nella logica del prim'ordine.
+ 
+ Lasciatemi sottolineare che le regole di produzione che abbiamo specificato sono fatte per collegare enunciati tra loro in nodo che siano {\it validi},
+ cioè che non si può verificare mai che la conseguenza sia falsa se tutte le premesse sono vere. La validità non chiede che le premesse siano vere, non afferma che la tesi è vera.
+ Le regole di produzione sono espresse nella logica del prim'ordine in cui gli enunciati sono rappresentati da costanti proposizionali, 
+ cioè lettere (tipo $P$) che rappresentano  proposizioni specifiche. Nella logica del prim'ordine equando si discute la validità non avete neanche a disposizione cosa dicano gli enunciati che si stanno collegati.
+ 
+ Questo è un fatto. Quando scriviamo che $1+1=2$ lo dimostriamo definendo $1=s(0)$ e $2=s(1)$ e poi si usa la definizione di somma $a+s(b)= s(a+b)$ (definizione somma) e $a+0=a$ (definizione 0) oltre agli assiomi di Peano.
+ \eq{
+ \Align{
+  \hbox to 3cm{$1+1= 1+s(0)$\hfill }  \qquad\qquad\qquad \hbox to 3cm{(definizone 1)\hfill}\cr
+  \hbox to 3cm{$1+1= s(1+0)$\hfill }  \qquad\qquad\qquad \hbox to 3cm{(definizone somma)\hfill}\cr
+  \hbox to 3cm{$1+1= s(1)$ \hfill}  \qquad\qquad\qquad \hbox to 3cm{(definizone 0)\hfill}\cr
+  \hbox to 3cm{$1+1= 2$\hfill }  \qquad\qquad\qquad \hbox to 3cm{(definizone 2)\hfill}\cr
+ }
+ }
+ non abbiamo nessun vantaggio sostanziale a sapere cosa sono 1, 2, +, 0, $s$. Tra l'altro $s$ è una relazione indefinita, 0 è detto esistere da un assioma, 1, 2
+ sono termini definiti.
+ }
+
+ 
+
+
+Un sistema assiomatico può presentare delle patologie.
+
+Se in un sistema non posso dimostrare risultati contraddittori (ad esempio 
+\eq{
+(P).and.(.not.P)
+}
+che è sicuramente falso) il sistema (gli assiomi) è {\it coerente}.
+
+Se in un sistema di qualsiasi enunciato posso dimostrare $P$ oppure $.not.(P)$ il sistema (gli assiomi) si dicono {\it completi}.
+
+Se in un sistema non posso dimostrare un assioma, allora il sistema (gli assiomi) si dice {\it indipendente}.
+
+
+La completezza e l'indipendenza sono auspicabili, ma la coerenze è necessaria.
+In un sistema incoerente, abbiamo dimostrato un enunciato sicuramente falso, e si può mostrare che uno può derivare qualunque enunciato da una ipotesi sicuramente falsa.
+Abbiamo riconosciuto che la validità di una dimostrazione è riposta nell'assicurare che la tesi non può essere falsa se le ipotesi sono vera. Ma se le ipotesi sono sicuramente false, non c'è nulla da assicurare. Da una premessa falsa segue qualunque cosa.
+
+Quindi in un sistema assiomatico incoerente ogni proposizione è dimostrabile e un tale sistema quindi non serve a nulla.
+Forse possiamo dire che lo scopo della matematica non è di dimostrare che le cose sono vere e nel produrre dimostrazione di tali enunciati (fosse questo basterebbe un unico sistema formale incoerente) ma si sapere che alcuni sono falsi.
+Per questa ragione la coerenza è necessaria, della completezza e dell'indipendenza possiamo fare a meno.
+
+Quando guardiamo ad un teorema, l'unica cosa che sappiamo che non può capitare è che la tesi sia falsa quando tutte le ipotesi sono vere.
+Se le ipotesi sono state dimostrate anch'esse, la tesi è vera {\it se sono veri gli assiomi}. 
+
+La matematica non parla di vero o falso parla di dimostrabilità di enunciati, che loro possono essere veri o falsi.
+Sapere che un enunciato può essere dimostrato non ci dice se questo è vero o falso, ci dice che deriva dagli assiomi. Se chiedete a me non sapete neanche che gli assiomi sono veri o falsi, sapete che li assumete validi senza dimostrazione. Assumere una cosa per valida, non significa che la ritenete vera, significa che la ritenete valida senza dimostrazione.
+
+In questo contesto, ditemi voi cosa serve il significato dei termini indefiniti?
+Voi conoscete Socrate? Avete mai visto un triangolo al supermercato? Un numero?
+
+La matematica non sono non parla del mondo reale, non parla neanche di vero e falso, parla solo si enunciati validi cioè di quali enunciati possono essere dimostrati a partire dagli assiomi.
+È il prezzo che si paga se si vuole avere certezze, possiamo avere certezze sul nulla oppure non sapere nulla di tutto.
+
+\Note{
+Quando sono state scoperte o inventate le geometrie non euclidee sono state prodotte modificando il quinto postulato di Eulcide (per un punto fuori da una retta passa un'unica parallela)
+in altri assiomi in contraddizione con esso (ad esempio: non esistono parallele oppure per un punto esistono infinite parallele).
+Poi si vede che le geometrie non-euclidee sono coerenti tanto quanto quelle Euclidee.
+
+Ora se gli assiomi dovessero essere veri come fanno ad essere veri assiomi contraddittori anche se in sistemi assiomatici diversi?
+
+Se ne esce solo dicendo che in certi casi valgono gli assiomi di Euclide talvolta gli altri. 
+Si sopravvive solo dicendo che la validità non parla di verità e falsità, un enunciato non è valido o non valido, è valido in un sistema formale e magari non valido in un altro.
+}
+
+Se fate un giro su Wiki vedete che si usa un sacco di vero e falso. 
+La mia {\bf opinione} è che questa semantica sia comoda per noi ma non sta scritta nella matematica. La matematica è senza significato, non parla di vero o falso parla di quali proposizioni possono essere derivate da altre.
+La matematica è una questione di relazioni tra enunciati che chiamiamo validità e che descriviamo dando una dimostrazione.
+
+
+
+\section*{Giorno 20: modelli}
+
+Finora abbiamo visto un sistema assiomatico (gli assiomi di Peano per gli ordinali naturali).
+Questo è fatto come descritto ieri. 
+Il {\it successivo} e {\it numero naturale} sono termini indefiniti.
+Gli assiomi sono quelli che abbiamo scritto.
+Abbiamo definito somma e prodotto e abbiamo dimostrato alcuni teoremi ($5+3=8$).
+
+Lo abbiamo fatto in modo un po' informale, secondo i canoni della logica del prim'ordine e i sistemi di dimostrazione annessi
+avremmo dovuto annotare una lista di enunciati e con quale regola di produzione è stata prodotta a partire da quali premesse.
+Ma noi siamo fighi e ribelli e facciamo le cose come ci pare.
+
+Da quello che abbiamo detto in realtà manco sappiamo cosa significa successivo e numero naturale. 
+La semantica è suggerita dai nomi, aiuta ma non è necessaria e non segue dagli assiomi né dai teoremi successivi.
+
+Possiamo dire che gli assiomi si {\it inventano} ma una volta fissati gli assiomi in linea di principio i teoremi che da questi si possono dimostrare sono stabiliti per sempre anche se noi ancora non li conosciamo. 
+Una volta stabiliti gli assiomi, noi certamente {\it scopriamo} le dimostrazioni e i teoremi.
+
+Abbiamo anche discusso che i sistemi assiomatici possono essere coerenti, indipendenti e completi.
+G\"odel ha dimostrato che il sistema di Peano non è completo. Ci sono enunciati che non possono essere dimostrati vero o falsi (tra cui la coerenza).
+
+Ma chi ci garantisce che è un sistema coerente? Chi ci assicura che domani non scopriremo che $1=0$? (Già un assioma ci dice che $1:= s(0)\not=0$.)
+
+Per alcuni sistemi assiomatici molto semplici qualche volta questo è possibile dimostrarlo direttamente nel sistema stesso. 
+Ma G\"odel ci assicura che la coerenza in Peano non è decidibile.
+
+Altre volte (e pure per Peano) è possibile dare una prova relativa di coerenza fornendone un modello.
+
+Un modello consiste nel considerare un altro sistema assiomatico (in genere più complesso di quello che stiamo analizzando).
+Nel sistema grande (nel caso di Peano il sistema assiomatico di teoria degli insiemi) noi possiamo trovare oggetti (insiemi) che realizzano i termini indefiniti di Peano
+in modo che gli assiomi diventano teoremi nel sistema grande.
+
+\Note{
+Potete definire $0$ come l'insieme $\Emptyset$. E noto $n\in \N$ come insieme possiamo definire il successivo come l'insieme $s(n)= n\union \{n\}$.
+Poi possiamo dimostrare come teoremi in teoria degli insiemi che valgono gli altri assiomi come teoremi.
+
+Fatto questo abbiamo un modello del sistema assiomatico di Peano all'interno di teoria degli insiemi.
+Se, {\bf se}, teoria degli insiemi è coerente allora Peano è coerente, per questo si chiama dimostrazione relativa di coerenza.
+} 
+
+
+In un modello c'è una semantica interna alla teoria grande del sistema piccolo. È tutto meno astratto, ma in genere la teoria grande è altrettanto possibile sia incoerente rispetto alla teoria piccola. 
+Nella teoria degli insiemi uno {\it scopre} gli assiomi di Peano come teoremi.
+
+Talvolta il medesimo sistema può avere modelli diversi anche in teorie diverse.
+
+Notate che invece per definire interi e razionali, abbiamo preso un'altra strada.
+Non abbiamo definito un nuovo sistema assiomatico, Abbiamo esteso con definizioni il sistema di Peano.
+Noi lo abbiamo fatto usando il suo modello ma possiamo dimostrare tutto come teoremi in Peano.
+Se facciamo finta di sapere cosa è un numero naturale, abbiamo un modo di scoprire i numeri interi e razionali. 
+Noi diamo delle definizioni ma la possibilità di considerare coppie di naturali (o interi) e la possibilità di scegliere operazioni su questi nuovi  numeri è già implicita negli assiomi di Peano. 
+
+
+Questi si chiamano modelli, poi possiamo specificare una specie di modelli materiali in cui i termini indefiniti vengono associati a oggetti reali e gli assiomi a loro proprietà.
+In questo senso talvolta si interpretano gli oggetti matematici come oggetti reali e gli assiomi come le loro proprietà.
+Questi sistemi materiali sono il fondamento dell[uso della matematica nelle scienze naturali. {\bf Secondo me}, non sono matematica nel senso di cui sopra.
+Per sapere se un oggetto reale ha una proprietà occorre fare un esperimento, non una dimostrazione.
+
+Il meccanismo alla base dei sistemi materiali è interessante, ne parliamo un'altra volta, ma secondo me un po' oltre la matematica e spostato nella direzione delle scienze naturali.
+
+
+\newpage
+\NewSection{Quinta settimana}
+
+Vediamo l'avvento dell'algebra, impariamo a risolvere equazioni di primo e secondo grado.
+
+
+\section*{Giorno 21: Algebra e equazioni}
+
+Nel 1200 arrivano in europa i numeri che gli arabi avevano imparato dagli indiani.
+In quel periodo gli arabi si trovavano ad avere lo stesso ruolo di porta dell'europa verso oriente che avevano avuto i greci durante l'antichità.
+
+Come i greci avevano importato in europa la geometria imparata da balilonesi e egiziani arricchendola del concetto di dimostrazione
+così gli arabi-persiani importarono lo zero, la notazione posizionale, arricchendo il tutto con l'agebra.
+
+Nel 300ac Euclide colleziona molti risultati noti e li deriva da un insieme di postulati assunti per veri.
+Per 2300 anni gli elementi di Euclide, il suo stile di dimostrazione, sono stati il prototipo e la definizione di cosa significava matematica in europa.
+Gli elementi di Euclide sono stati copiati, integrati e estesi per tutto questo periodo senza che nessuno (prima di Hilbert) si osasse a metterne in discussione 
+la struttura.
+
+\Note{all'inizio del 1800 Gauss --inedito--e poi altri hanno proposto le geometrie non euclidee, essenzialmente per mostrare che il quinto postulato di Euclide era indipendente dagli altri.
+Alla fine dell'800 Hilbert invece proponeva una versione migliorata degli elementi di Euclide aggiungendo un po' di assiomi che da Euclide erano stati assunti e usati senza annotarli esplicitamente. Tale aggiunta era necessaria per poter portare gli elementi allo standard che stava  emergendo dalla logica matematica in quel periodo: nessuna assunzione implicita, nessuna ambiguità semantica.
+
+Ci sono voluti 2300 anni per poter dire che gli elementi non erano del tutto perfetti, e ci è voluto Hilbert (e Gauss prima di lui).}
+  
+Nei nuovi numeri c'era lo zero e i numeri interi, anche se i numeri negativi impiegarono qualche secolo a diventare di uso comune tranne in finanza dove erano usati per rappresentare i debiti o le perdite. Gli arabi li usavano in finanza ma non in algebra, in India erano usati con circospezione ma pare fossero stati inventati in Cina.
+A partire dal 1200 in europa, a opera principalmente di Fibonacci si cominciò a diffondere la nuova notazione (con lo zero e posizionale).
+
+Ma quello che gli arabi aggiunsero è stata l'algebra (ad opera di Al-Khwārizmī che era persiano), cioè la capacità di risolvere problemi, quelli che noi oggi riconosciamo come equazioni di primo e secondo grado.
+All'inizio per gli arabi l'algebra era una disciplina parlata. Risolvevano un problema con un discorso tipo
+
+\Note{Cos`è il quadrato di una cosa che, quando incrementato di 10 volte la sua radice, è uguale a 39?
+La soluzione è questa: dividi in due il numero di radici, che in questo caso dà 5.
+Questo moltiplicato per se stesso è 25. Aggiungi questo a 39; la somma è 64. 
+Ora prendi la radice di questo, che è 8, e sottrai da ciò metà del numero delle radici, che è 5; il resto è 3.
+Questa è la radice del quadrato che stavi cercando.
+
+Se tenete traccia e partite dall'equazione $x^2+bx=c$ ottenete la descrizione della formula
+\eq{
+x=\sqrt{\(\frac[b/2]\)^2+c}-\frac[b/2]
+}
+che è la formula (ridotta che usiamo per risolvere le equazioni di secondo grado ponendo $a=1$.)
+
+[Notate niente numeri negativi, non scrive $x^3+10x-39=0$ proprio per non parlare di numeri negativi.]
+}
+
+
+Successivamente hanno inventato una notazione un po' complicata per trattare questi problemi. 
+Scrivevano $.3.^2p.12 egaulx a .9.^1$ per quello che noi oggi scriviamo $ 3x^2 + 12 = 9x$ (sempre evitando i numeri negativi).
+
+Noi sappiamo veramente poco di quello che si faceva a quei tempi.
+
+\Note{Come dice John Dersch le cantine delle moschee del medio oriente devono essere piene di manoscritti di quel periodo che raccontano come è nata l'algebra, ma purtroppo a nessuno importa.}
+ 
+Anche perché in europa (ma pure nel mondo arabo) tutto ciò aveva poco interesse teorico e maggiormente un interesse pratico per mantenere i conti dei mercanti in ordine. 
+Prevaleva un atteggiamento pragmatico. Se le dimostrazioni di Euclide finivano con la formula medievale QDE ({\it quod erat demonstrandum} ciò che si doveva dimostrare)
+le {\it dimostrazioni} algebriche finivano in una formula equivalente a {\it e vedrai che questo è il numero che cercavi}.
+Se le dimostrazioni di Euclide bastavano a loro stesse, riponevano il loro valore nel metodo, quelle dell'algebra rimandavano a una verifica. Erano problemi in cui ti do un metodo per calcolare il risultato che non è necessario tu capisca o trovi convincente e poi, se ti va, una volta trovato il risultato puoi verificare che questo è la soluzione che cercavi.
+Questo anche perché i problemi dell'algebra sono strutturalmente così: sono problemi in cui è difficile trovare il risultato ma è facile verificare se un numero è la soluzione cercata. 
+
+\Note{Se vi è famigliare la sensazione di dover applicare una formula non avendo capito da dove salta fuori, bene è cominciato tutto là. Anche in europa l'algebra è rimasta per secoli divisa dalla vera matematica e solo verso il 700-800 è stata assiomatizzata al punto di poter dimostrare le formule alla stregua di quello che faceva Euclide.
+La diffidenza secolare per i numeri negativi viene anche da fatto che molte formule erano dimostrate geometricamente, e in geometria ciaone numeri negativi. Ad esempio 
+$a^2+b^2+2ab = (a+b)^2$ era {\it dimostrata} dalla figura
+
+$$   
+\includegraphics[width=6cm]{quadrato.eps} 
+   %\label{fig:example}
+$$
+\centerline{ {Figura 1: $a^2+b^2+2ab = (a+b)^2$}}
+
+}
+
+Un altro aspetto delle verifiche è che non è richiesta una astrazione ulteriore rispetto a saper fare i conti per la verifica.
+Io posso trovare una formula per un qualunque polinomio di secondo grado $ax^2+bx+c=0$, te la racconto su un esempio $2x^2+6x+10=0$,
+e poi ti dico di verificare il risultato. Infine ti informo che puoi usare la stessa tecnica in generale per qualunque polinomio di secondo grado.
+Tu applichi la stessa formula che avevi imparato per l'esempio anche senza capirla e poi verifichi che il risultato che trovi è giusto.
+Se non ti viene la verifica, siccome la formula l'ho detta io e tu non sei un cazzo, significa che hai sbagliato tu, trovati l'errore.
+Il tutto senza doverti dire cosa è l'algebra letterale con cui io faccio il conto.
+
+\Note{Nel mondo anglosassone anche nelle discipline dure, il calcolo differenziale è ancora oggi insegnato così. Uno si fa il corso di calculus in cui impara a calcoare le derivate e gli integrali senza capire nulla. Poi si fa il corso di Analysis in cui si dimostrano i teoremi necessari a capire quello che si è imparato a fare. Per me pessima idea e un pessimo esempio di controeducazione civica. Ma è così. Questo è per me il secondo motivo per cui dovrebbe essere vietato insegnare matematica come è insegnata nella maggior parte dei casi.
+}
+
+
+Quindi dal 1200 ad almeno tutto il 1600 la matematica è la storia di una coppia di separati in casa, e di conseguenza la didattica della matematica un disastro.
+
+Ora il nostro prossimo obiettivo è quello di arrivare a risolvere le equazioni di primo e secondo grado in generale.
+La buona notizia è che se vi ricordate la definizione di relazione di equivalenza non avete bisogno di altro.
+
+
+\section*{Giorno 22: lettere, incognite e parametri}
+
+Una volta che abbiamo imparato a fare le operazioni con i numeri razionali, che contengono pure gli interi e i naturali come casi particolari,
+in molte situazioni vogliamo scrivere identità che valgono per ogni valore dei numeri coinvolti.
+Per questa ragione abbiamo inventato i parametri $a, b, c, \dots\in \Q$.
+Quando ad esempio scriviamo le proprietà delle operazioni
+\eq{
+a(b+c)= ab+ac
+}
+intendiamo che questa vale per ogni valore di $a, b, c\in \Q$. 
+
+Tra breve introdurremo le incognite che di solito indichiamo con $x$ che hanno una semantica diversa. Quando scriviamo 
+\eq{
+3x+3=1-2x
+}
+intendiamo chiedere se esiste un valore di $x$ che rende uguali i 2 lati dell'equazione.
+I {\it parametri} sottintendono un quantificatore universale (per ogni) mentre le {\it incognite} sottintendono un quantificatore esistenziale.
+Se vi aiuta, le incognite hanno un valore interrogativo aggiunto: esiste un valore di $x$ per cui è verificata l'equazione?
+
+\Note{Quindi quando scriviamo 
+\eq{
+\frac[a+b/a]=b
+}
+non basta vedere che per $b=2$ e $a=2$ è soddisfatta per accettarla come formula valida, 
+mentre basta vedere che non vale per $a=1$ e $b=2$ per dire che l'identità non è corretta.
+}
+
+Ora se state pensando che distinguere tra parametri e incognite è facile, se vedo $x, y, z, \dots$ sono incognite se vedo $a, b, c, \dots$ sono parametri anche questo non è sempre vero.
+Se vi chiedo di scrivere l'equazione della retta generica mi scrivete $ax+by=c$ intendendo che per ogni valore di $[a,b,c]$ che sono parametri,
+i punti $(x,y)$  che soddisfano l'equazione si distribuiscono lungo una retta, quale retta è identificata dai parametri, mentre $x, y$ compaiono come incognite.
+
+Se poi chiediamo quali rette passano per il punto $(2, 3)$, dobbiamo sostituire a $(x, y)=(2, 3)$ ottenendo $2a+3b=c$ e a questo punto dobbiamo determinare $(a, b,c)$ in modo che questa identità sia valida. Le lettere $a,b,c$ che nel paragrafo precedente erano parametri, ora diventano incognite. Allora si determina $c=2a+3b$ e si sostituisca
+\eq{
+ax+by=2a+3b
+\qquad
+a(x-2)+b(y-3)=0
+}
+che di nuovo, per ogni valore $[a,b]$ determinano una retta che passa per il punto $(2,3)$.
+Quindi $a, b$ tornano parametri e $x, y$ tornano incignite.
+
+In pratica è il lettore in base a quello che vuole fare che decide cosa è parametro e cosa è incognita.
+
+
+È ovvio che per fare i conti con frazioni qualunque non serve fare i conti coi numeri ma bisogna vedere il calcolo come manipolazione di formule seguendo delle regole 
+che derivano dalle proprietà delle operazioni
+\eq{
+\frac[a/b]+ \frac[c/d]=\frac[ad+cb/bd]
+\qquad\qquad
+\frac[a/b] \frac[c/d]=\frac[ac/bd]
+\qquad\qquad
+\frac[{\frac[a/b] }/{  \frac[c/d]}]= \frac[a/b]\frac[d/c]
+}
+
+\Note{Queste sono le stesse regole che si usano nel caso delle frazioni numeriche, tranne il fatto che per evitare di dover semplificare alla fine (cosa che peraltro può succedere comunque)
+quando sommiamo le frazioni si cerca nel caso numerico il minimo comune denominatore, mentre nel caso letterale, visto che non sappiamo i valori non possiamo di certo sapere il minimo comune denominatore e quindi lo facciamo prendendo come denominatore semplicemente il prodotto. 
+}
+
+Anche questo passaggio dai numeri alle lettere è un passaggio delicato e qualcuno non lo passa mai.
+Intanto dovete scordarvi che sia
+\eq{
+\frac[a+b/a]=b
+\qquad\o\qquad
+\frac[a+b/a]= 1+b
+}
+Potete facilmente convincervi che queste formule non sono valide, fatelo.
+
+La seconda cosa importante sono le regole di precedenza tra le operazioni. 
+Tutto nasce dal fatto che per specificare l'ordine con cui vengono applicate le operazioni, bisognerebbe scrivere
+\eq{
+\frac[1+3+4/8] = (1+(3+4))/8
+}
+Prima si svolgono i conti nelle parentesi più interne quindi si calcola
+\eq{
+\frac[1+3+4/8] = (1+(3+4))/8
+=  (1+7)/8
+= 8/8
+=1
+}
+
+Ciò comporta che, non fosse per la proprietà associativa della somma, non si potrebbe neanche scrivere $1+3+4$ perché sarebbe ambiguo distinguere tra $(1+3)+4$ e $1+(3+4)$.
+È solo in virtù della proprietà associativa che  $(a+b)+c=a+(b+c)$ e quindi, non essendoci differenza tra le 2 scritture, possiamo scrivere ancora peggio $a+b+c$.
+La stessa cosa per il prodotto $abc$.
+
+Ma il problema emerge comunque quando si mischiano somme e prodotti. Se scriviamo $a+bc$ intendiamo
+$a+(bc)$ o $(a+b)c$?
+
+\Note{Notate che sui libri $a+bc=a+(bc)$ mentre sulle calcolatrici
+$a+bc$ calcola $(a+b)*c$. 
+Le calcolatrici calcolano le funzioni nel valore che compare sullo schermo, calcolano e operazioni tra il valore sullo schermo e il successivo valore digitato.
+
+Almeno di norma perché poi esistono calcolatrici bellissime in polacco inverso in cui per calcolare 5+3 si digita 3 5 + (come in forth o nel linguaggio che si usa per i compilatori)
+o in polacco diretto in cui si digita + 5 3 (come in lisp in ps o in pdf).
+In più oggi la potenza di calcolo è sufficiente per implementare sulle calcolatrici le convenzioni dei libri con la possibilità di scrivere una formula su una riga con tutte le parentesi necessarie
+e poi interpretarla e calcolare il risultato. Questo succede su molti smartphones ma ad esempio le calcolatrici di sistema di windows implementano le convenzioni standard delle calcolatrici standard.
+}
+
+Non so perché i lettori siano allergici alle parentesi, ma per evitarle si conviene che il prodotto abbia precedenza sulle somme, quindi
+\eq{
+a+bc=a+(bc)
+}
+mentre se uno vuole può scrivere $(a+b)c$ in cui la parentesi è necessaria se prima si vuole fare la somma e poi il prodotto.
+
+La stessa  cosa le potenze hanno la precedenza sui prodotti. di norma si interpreta $xy^2= x\cdot (y^2)$ non come $(xy)^2$.
+
+Onestamente sono cose che abbiamo assunto col latte materno e farei fatica a fare una lista delle precedenze adottate in matematica.
+Le abbiamo assunto facendo una serie interminabili di esercizi tipo semplificare l'espressione
+\eq{
+\Frac[(x-y)(x+y)/xy]+ \Frac[2y/x]+2-\Frac[(x+y)^2/xy]
+}
+in cui tra l'altro $x, y$ compaiono come parametri.
+Semplificare una espressione significa riscriverla in modo più semplice, riscrivendo sempre espressioni uguali.
+
+\Note{
+Semplificare l'espressione 
+\eq{
+\Align{
+&\Frac[1/x^2-4x+4]- \Frac[2/x^2-2x] +\Frac[1/x^2-x-2]=\cr
+&\quad=\Frac[1/(x-2)^2]- \Frac[2/x(x-2)] +\Frac[1/ (x-2)(x+1)]=\cr
+&\quad=\Frac[x(x+1)/x(x+1)(x-2)^2]+\Frac[-2(x+1)(x-2)/x(x+1)(x-2)^2]+ \Frac[x(x-2)/x(x+1)(x-2)^2]=\cr
+&\quad=\Frac[x(x+1)  -2(x+1)(x-2)	 +x(x-2)		/x(x+1)(x-2)^2]=\cr
+&\quad=\Frac[x^2+x  -2x^2+2x+4+x^2-2x 		/x(x+1)(x-2)^2]=\cr
+&\quad=\Frac[  x+4		/x(x+1)(x-2)^2]\cr
+}
+}
+L'esercizio prende la forma di una catena di uguaglianze tra espressioni equivalenti piano piano più ``semplici''.
+}
+
+Assicuratevi di saperla semplificare, saperla calcolare ponendo $x=7$ e $y=-4$.
+Questo è un buon posto per fermarsi se non siete super-convinti di saperlo fare. 
+Se cercate {\it esercizi espressioni algebriche letterali} trovate un miliardo di esercizi da svolgere.
+
+Esercitatevi, scoprite dove siete soliti fare errori, condizionatevi a controllare mentre fate i conti di non aver fatto errori. 
+È una forma di meditazione e solo così potete ottenere di riuscire a eliminare gli errori che condizionano il risultato.
+Se l'espressione si allunga e siete esposti a fare un errore ogni 100 passaggi, da una certa complessità in sù sarete pressoché certi di ottenere un risultato sbagliato, e non potete permettervelo.
+
+Dice il saggio: 
+\blockquote{\footnotesize
+It was never really a battle for me to win, \\
+it was an eternal dance\\
+And like a dance, the more rigid I became, the harder it got\\
+The more I cursed my clumsy footsteps, the more I struggled
+
+So I got older and I learned to relax\\
+And I learned to soften and that dance got easier
+
+It is this eternal dance that separates human beings\\
+From angels, from demons, from gods\\
+And I must not forget, we must not forget\\
+That we are human beings\\
+}
+
+Può essere fatto, potete diventare sicuri del conto che avete fatto, anche se è lungo una pagina.
+
+\section*{Giorno 23: equazioni lineari}
+
+Una equazione sono 2 espressioni (che possono contenere incognite) poste uguali tra loro.
+
+\Note{È un'equazione $3x+2=2x$.
+Ma pure $2x+3y-4=3x=2y+1$.
+
+Siccome 0 è essa stessa una espressione, $3x-1=0$ è anche un'equazione.
+Più semplicemente, prediamo una funzione $f:\Q^n\arr \Q: (x_1, x_2,\dots, x_n)\mapsto f(x_1, x_2,\dots, x_n)$ a cui è associata l'equazione $f(x_1, x_2,\dots, x_n)=0$.
+
+In particolare $0=0$  (oppure $x=x$), è soddisfatta da ogni valore di $x$, quindi qualunque valore di $x$ è soluzione.
+
+Invece non c'è nessun valore di $x$ per cui $1=0$ (oppure $x+1=x$), che quindi è un'equazione senza soluzione. (Questa non ha soluzione è uno degli assiomi di Peano, tra l'altro.
+Ma allora l'abbiamo dimostrato? Certo, ma abbiamo assunto una paccata di assiomi tra cui quelli di Peano. Abbiamo detto che gli assiomi sono assunti per validi in un sistema formale e se abbiamo un modello diventano teoremi in un sistema assiomatico più grande.)
+
+Se vi chiedo di risolvere $ax+b=0$ dovrei specificare quali sono le incognite e quali i parametri anche se in genere si intende che $x,y, z, \dots$ sono le incognite.
+}
+ 
+Due equazioni sono dette {\it equivalenti} se hanno le stesse soluzioni, cosicché risolvere l'una o l'altra non fa differenza.
+Risolvere una equazione significa scrivere una lista di equazioni equivalenti che alla fine diventano $x=5$ (oppure $0=0$ o $1=0$) che rendano manifesti i valori dell'incognita che soddisfano l'equazione.
+
+Quindi l'unica cosa veramente rilevante è capire quando 2 equazioni sono equivalenti.
+
+\Note{
+Sia data un'equazione $f(x)=g(x)$. Se sommiamo ad ambo i membri una stessa funzione $h(x)$ otteniamo una equazione $f(x)+ h(x)= g(x)+ h(x)$ che è equivalente all'equazione di partenza.
+
+Infatti se $x=x_0$ è soluzione della prima $f(x_0)=g(x_0)$, allora abbiamo anche che $f(x_0)+ h(x_0)= g(x_0)+ h(x_0)$.
+Viceversa, se  $f(x_0)+ h(x_0)= g(x_0)+ h(x_0)$ ovviamente $h(x_0)=h(x_0)$ e quindi deve essere $f(x_0)= g(x_0)$.
+Quindi $x_0$ è soluzione della prima se e solo se è soluzione della seconda.
+
+Consideriamo ora l'equazione $f(x)h(x)=g(x)h(x)$.
+Se $x=x_0$ è soluzione della prima $f(x_0)=g(x_0)$, allora abbiamo anche che $f(x_0)h(x_0)= g(x_0)h(x_0)$ (purché $x_0$ sia nel dominio di $h(x)$).
+Viceversa, se  $f(x_0)h(x_0)= g(x_0)h(x_0)$ ovviamente $h(x_0)=h(x_0)$ e quindi, se $h(x_0)\not=0$, deve essere $f(x_0)= g(x_0)$.
+Ma se $h(x_0)=0$, allora $f(x_0)h(x_0)= g(x_0)h(x_0)$ anche se $f(x_0)\not= g(x_0)$.
+Quindi $x_0$ è soluzione della prima se (ma non solo se) è soluzione della seconda.
+Le 2 equazioni non sono equivalenti (a meno che la funzione $h(x)$ non sia priva di soluzioni).
+
+Quando moltiplichiamo e dividiamo per qualcosa che dipende dalle incognite possiamo introdurre con ciò delle soluzioni della seconda equazione che non erano soluzioni della prima.
+Si può fare ma se lo facciamo poi dobbiamo verificare che i valori trovati siano stati soluzioni della prima equazione per eliminare le soluzioni spurie.
+
+Ma se moltiplichiamo o dividiamo una equazione per una costante non nulla allora sicuramente otteniamo un'equazione equivalente (proprio perché la costante non nulla è anche una funzione che non si annulla mai.)
+
+Più in generale se applichiamo la stessa funzione ad ambo i membri $h(f(x))= h(g(x))$ otteniamo una equazione equivalente se $h$ è biettiva.
+Se $h$ non è biettiva possiamo introdurre delle soluzioni spurie. Alla fine dobbiamo quindi verificare le soluzioni trovate per eliminare le eventuali soluzioni spie.
+Ad esempio consideriamo $x-1=3-2x$ (che ha come unica soluzione $x=\frac[4/3]$) e invece di risolverla semplicemente applichiamo il quadrato ad ambo i membri
+$x^2-2x+1= 4x^2-12x+9$ che si semplifica a $3x^2-10x+8=0$.
+Questa si fattorizza come $\(x-\frac[4/3]\)\(3x-6\)=0$. (Ora non vi preoccupate di come io abbia fattorizzato, preoccupatevi che la fattorizzazione sia giusta, verificando che il prodotto dà quello che c'era.)
+
+Quest'ultima equazione ha 2 soluzioni, $x=\frac[4/3]$ (come la prima) e $x=2$ che è una soluzione spuria introdotta elevando a quadrato ambi i membri dovuta al fatto che la funzione $h(x)=x^2$
+non è biettiva (visto che $(-x)^2= x^2$).
+
+In effetti, la soluzione spuria corrisponde alla soluzione dell'equazione $x-1=-(3-2x)$ ($x=2$) che ha lo stesso quadrato di quella da cui siamo partiti.
+}
+
+Immaginatevi una equazione come una bilancia a 2 piatti. Se aggiungiamo un chilo a entrambi i piatti oppure se togliamo una mela da entrambi i piatti, i 2 piatti se erano
+in equilibrio restano in equilibrio (qualunque sia il peso di una mela).
+
+Quindi, riassumendo possiamo manipolare le equazioni sommando o sottraendo ad entrambi i membri quello che ci va, e moltiplicando o dividendo ambo i membri per quello che ci va purché non sia mai nullo.
+Più in generale possiamo applicare la stessa funzione ad ambo i membri ma se la funzione non è biettiva dobbiamo verificare le soluzioni trovate ed eliminare eventuali soluzioni spurie. 
+
+\ms
+Quindi possiamo trovare la soluzione generale di una qualunque equazione si può scrivere nella forma $ax+b=0$.
+
+\Note{Sommate $-b$ ad entrambi i membri: $ax+b-b=ax+0= ax$, $0-b=-b$, quindi $ax=-b$ è equivalente.
+
+Se $a=0$ questa equazione è equivalente a $0=-b$ che è impossibile se $b \not=0$ (non ci sono soluzioni)
+oppure indeterminata se $b=0$ (qualunque $x$ è soluzione).
+
+Se $a\not =0$, possiamo dividere per $a$: $ax\frac[1/a]= x$ e $-b\frac[1/a]= -\frac[b/a]$, quindi abbiamo l'equazione $x=-\frac[b/a]$ che è la soluzione cercata. 
+}
+
+Tutto ciò è generale perché abbiamo definito numeri interi negativi e numeri razionali in modo da poterlo sempre fare.
+
+
+Ma dovremmo iniziare affrontando un problema: cosa sono le equazioni lineari? 
+Sui libri trovate che le equazioni lineari sono quelle che si scrivono come $ax+b=0$ che è vero ma dovete avere chiaro in mente la differenza tra si scrivono così (queste sono  lineari)
+e si {\it possono} scrivere così (tutte le equazioni lineari si possono scrivere così). 
+L'equazione $x^2+ax+c= x^2+bx+d$ {\it è} un'equazione lineare ($(a-b)x+(c-b)=0$).
+L'equazione 
+\eq{
+\frac[ -x^2 +2x-1/ x^2-1]=1 
+}
+è lineare ($x+3=3x+3$, $2x=0$).
+
+Definire un'equazione lineare come un'equazione si può scrivere in una certa forma è come definire una frazione come $\frac[a/b]$, definisce un numerale non un numero.
+
+
+\Note{In verità noi possiamo definire cosa è una funzione $y=f(x)$ lineare e da questa un'equazione lineare $f(x)=0$.
+Tra l'altro {\it lineare} in verità ha 2 significati (polinomio di primo grado e polinomi {\it omogenei} di primo grado), bisogna portare pazienza.
+
+In ogni caso, una funzione è lineare (nel primo senso che è quello che si usa per le equazioni) se e soltanto se le soluzioni $(x, y): y=f(x)$ si dispongono lungo una retta, cioè se
+e solo se, data una soluzione $(x_0, y_0)$, tutte le altre sono nella forma $(x=x_0+as, y=y_0+bs)$ per ogni $s$ e con $a, b$ costanti. 
+
+Quindi una equazione è lineare se si ottiene da una funzione lineare $f(x)=0$.
+}
+
+Quindi sappiamo risolvere tutte le equazioni lineari con una incognita.
+
+
+\section*{Giorno 24: equazioni quadratiche in una variabile.}
+
+Valgono tutti i discorsi fatti nel caso lineare. Una equazione è quadratica se si può mettere nella forma $ax^2+bx+c=0$.
+A scuola vi hanno dato la formula per risolvere queste equazioni
+\eq{
+x=\Frac[-b\pm \sqrt{b^2-4ac}/2a]
+}
+se il discriminante $\De=b^2-4ac\ge 0$, altrimenti per i discriminanti negativi non ci sono soluzioni.
+Per il discriminante nullo, c'è una sola soluzione
+\eq{
+x=\Frac[-b\pm \sqrt{b^2-4ac}/2a]=\Frac[-b/2a]
+}
+
+Non so se vi hanno dimostrato questa formula o se vi ricordate la dimostrazione.
+È una bella dimostrazione e vale la pena di ripercorrerla.
+
+\Note{
+Notate che se $b=0$ sappiamo risolvere 
+\eq{
+ax^2+c=0
+\qquad
+x^2=-\frac[c/a]
+}
+Va detto che siccome non conosciamo il valore di $a$ e $c$ non sappiamo né il valore né il segno di $-\frac[c/a]$, che non è necessariamente negativo.
+
+Il valore di $x$ è la definizione di radice quadrata $\sqrt{-\frac[c/a]}$ che è quel numero {\bf positivo} che elevato a quadrato dà $-\frac[c/a]$ (per cui ovviamente $-\frac[c/a]$ deve essere positivo se no non ci sono soluzioni).
+
+Quindi le soluzioni sono $x= \pm \sqrt{-\frac[c/a]}$ se $-\frac[c/a]> 0$, $x=0$ se $-\frac[c/a]=0$, non ci sono soluzioni se $-\frac[c/a]<0$.
+
+Quindi se riusciamo sempre a riportarci a questo caso, sappiamo trovare la soluzione di una generica equazione quadratica.
+}
+
+Il metodo per ridursi al caso che sappiamo risolvere è una delle invenzioni di  Al-Khwārizmī.
+È stata tanto rilevante che gli è stato dato un nome: metodo del completamento dei quadrati.
+
+
+Si tratta di ricostruire il prodotto notevole $(A+B)^2= A^2+2AB+B^2$. Infatti assumendo $a\not=0$ (se no l'equazione è lineare e già sappiamo risolverla):
+\eqs{
+ax^2+bx+c
+=&ax^2+2a\frac[b/2a]x \pm a\frac[b^2/4a^2]+c=\cr
+=&a ( x^2+2\frac[b/2a]x +  \frac[b^2/4a^2]) + c- a \frac[b^2/4a^2]=\cr
+=&a ( x +  \frac[b/2a])^2 -  \frac[b^2-4ac/4a]=0\cr
+}  
+Per semplicità poniamo $\De=b^2-4ac$ e $z=x +  \frac[b/2a]$, l'equazione diventa $az^2-\frac[\De/4a]=0$.
+Questa la sappiamo risolvere come mostrato sopra $z= \pm\sqrt{\frac[\De/4a^2]}= \pm \frac[\sqrt{\De}/2a]$.
+
+\Note{
+Wait! Come hai fatto l'ultimo passaggio? 
+Vi sto dicendo che $ \frac[\sqrt{\De}/2a]$ è quel numero che elevato a quadrato dà $\frac[\De/4a^2]$. Beh, provate
+\eq{
+ \(\frac[\sqrt{\De}/2a]\)^2= \frac[\sqrt{\De}/2a] \frac[\sqrt{\De}/2a]= \frac[\sqrt{\De}^2/4a^2] = \frac[\De/4a^2]
+}
+checked!
+}
+
+Ricordando infine la definizione di $z$ abbiamo
+\eq{
+x= - \frac[b/2a] \pm \frac[\sqrt{\De}/2a]=  \frac[-b\pm\sqrt{\De}/2a]
+}
+
+Se non accettate i numeri negativi per voi
+\eq{
+ax^2+bx+c=0
+\qquad
+ax^2+bx=-c
+\qquad
+ax^2=-bx-c
+}
+sono tutte equazioni diverse e infatti una volta sta roba era eterna perché uno doveva fare $n$ volte lo stesso conto per coprire tutti i casi.
+
+
+Vedendo questo risultato si potrebbe immaginare che a questo punto sappiamo risolvere qualunque equazione polinomiale, ma la natura è malevola.
+Possiamo risolvere qualunque polinomio di quarto e quinto grado poi basta.
+
+I polinomi di quinto grado non siamo capaci di risolverli in generale. Anzi, sappiamo dimostrare che non esiste una formula elementare per scrivere in generale una soluzione anche nei casi (i polinomi di grado dispari) in cui sappiamo (sapremo) che esiste una soluzione reale.
+Solo che quest'ultimo paragrafo copre i secoli da Cardano (1500) a Euler (1800) e ci dobbiamo tornare sopra più in là.
+
+Per ora siamo contenti che sappiamo risolvere tutte le equazioni di primo e secondo grado come già sapeva fare Al-Khwārizmī.
 
 
 
