@@ -1,0 +1,667 @@
+% !TEX TS-program = latex
+% !TEX spellcheck = it-IT
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{tikz} % LATEX
+\usetikzlibrary {automata}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Trim Size: 9.75in x 6.5in
+%% Text Area: 8in (include Runningheads) x 5in
+%% ws-ijgmmp.tex   :   2-9-08
+%% Tex file to use with ws-ijgmmp.cls written in Latex2E.
+%% The content, structure, format and layout of this style file is the
+%% property of World Scientific Publishing Co. Pte. Ltd.
+%% Copyright 1995, 2002 by World Scientific Publishing Co.
+%% All rights are reserved.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{pictexwd,dcpic}
+\usepackage{csquotes}
+\usepackage{nopageno}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{pictex, dcpic}
+\usepackage{color}
+%\usepackage{graphicx}
+%\numberwithin{equation}{section} % This line resets equation numbering when starting a new section.
+%\renewcommand{\theequation}{Eq. \thesection.\arabic{equation}} % This line ads "Eq." in front of your equation numbering.
+
+
+
+
+%
+%    Macros.    Version 1.2.0.beta
+%    The best use is to paste all of them into the papers
+%     1/8/2005
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			Greek		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\al{\alpha}
+\def\be{\beta}
+\def\de{\delta}
+\def\ga{\gamma}
+\def\up{\upsilon}
+\def\ep{\epsilon}
+\def\io{\iota}
+\def\te{\theta}
+\def\la{\lambda}
+\def\ze{\zeta}
+\def\om{\omega}
+\def\si{\sigma}
+\def\vp{\varphi}
+\def\vpi{\varpi}
+\def\ka{\kappa}
+\def\vs{\varsigma}
+\def\vr{\varrho}
+
+\def\De{\Delta}
+\def\Ga{\Gamma}
+\def\Te{\Theta}
+\def\La{\Lambda}
+\def\Om{\Omega}
+\def\Si{\Sigma}
+\def\Up{\Upsilon}
+
+\def\boldDe{\bf\Delta}
+\def\boldGa{\bf\Gamma}
+\def\boldTe{\bf\Theta}
+\def\boldLa{\bf\Lambda}
+\def\boldOm{\bf\Omega}
+\def\boldSi{\bf\Sigma}
+\def\boldUp{\bf\Upsilon}
+\def\boldXi{\bf\Xi}
+\def\boldPi{\bf\Pi}
+\def\boldPhi{\bf\Phi}
+\def\boldPsi{\bf\Psi}
+
+\def\boldal{\bf\al}
+\def\boldbe{\bf\be}
+\def\boldga{\bf\ga}
+\def\boldde{\bf\de}
+\def\boldep{\bf\ep}
+\def\boldze{\bf\ze}
+\def\boldeta{\bf\eta}
+\def\boldte{\bf\te}
+\def\boldio{\bf\io}
+\def\boldka{\bf\ka}
+\def\boldla{\bf\la}
+\def\boldmu{\hbox{\greekbold\char "16}}
+\def\boldnu{\hbox{\greekbold\char "17}}
+\def\boldxi{\hbox{\greekbold\char "18}}
+\def\boldpi{\hbox{\greekbold\char "19}}
+\def\boldrho{\hbox{\greekbold\char "1A}}
+\def\boldsi{\bf\si}
+\def\boldtau{\hbox{\greekbold\char "1C}}
+\def\boldup{\hbox{\greekbold\char "1D}}
+\def\boldphi{\hbox{\greekbold\char "1E}}
+\def\boldchi{\hbox{\greekbold\char "1F}}
+\def\boldpsi{\hbox{\greekbold\char "20}}
+\def\boldom{\hbox{\greekbold\char "21}}
+\def\boldvep{\hbox{\greekbold\char "22}}
+\def\boldvte{\hbox{\greekbold\char "23}}
+\def\boldvpi{\hbox{\greekbold\char "24}}
+\def\boldvrho{\hbox{\greekbold\char "25}}
+\def\boldvsi{\hbox{\greekbold\char "26}}
+\def\boldvphi{\hbox{\greekbold\char "27}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			Cal			 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \def\calA{{\hbox{\cal A}}}
+ \def\calU{{\hbox{\cal U}}}
+ \def\calB{{\hbox{\cal B}}}
+ \def\calC{{\hbox{\cal C}}}
+ \def\calI{{\hbox{\cal I}}}
+ \def\calQ{{\hbox{\cal Q}}}
+ \def\calP{{\hbox{\cal P}}}
+ \def\calL{{\hbox{\cal L}}}
+ \def\calE{{\hbox{\cal E}}}
+ \def\calW{{\hbox{\cal W}}}
+ \def\calV{{\hbox{\cal V}}}
+ \def\calS{{\hbox{\cal S}}}
+ \def\calF{{\hbox{\cal F}}}
+ \def\calR{{\hbox{\cal R}}}
+ \def\calO{{\hbox{\cal O}}}
+ \def\calM{{\hbox{\cal M}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			gothic		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \def\su{{\mathfrak{su}}}
+ \def\gl{{\mathfrak{gl}}}
+ \def\gotg{{\mathfrak{g}}}
+ \def\goth{{\mathfrak{h}}}
+ \def\gotm{{\mathfrak{m}}}
+ \def\gotk{{\mathfrak{k}}}
+ \def\spin{{\mathfrak{spin}}}
+ \def\slC{{\mathfrak{sl}}}
+ \def\O{{\mathfrak{O}}}
+ \def\Set{{\mathfrak{Set}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			Bbb			 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \def\one{\mathbb{I}}
+ \def\A{\mathbb{A}}
+ \def\B{\mathbb{B}}
+ \def\C{\mathbb{C}}
+ \def\D{\mathbb{D}}
+ \def\E{\mathbb{E}}
+ \def\F{\mathbb{F}}
+ \def\G{\mathbb{G}}
+ \def\H{\mathbb{H}}
+ \def\J{\mathbb{J}}
+ \def\K{\mathbb{K}}
+ \def\I{\mathbb{I}}
+ \def\L{\mathbb{L}}
+ \def\M{\mathbb{M}}
+ \def\N{\mathbb{N}}
+ \def\O{\mathbb{O}}
+ \def\P{\mathbb{P}}
+ \def\Q{\mathbb{Q}}
+ \def\R{\mathbb{R}}
+ \def\S{\mathbb{S}}
+ \def\T{\mathbb{T}}
+ \def\U{\mathbb{U}}
+ \def\V{\mathbb{V}}
+ \def\X{\mathbb{X}}
+ \def\Y{\mathbb{Y}}
+ \def\W{\mathbb{W}}
+ \def\Z{\mathbb{Z}}
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%		MathRoman		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\Tr{{\hbox{Tr}}}
+\def\Con{{\hbox{Con}}}
+\def\Aut{{\hbox{Aut}}}
+\def\Div{{\hbox{Div}}}
+\def\ad{{\hbox{ad}}}
+\def\Ad{{\hbox{Ad}}}
+\def\Re{{\hbox{Re}}}
+\def\Im{{\hbox{Im}}}
+\def\Card{{\hbox{Card}}}
+\def\Iso{{\hbox{Iso}}}
+\def\Geo{{\hbox{Geo}}}
+\def\Int{{\hbox{Int}}}
+\def\Inv{{\hbox{Inv}}}
+\def\Spin{{\hbox{Spin}}}
+\def\SO{{\hbox{SO}}}
+\def\SU{{\hbox{SU}}}
+\def\SL{{\hbox{SL}}}
+\def\GL{{\hbox{GL}}}
+\def\det{{\hbox{det}}}
+\def\Hom{{\hbox{Hom}}}
+\def\End{{\hbox{End}}}
+\def\Euc{{\hbox{Euc}}}
+\def\Lor{{\hbox{Lor}}}
+\def\Diff{{\hbox{Diff}}}
+\def\di{{\hbox{d}}}
+\def\id{{\hbox{\rm id}}}
+\def\diag{{\hbox{diag}}}
+\def\rank{{\hbox{rank}}}
+\def\span{{\hbox{span}}}
+\def\Sim{{\hbox{Sim}}}
+
+\def\Obj{{\hbox{Obj}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%		OtherSymbols		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\ip{\hbox to4pt{\leaders\hrule height0.3pt\hfill}\vbox to8pt{\leaders\vrule width0.3pt\vfill}\kern 2pt}
+
+% inner product
+\def\QDE{\hfill\hbox{\ }\vrule height4pt width4pt depth0pt} 
+\def\del{\partial}
+\def\na{\nabla}
+\def\inter{\cap}
+\def\Vec{\mathfrak{X}}
+\def\Lie{\hbox{\LieFont \$}}
+
+\def\arr{\rightarrow}
+\def\larr{\longrightarrow}
+\def\harr{\hookrightarrow}
+\def\hlarr{\lhook\joinrel\longrightarrow}
+\def\then{\Rightarrow}
+\def\semidirect{\hbox{\Bbb \char111}}
+\def\binomial#1#2{\left(\Matrix{#1\cr #2\cr}\right)}
+
+\def\barJ{\bar J}
+
+\def\sSU{{\hbox{SU}}}
+\def\so{{so}}
+%\def\N{{{\mathbb N}}}
+
+\def\file#1{{\tt #1}}
+\def\calH{{{\cal H}}}
+\def\calJ{{{\cal J}}}
+\def\calA{{{\cal A}}}
+\def\calV{{{\cal V}}}
+\def\calG{{{\cal G}}}
+\def\calP{{{\cal P}}}
+\def\calK{{{\cal K}}}
+\def\calD{{{\cal D}}}
+\def\scalD{{{\cal D}}}
+
+\def\Loop{{\hbox{Loop}}}
+\def\Hoop{{\hbox{Hoop}}}
+\def\Sym{{\hbox{Sym}}}
+\def\sR{{\R}}
+\def\dCor{dCor}
+\def\epm{\hbox{$^\pm$}}
+\def\dunion{\coprod}
+
+\def\nab#1{{\buildrel #1\over \na}}
+\def\frac[#1/#2]{\hbox{$#1\over#2$}}
+\def\Frac[#1/#2]{{#1\over#2}}
+\def\({\left(}
+\def\){\right)}
+\def\[{\left[}
+\def\]{\right]}
+\def\^#1{{}^{#1}_{\>\cdot}}
+\def\_#1{{}_{#1}^{\>\cdot}}
+\def\Label=#1{{\buildrel {\hbox{\fiveSerif \ShowLabel{#1}}}\over =}}
+\def\<{\kern -1pt}
+\def\Bar{\>|\>}
+\def\Dal{\hbox{\tenRelazioni  \char003}}
+
+\def\uvec#1{\vbox{\hbox{$\scriptstyle\rightharpoonup$}\vskip-9pt\hbox{$#1$}}}
+\def\dvec#1{\vtop{\hbox{$#1$}\vskip-10pt\hbox{$\scriptstyle\rightharpoondown$}}}
+\def\Cprod{\diamond}
+\def\obullet{\odot}
+
+
+
+%%%%%%%%%%%%			frames 				%%%%%%%%%%%%%%%%%%%
+
+\def\red#1{{\color{red}{#1}}}
+\def\blue#1{{\color{blue}{#1}}}
+\def\green#1{{\color{green}{#1}}}
+
+\def\Red{\color{red}}
+\def\Blue{\color{blue}}
+\def\Green{\color{green}}
+
+
+\def\frame#1{\vbox{\hrule\hbox{\vrule\vbox{\kern2pt\hbox{\kern2pt#1\kern2pt}\kern2pt}\vrule}\hrule\kern-4pt}} 
+\def\redframe#1{\red{\frame{#1}}} 
+\def\greenframe#1{\green{\frame{#1}}} 
+\def\blueframe#1{\blue{\frame{#1}}} 
+
+\def\uline#1{\underline{#1}}
+\def\uuline#1{\underline{\underline{#1}}}
+\def\Box to #1#2#3{\frame{\vtop{\hbox to #1{\hfill #2 \hfill}\hbox to #1{\hfill #3 \hfill}}}}
+
+
+
+\def\ubal{\underline{\al}\kern1pt}
+\def\obal{\overline{\al}\kern1pt}
+
+\def\ubR{\underline{R}\kern1pt}
+\def\obR{\overline{R}\kern1pt}
+\def\ubom{\underline{\om}\kern1pt}
+\def\obxi{\overline{\xi}\kern1pt}
+\def\ubu{\underline{u}\kern1pt}
+\def\ube{\underline{e}\kern1pt}
+\def\obe{\overline{e}\kern1pt}
+\def\Limit{\>{\buildrel{r\arr\infty}\over \longrightarrow}\,}
+\def\union{\cup}
+\def\Emptyset{\varnothing}
+
+
+
+
+\def\Uvec#1{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{#1}\hfil$\crcr}}}
+\def\Dvec#1{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{#1}\hfil$\crcr}}}
+
+
+%   u 
+\def\uvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+\def\dvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+%\def\uvecu{\Uvec{u}}
+%\def\dvecu{\Dvec{u}}
+
+%   be
+\def\uvecbe{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern3pt$\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{\be}\hfil$\crcr}}}
+\def\dvecbe{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern1pt$\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-10pt\nointerlineskip}
+     $\hfil\displaystyle{\be}\hfil$\crcr}}}
+
+%   n
+\def\uvecn{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{n}\hfil$\crcr}}}
+\def\dvecn{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{n}\hfil$\crcr}}}
+
+%   m
+\def\uvecm{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{m}\hfil$\crcr}}}
+\def\dvecm{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{m}\hfil$\crcr}}}
+
+%   N
+\def\uvecN{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern3pt$\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{N}\hfil$\crcr}}}
+\def\dvecN{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern0pt$\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-10pt\nointerlineskip}
+     $\hfil\displaystyle{N}\hfil$\crcr}}}
+
+%   u
+\def\uvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+\def\dvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+
+%   w
+\def\uvecw{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{w}\hfil$\crcr}}}
+\def\dvecw{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{w}\hfil$\crcr}}}
+
+%   v
+\def\uvecv{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{v}\hfil$\crcr}}}
+\def\dvecv{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{v}\hfil$\crcr}}}
+
+\def\astA{{}^\ast A}
+\def\circA{{}^\circ A}
+\def\astk{{}^\ast k}
+\def\circk{{}^\circ k}
+\def\astK{{}^\ast K}
+\def\circK{{}^\circ K}
+\def\astL{{}^\ast L}
+\def\circL{{}^\circ L}
+\def\astal{{}^\ast \al}
+\def\circal{{}^\circ \al}
+\def\astsi{{}^\ast \si}
+\def\circsi{{}^\circ \si}
+\def\aste{{}^\ast e}
+\def\circe{{}^\circ e}
+\def\astte{{}^\ast \te}
+\def\circte{{}^\circ \te}
+\def\astGa{{}^\ast \Ga}
+\def\circGa{{}^\circ \Ga}
+\def\Lie{\pounds}
+
+\long\def\Hide#1{}
+\long\def\HideMarked#1{\hfill{$\triangleright$}}
+\def\rtau{\tau}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\def\NormalStyle{\leftskip=2cm\rightskip=0cm\normalsize\parindent=5pt\parskip=3pt\normalbaselineskip=14pt\baselineskip=\normalbaselineskip}
+%\def\AbstractStyle{\leftskip=3cm\rightskip=1cm\scriptsize\parindent=0pt\parskip=0pt\normalbaselineskip=11pt\baselineskip=\normalbaselineskip}
+%\def\NoteStyle{\leftskip=3cm\rightskip=1cm\scriptsize\parindent=0pt\parskip=0pt\normalbaselineskip=11pt\baselineskip=\normalbaselineskip}
+
+\def\ShowLabel#1{\ref{#1}}
+
+\def\Bibliography{\begin{thebibliography}{199}\footnotesize\References}
+\def\EndBibliography{\end{thebibliography}}
+\def\bib#1#2{\bibitem{#1}#2}
+\def\Ref#1{\cite{#1}}
+
+
+\def\NewSection#1{\section{#1}}
+\def\NewSubSection#1{\subsection*{#1}}
+\def\NewAppendix#1#2{\section*{Appendix #1: #2}}
+\def\Acknowledgements{\section*{Acknowledgements}}
+\def\bs{\bigskip}
+\def\ms{\medskip}
+\def\ss{\smallskip}
+\def\ni{\noindent}
+
+\long\def\Note#1{\blockquote{\footnotesize {\bf Nota:}~#1\par}}
+\long\def\Ex#1{\blockquote{\footnotesize {\bf Esercizio:}~#1\par}}
+
+\def\eq#1{\begin{equation}#1\end{equation}}
+\def\eqLabel#1#2{\begin{equation}#1\label{#2}\end{equation}}
+
+
+\def\Cases#1{\begin{cases}#1\end{cases}}
+\def\Matrix#1{\begin{matrix}#1\end{matrix}}
+\def\Align#1{\begin{aligned}#1\end{aligned}}
+
+\def\eqs#1{\eq{\Align{#1}}}
+\def\eqsLabel#1#2{\eq{\Align{#1}\label{#2}}}
+
+
+
+
+\def\Abstract{\AbstractStyle{\bf Abstract. }}
+\def\EndAbstract{\par\NormalStyle}
+
+\def\TitleScript{}
+\def\TitleLine#1{\def\TitleScript{#1}}
+\def\MoreTitleLine#1{\edef\TitleScript{\TitleScript\\#1}}
+
+\def\AuthorScript{}
+\def\AuthorLine#1{\def\AuthorScript{#1}}
+\def\MoreAuthorLine#1{\edef\AuthorScript{\AuthorScript\\#1}}
+
+\def\AddressScript{}
+\def\AddressLine#1{\def\AddressScript{#1}}
+\def\MoreAddressLine#1{\edef\AddressScript{\AddressScript\\#1}}
+
+\date{}
+
+\def\BeginDocument{\begin{document}}
+
+\def\MakeTitle{
+\begin{center}
+{\Large\bf\sffamily\baselineskip=2pt\TitleScript}\\
+\vskip 10pt
+{\small by {\it \AuthorScript}}\\
+\vskip 10pt
+{\small \AddressScript}
+\end{center}
+\ms
+}
+
+\def\EndDocument{\end{document}}
+
+\def\Figure[#1]#2{\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[#1]{#2} }
+\def\Caption#1{\caption{#1}}
+\def\EndFigure{\end{figure}}
+
+\def\Diagram#1{\eq{
+\begindc{\commdiag}[10]
+#1
+\enddc%
+}%
+}
+
+\def\Itemize#1{\begin{itemize}#1\end{itemize}}
+\def\Item[#1]{\item[#1]}
+
+\def\AllReferences{}
+
+
+
+\def\Shrink{\small}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\BeginDocument
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\parindent=5pt
+\baselineskip=13pt
+\parskip=5pt
+
+
+
+
+
+\begin{document}
+
+\AllReferences
+
+
+%%%%%%%%%%%%%%%%%%%%% Publisher's Area please ignore %%%%%%%%%%%%%%%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Giorno 23: equazioni lineari}
+
+Una equazione sono 2 espressioni (che possono contenere incognite) poste uguali tra loro.
+
+\Note{È un'equazione $3x+2=2x$.
+Ma pure $2x+3y-4=3x=2y+1$.
+
+Siccome 0 è essa stessa una espressione, $3x-1=0$ è anche un'equazione.
+Più semplicemente, prediamo una funzione $f:\Q^n\arr \Q: (x_1, x_2,\dots, x_n)\mapsto f(x_1, x_2,\dots, x_n)$ a cui è associata l'equazione $f(x_1, x_2,\dots, x_n)=0$.
+
+In particolare $0=0$  (oppure $x=x$), è soddisfatta da ogni valore di $x$, quindi qualunque valore di $x$ è soluzione.
+
+Invece non c'è nessun valore di $x$ per cui $1=0$ (oppure $x+1=x$), che quindi è un'equazione senza soluzione. (Questa non ha soluzione è uno degli assiomi di Peano, tra l'altro.
+Ma allora l'abbiamo dimostrato? Certo, ma abbiamo assunto una paccata di assiomi tra cui quelli di Peano. Abbiamo detto che gli assiomi sono assunti per validi in un sistema formale e se abbiamo un modello diventano teoremi in un sistema assiomatico più grande.)
+
+Se vi chiedo di risolvere $ax+b=0$ dovrei specificare quali sono le incognite e quali i parametri anche se in genere si intende che $x,y, z, \dots$ sono le incognite.
+}
+ 
+Due equazioni sono dette {\it equivalenti} se hanno le stesse soluzioni, cosicché risolvere l'una o l'altra non fa differenza.
+Risolvere una equazione significa scrivere una lista di equazioni equivalenti che alla fine diventano $x=5$ (oppure $0=0$ o $1=0$) che rendano manifesti i valori dell'incognita che soddisfano l'equazione.
+
+Quindi l'unica cosa veramente rilevante è capire quando 2 equazioni sono equivalenti.
+
+\Note{
+Sia data un'equazione $f(x)=g(x)$. Se sommiamo ad ambo i membri una stessa funzione $h(x)$ otteniamo una equazione $f(x)+ h(x)= g(x)+ h(x)$ che è equivalente all'equazione di partenza.
+
+Infatti se $x=x_0$ è soluzione della prima $f(x_0)=g(x_0)$, allora abbiamo anche che $f(x_0)+ h(x_0)= g(x_0)+ h(x_0)$.
+Viceversa, se  $f(x_0)+ h(x_0)= g(x_0)+ h(x_0)$ ovviamente $h(x_0)=h(x_0)$ e quindi deve essere $f(x_0)= g(x_0)$.
+Quindi $x_0$ è soluzione della prima se e solo se è soluzione della seconda.
+
+Consideriamo ora l'equazione $f(x)h(x)=g(x)h(x)$.
+Se $x=x_0$ è soluzione della prima $f(x_0)=g(x_0)$, allora abbiamo anche che $f(x_0)h(x_0)= g(x_0)h(x_0)$ (purché $x_0$ sia nel dominio di $h(x)$).
+Viceversa, se  $f(x_0)h(x_0)= g(x_0)h(x_0)$ ovviamente $h(x_0)=h(x_0)$ e quindi, se $h(x_0)\not=0$, deve essere $f(x_0)= g(x_0)$.
+Ma se $h(x_0)=0$, allora $f(x_0)h(x_0)= g(x_0)h(x_0)$ anche se $f(x_0)\not= g(x_0)$.
+Quindi $x_0$ è soluzione della prima se (ma non solo se) è soluzione della seconda.
+Le 2 equazioni non sono equivalenti (a meno che la funzione $h(x)$ non sia priva di soluzioni).
+
+Quando moltiplichiamo e dividiamo per qualcosa che dipende dalle incognite possiamo introdurre con ciò delle soluzioni della seconda equazione che non erano soluzioni della prima.
+Si può fare ma se lo facciamo poi dobbiamo verificare che i valori trovati siano stati soluzioni della prima equazione per eliminare le soluzioni spurie.
+
+Ma se moltiplichiamo o dividiamo una equazione per una costante non nulla allora sicuramente otteniamo un'equazione equivalente (proprio perché la costante non nulla è anche una funzione che non si annulla mai.)
+
+Più in generale se applichiamo la stessa funzione ad ambo i membri $h(f(x))= h(g(x))$ otteniamo una equazione equivalente se $h$ è biettiva.
+Se $h$ non è biettiva possiamo introdurre delle soluzioni spurie. Alla fine dobbiamo quindi verificare le soluzioni trovate per eliminare le eventuali soluzioni spie.
+Ad esempio consideriamo $x-1=3-2x$ (che ha come unica soluzione $x=\frac[4/3]$) e invece di risolverla semplicemente applichiamo il quadrato ad ambo i membri
+$x^2-2x+1= 4x^2-12x+9$ che si semplifica a $3x^2-10x+8=0$.
+Questa si fattorizza come $\(x-\frac[4/3]\)\(3x-6\)=0$. (Ora non vi preoccupate di come io abbia fattorizzato, preoccupatevi che la fattorizzazione sia giusta, verificando che il prodotto dà quello che c'era.)
+
+Quest'ultima equazione ha 2 soluzioni, $x=\frac[4/3]$ (come la prima) e $x=2$ che è una soluzione spuria introdotta elevando a quadrato ambi i membri dovuta al fatto che la funzione $h(x)=x^2$
+non è biettiva (visto che $(-x)^2= x^2$).
+
+In effetti, la soluzione spuria corrisponde alla soluzione dell'equazione $x-1=-(3-2x)$ ($x=2$) che ha lo stesso quadrato di quella da cui siamo partiti.
+}
+
+Immaginatevi una equazione come una bilancia a 2 piatti. Se aggiungiamo un chilo a entrambi i piatti oppure se togliamo una mela da entrambi i piatti, i 2 piatti se erano
+in equilibrio restano in equilibrio (qualunque sia il peso di una mela).
+
+Quindi, riassumendo possiamo manipolare le equazioni sommando o sottraendo ad entrambi i membri quello che ci va, e moltiplicando o dividendo ambo i membri per quello che ci va purché non sia mai nullo.
+Più in generale possiamo applicare la stessa funzione ad ambo i membri ma se la funzione non è biettiva dobbiamo verificare le soluzioni trovate ed eliminare eventuali soluzioni spurie. 
+
+\ms
+Quindi possiamo trovare la soluzione generale di una qualunque equazione si può scrivere nella forma $ax+b=0$.
+
+\Note{Sommate $-b$ ad entrambi i membri: $ax+b-b=ax+0= ax$, $0-b=-b$, quindi $ax=-b$ è equivalente.
+
+Se $a=0$ questa equazione è equivalente a $0=-b$ che è impossibile se $b \not=0$ (non ci sono soluzioni)
+oppure indeterminata se $b=0$ (qualunque $x$ è soluzione).
+
+Se $a\not =0$, possiamo dividere per $a$: $ax\frac[1/a]= x$ e $-b\frac[1/a]= -\frac[b/a]$, quindi abbiamo l'equazione $x=-\frac[b/a]$ che è la soluzione cercata. 
+}
+
+Tutto ciò è generale perché abbiamo definito numeri interi negativi e numeri razionali in modo da poterlo sempre fare.
+
+
+Ma dovremmo iniziare affrontando un problema: cosa sono le equazioni lineari? 
+Sui libri trovate che le equazioni lineari sono quelle che si scrivono come $ax+b=0$ che è vero ma dovete avere chiaro in mente la differenza tra si scrivono così (queste sono  lineari)
+e si {\it possono} scrivere così (tutte le equazioni lineari si possono scrivere così). 
+L'equazione $x^2+ax+c= x^2+bx+d$ {\it è} un'equazione lineare ($(a-b)x+(c-b)=0$).
+L'equazione 
+\eq{
+\frac[ -x^2 +2x-1/ x^2-1]=1 
+}
+è lineare ($x+3=3x+3$, $2x=0$).
+
+Definire un'equazione lineare come un'equazione si può scrivere in una certa forma è come definire una frazione come $\frac[a/b]$, definisce un numerale non un numero.
+
+
+\Note{In verità noi possiamo definire cosa è una funzione $y=f(x)$ lineare e da questa un'equazione lineare $f(x)=0$.
+Tra l'altro {\it lineare} in verità ha 2 significati (polinomio di primo grado e polinomi {\it omogenei} di primo grado), bisogna portare pazienza.
+
+In ogni caso, una funzione è lineare (nel primo senso che è quello che si usa per le equazioni) se e soltanto se le soluzioni $(x, y): y=f(x)$ si dispongono lungo una retta, cioè se
+e solo se, data una soluzione $(x_0, y_0)$, tutte le altre sono nella forma $(x=x_0+as, y=y_0+bs)$ per ogni $s$ e con $a, b$ costanti. 
+
+Quindi una equazione è lineare se si ottiene da una funzione lineare $f(x)=0$.
+}
+
+Quindi sappiamo risolvere tutte le equazioni lineari con una incognita.
+
+
+
+\EndDocument
+\end
+
+
