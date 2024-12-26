@@ -1,0 +1,749 @@
+% !TEX TS-program = latex
+% !TEX spellcheck = it-IT
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{tikz} % LATEX
+\usetikzlibrary {automata}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Trim Size: 9.75in x 6.5in
+%% Text Area: 8in (include Runningheads) x 5in
+%% ws-ijgmmp.tex   :   2-9-08
+%% Tex file to use with ws-ijgmmp.cls written in Latex2E.
+%% The content, structure, format and layout of this style file is the
+%% property of World Scientific Publishing Co. Pte. Ltd.
+%% Copyright 1995, 2002 by World Scientific Publishing Co.
+%% All rights are reserved.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{pictexwd,dcpic}
+\usepackage{csquotes}
+\usepackage{nopageno}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{pictex, dcpic}
+\usepackage{color}
+%\usepackage{graphicx}
+%\numberwithin{equation}{section} % This line resets equation numbering when starting a new section.
+%\renewcommand{\theequation}{Eq. \thesection.\arabic{equation}} % This line ads "Eq." in front of your equation numbering.
+
+
+
+
+%
+%    Macros.    Version 1.2.0.beta
+%    The best use is to paste all of them into the papers
+%     1/8/2005
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			Greek		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\al{\alpha}
+\def\be{\beta}
+\def\de{\delta}
+\def\ga{\gamma}
+\def\up{\upsilon}
+\def\ep{\epsilon}
+\def\io{\iota}
+\def\te{\theta}
+\def\la{\lambda}
+\def\ze{\zeta}
+\def\om{\omega}
+\def\si{\sigma}
+\def\vp{\varphi}
+\def\vpi{\varpi}
+\def\ka{\kappa}
+\def\vs{\varsigma}
+\def\vr{\varrho}
+
+\def\De{\Delta}
+\def\Ga{\Gamma}
+\def\Te{\Theta}
+\def\La{\Lambda}
+\def\Om{\Omega}
+\def\Si{\Sigma}
+\def\Up{\Upsilon}
+
+\def\boldDe{\bf\Delta}
+\def\boldGa{\bf\Gamma}
+\def\boldTe{\bf\Theta}
+\def\boldLa{\bf\Lambda}
+\def\boldOm{\bf\Omega}
+\def\boldSi{\bf\Sigma}
+\def\boldUp{\bf\Upsilon}
+\def\boldXi{\bf\Xi}
+\def\boldPi{\bf\Pi}
+\def\boldPhi{\bf\Phi}
+\def\boldPsi{\bf\Psi}
+
+\def\boldal{\bf\al}
+\def\boldbe{\bf\be}
+\def\boldga{\bf\ga}
+\def\boldde{\bf\de}
+\def\boldep{\bf\ep}
+\def\boldze{\bf\ze}
+\def\boldeta{\bf\eta}
+\def\boldte{\bf\te}
+\def\boldio{\bf\io}
+\def\boldka{\bf\ka}
+\def\boldla{\bf\la}
+\def\boldmu{\hbox{\greekbold\char "16}}
+\def\boldnu{\hbox{\greekbold\char "17}}
+\def\boldxi{\hbox{\greekbold\char "18}}
+\def\boldpi{\hbox{\greekbold\char "19}}
+\def\boldrho{\hbox{\greekbold\char "1A}}
+\def\boldsi{\bf\si}
+\def\boldtau{\hbox{\greekbold\char "1C}}
+\def\boldup{\hbox{\greekbold\char "1D}}
+\def\boldphi{\hbox{\greekbold\char "1E}}
+\def\boldchi{\hbox{\greekbold\char "1F}}
+\def\boldpsi{\hbox{\greekbold\char "20}}
+\def\boldom{\hbox{\greekbold\char "21}}
+\def\boldvep{\hbox{\greekbold\char "22}}
+\def\boldvte{\hbox{\greekbold\char "23}}
+\def\boldvpi{\hbox{\greekbold\char "24}}
+\def\boldvrho{\hbox{\greekbold\char "25}}
+\def\boldvsi{\hbox{\greekbold\char "26}}
+\def\boldvphi{\hbox{\greekbold\char "27}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			Cal			 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \def\calA{{\hbox{\cal A}}}
+ \def\calU{{\hbox{\cal U}}}
+ \def\calB{{\hbox{\cal B}}}
+ \def\calC{{\hbox{\cal C}}}
+ \def\calI{{\hbox{\cal I}}}
+ \def\calQ{{\hbox{\cal Q}}}
+ \def\calP{{\hbox{\cal P}}}
+ \def\calL{{\hbox{\cal L}}}
+ \def\calE{{\hbox{\cal E}}}
+ \def\calW{{\hbox{\cal W}}}
+ \def\calV{{\hbox{\cal V}}}
+ \def\calS{{\hbox{\cal S}}}
+ \def\calF{{\hbox{\cal F}}}
+ \def\calR{{\hbox{\cal R}}}
+ \def\calO{{\hbox{\cal O}}}
+ \def\calM{{\hbox{\cal M}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			gothic		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \def\su{{\mathfrak{su}}}
+ \def\gl{{\mathfrak{gl}}}
+ \def\gotg{{\mathfrak{g}}}
+ \def\goth{{\mathfrak{h}}}
+ \def\gotm{{\mathfrak{m}}}
+ \def\gotk{{\mathfrak{k}}}
+ \def\spin{{\mathfrak{spin}}}
+ \def\slC{{\mathfrak{sl}}}
+ \def\O{{\mathfrak{O}}}
+ \def\Set{{\mathfrak{Set}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			Bbb			 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \def\one{\mathbb{I}}
+ \def\A{\mathbb{A}}
+ \def\B{\mathbb{B}}
+ \def\C{\mathbb{C}}
+ \def\D{\mathbb{D}}
+ \def\E{\mathbb{E}}
+ \def\F{\mathbb{F}}
+ \def\G{\mathbb{G}}
+ \def\H{\mathbb{H}}
+ \def\J{\mathbb{J}}
+ \def\K{\mathbb{K}}
+ \def\I{\mathbb{I}}
+ \def\L{\mathbb{L}}
+ \def\M{\mathbb{M}}
+ \def\N{\mathbb{N}}
+ \def\O{\mathbb{O}}
+ \def\P{\mathbb{P}}
+ \def\Q{\mathbb{Q}}
+ \def\R{\mathbb{R}}
+ \def\S{\mathbb{S}}
+ \def\T{\mathbb{T}}
+ \def\U{\mathbb{U}}
+ \def\V{\mathbb{V}}
+ \def\X{\mathbb{X}}
+ \def\Y{\mathbb{Y}}
+ \def\W{\mathbb{W}}
+ \def\Z{\mathbb{Z}}
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%		MathRoman		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\Tr{{\hbox{Tr}}}
+\def\Con{{\hbox{Con}}}
+\def\Aut{{\hbox{Aut}}}
+\def\Div{{\hbox{Div}}}
+\def\ad{{\hbox{ad}}}
+\def\Ad{{\hbox{Ad}}}
+\def\Re{{\hbox{Re}}}
+\def\Im{{\hbox{Im}}}
+\def\Card{{\hbox{Card}}}
+\def\Iso{{\hbox{Iso}}}
+\def\Geo{{\hbox{Geo}}}
+\def\Int{{\hbox{Int}}}
+\def\Inv{{\hbox{Inv}}}
+\def\Spin{{\hbox{Spin}}}
+\def\SO{{\hbox{SO}}}
+\def\SU{{\hbox{SU}}}
+\def\SL{{\hbox{SL}}}
+\def\GL{{\hbox{GL}}}
+\def\det{{\hbox{det}}}
+\def\Hom{{\hbox{Hom}}}
+\def\End{{\hbox{End}}}
+\def\Euc{{\hbox{Euc}}}
+\def\Lor{{\hbox{Lor}}}
+\def\Diff{{\hbox{Diff}}}
+\def\di{{\hbox{d}}}
+\def\id{{\hbox{\rm id}}}
+\def\diag{{\hbox{diag}}}
+\def\rank{{\hbox{rank}}}
+\def\span{{\hbox{span}}}
+\def\Sim{{\hbox{Sim}}}
+
+\def\Obj{{\hbox{Obj}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%		OtherSymbols		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\ip{\hbox to4pt{\leaders\hrule height0.3pt\hfill}\vbox to8pt{\leaders\vrule width0.3pt\vfill}\kern 2pt}
+
+% inner product
+\def\QDE{\hfill\hbox{\ }\vrule height4pt width4pt depth0pt} 
+\def\del{\partial}
+\def\na{\nabla}
+\def\inter{\cap}
+\def\Vec{\mathfrak{X}}
+\def\Lie{\hbox{\LieFont \$}}
+
+\def\arr{\rightarrow}
+\def\larr{\longrightarrow}
+\def\harr{\hookrightarrow}
+\def\hlarr{\lhook\joinrel\longrightarrow}
+\def\then{\Rightarrow}
+\def\semidirect{\hbox{\Bbb \char111}}
+\def\binomial#1#2{\left(\Matrix{#1\cr #2\cr}\right)}
+
+\def\barJ{\bar J}
+
+\def\sSU{{\hbox{SU}}}
+\def\so{{so}}
+%\def\N{{{\mathbb N}}}
+
+\def\file#1{{\tt #1}}
+\def\calH{{{\cal H}}}
+\def\calJ{{{\cal J}}}
+\def\calA{{{\cal A}}}
+\def\calV{{{\cal V}}}
+\def\calG{{{\cal G}}}
+\def\calP{{{\cal P}}}
+\def\calK{{{\cal K}}}
+\def\calD{{{\cal D}}}
+\def\scalD{{{\cal D}}}
+
+\def\Loop{{\hbox{Loop}}}
+\def\Hoop{{\hbox{Hoop}}}
+\def\Sym{{\hbox{Sym}}}
+\def\sR{{\R}}
+\def\dCor{dCor}
+\def\epm{\hbox{$^\pm$}}
+\def\dunion{\coprod}
+
+\def\nab#1{{\buildrel #1\over \na}}
+\def\frac[#1/#2]{\hbox{$#1\over#2$}}
+\def\Frac[#1/#2]{{#1\over#2}}
+\def\({\left(}
+\def\){\right)}
+\def\[{\left[}
+\def\]{\right]}
+\def\^#1{{}^{#1}_{\>\cdot}}
+\def\_#1{{}_{#1}^{\>\cdot}}
+\def\Label=#1{{\buildrel {\hbox{\fiveSerif \ShowLabel{#1}}}\over =}}
+\def\<{\kern -1pt}
+\def\Bar{\>|\>}
+\def\Dal{\hbox{\tenRelazioni  \char003}}
+
+\def\uvec#1{\vbox{\hbox{$\scriptstyle\rightharpoonup$}\vskip-9pt\hbox{$#1$}}}
+\def\dvec#1{\vtop{\hbox{$#1$}\vskip-10pt\hbox{$\scriptstyle\rightharpoondown$}}}
+\def\Cprod{\diamond}
+\def\obullet{\odot}
+\def\cbrt{{}^3\kern-5pt\sqrt}
+
+
+
+%%%%%%%%%%%%			frames 				%%%%%%%%%%%%%%%%%%%
+
+\def\red#1{{\color{red}{#1}}}
+\def\blue#1{{\color{blue}{#1}}}
+\def\green#1{{\color{green}{#1}}}
+
+\def\Red{\color{red}}
+\def\Blue{\color{blue}}
+\def\Green{\color{green}}
+
+
+\def\frame#1{\vbox{\hrule\hbox{\vrule\vbox{\kern2pt\hbox{\kern2pt#1\kern2pt}\kern2pt}\vrule}\hrule\kern-4pt}} 
+\def\redframe#1{\red{\frame{#1}}} 
+\def\greenframe#1{\green{\frame{#1}}} 
+\def\blueframe#1{\blue{\frame{#1}}} 
+
+\def\uline#1{\underline{#1}}
+\def\uuline#1{\underline{\underline{#1}}}
+\def\Box to #1#2#3{\frame{\vtop{\hbox to #1{\hfill #2 \hfill}\hbox to #1{\hfill #3 \hfill}}}}
+
+
+
+\def\ubal{\underline{\al}\kern1pt}
+\def\obal{\overline{\al}\kern1pt}
+
+\def\ubR{\underline{R}\kern1pt}
+\def\obR{\overline{R}\kern1pt}
+\def\ubom{\underline{\om}\kern1pt}
+\def\obxi{\overline{\xi}\kern1pt}
+\def\ubu{\underline{u}\kern1pt}
+\def\ube{\underline{e}\kern1pt}
+\def\obe{\overline{e}\kern1pt}
+\def\Limit{\>{\buildrel{r\arr\infty}\over \longrightarrow}\,}
+\def\union{\cup}
+\def\Emptyset{\varnothing}
+
+
+
+
+\def\Uvec#1{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{#1}\hfil$\crcr}}}
+\def\Dvec#1{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{#1}\hfil$\crcr}}}
+
+
+%   u 
+\def\uvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+\def\dvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+%\def\uvecu{\Uvec{u}}
+%\def\dvecu{\Dvec{u}}
+
+%   be
+\def\uvecbe{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern3pt$\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{\be}\hfil$\crcr}}}
+\def\dvecbe{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern1pt$\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-10pt\nointerlineskip}
+     $\hfil\displaystyle{\be}\hfil$\crcr}}}
+
+%   n
+\def\uvecn{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{n}\hfil$\crcr}}}
+\def\dvecn{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{n}\hfil$\crcr}}}
+
+%   m
+\def\uvecm{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{m}\hfil$\crcr}}}
+\def\dvecm{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{m}\hfil$\crcr}}}
+
+%   N
+\def\uvecN{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern3pt$\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{N}\hfil$\crcr}}}
+\def\dvecN{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern0pt$\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-10pt\nointerlineskip}
+     $\hfil\displaystyle{N}\hfil$\crcr}}}
+
+%   u
+\def\uvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+\def\dvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+
+%   w
+\def\uvecw{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{w}\hfil$\crcr}}}
+\def\dvecw{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{w}\hfil$\crcr}}}
+
+%   v
+\def\uvecv{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{v}\hfil$\crcr}}}
+\def\dvecv{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{v}\hfil$\crcr}}}
+
+\def\astA{{}^\ast A}
+\def\circA{{}^\circ A}
+\def\astk{{}^\ast k}
+\def\circk{{}^\circ k}
+\def\astK{{}^\ast K}
+\def\circK{{}^\circ K}
+\def\astL{{}^\ast L}
+\def\circL{{}^\circ L}
+\def\astal{{}^\ast \al}
+\def\circal{{}^\circ \al}
+\def\astsi{{}^\ast \si}
+\def\circsi{{}^\circ \si}
+\def\aste{{}^\ast e}
+\def\circe{{}^\circ e}
+\def\astte{{}^\ast \te}
+\def\circte{{}^\circ \te}
+\def\astGa{{}^\ast \Ga}
+\def\circGa{{}^\circ \Ga}
+\def\Lie{\pounds}
+
+\long\def\Hide#1{}
+\long\def\HideMarked#1{\hfill{$\triangleright$}}
+\def\rtau{\tau}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\def\NormalStyle{\leftskip=2cm\rightskip=0cm\normalsize\parindent=5pt\parskip=3pt\normalbaselineskip=14pt\baselineskip=\normalbaselineskip}
+%\def\AbstractStyle{\leftskip=3cm\rightskip=1cm\scriptsize\parindent=0pt\parskip=0pt\normalbaselineskip=11pt\baselineskip=\normalbaselineskip}
+%\def\NoteStyle{\leftskip=3cm\rightskip=1cm\scriptsize\parindent=0pt\parskip=0pt\normalbaselineskip=11pt\baselineskip=\normalbaselineskip}
+
+\def\ShowLabel#1{\ref{#1}}
+
+\def\Bibliography{\begin{thebibliography}{199}\footnotesize\References}
+\def\EndBibliography{\end{thebibliography}}
+\def\bib#1#2{\bibitem{#1}#2}
+\def\Ref#1{\cite{#1}}
+
+
+\def\NewSection#1{\section{#1}}
+\def\NewSubSection#1{\subsection*{#1}}
+\def\NewAppendix#1#2{\section*{Appendix #1: #2}}
+\def\Acknowledgements{\section*{Acknowledgements}}
+\def\bs{\bigskip}
+\def\ms{\medskip}
+\def\ss{\smallskip}
+\def\ni{\noindent}
+
+\long\def\Note#1{\blockquote{\footnotesize {\bf Nota:}~#1\par}}
+\long\def\Ex#1{\blockquote{\footnotesize {\bf Esercizio:}~#1\par}}
+
+\def\eq#1{\begin{equation}#1\end{equation}}
+\def\eqLabel#1#2{\begin{equation}#1\label{#2}\end{equation}}
+
+
+\def\Cases#1{\begin{cases}#1\end{cases}}
+\def\Matrix#1{\begin{matrix}#1\end{matrix}}
+\def\Align#1{\begin{aligned}#1\end{aligned}}
+
+\def\eqs#1{\eq{\Align{#1}}}
+\def\eqsLabel#1#2{\eq{\Align{#1}\label{#2}}}
+
+
+
+
+\def\Abstract{\AbstractStyle{\bf Abstract. }}
+\def\EndAbstract{\par\NormalStyle}
+
+\def\TitleScript{}
+\def\TitleLine#1{\def\TitleScript{#1}}
+\def\MoreTitleLine#1{\edef\TitleScript{\TitleScript\\#1}}
+
+\def\AuthorScript{}
+\def\AuthorLine#1{\def\AuthorScript{#1}}
+\def\MoreAuthorLine#1{\edef\AuthorScript{\AuthorScript\\#1}}
+
+\def\AddressScript{}
+\def\AddressLine#1{\def\AddressScript{#1}}
+\def\MoreAddressLine#1{\edef\AddressScript{\AddressScript\\#1}}
+
+\date{}
+
+\def\BeginDocument{\begin{document}}
+
+\def\MakeTitle{
+\begin{center}
+{\Large\bf\sffamily\baselineskip=2pt\TitleScript}\\
+\vskip 10pt
+{\small by {\it \AuthorScript}}\\
+\vskip 10pt
+{\small \AddressScript}
+\end{center}
+\ms
+}
+
+\def\EndDocument{\end{document}}
+
+\def\Figure[#1]#2{\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[#1]{#2} }
+\def\Caption#1{\caption{#1}}
+\def\EndFigure{\end{figure}}
+
+\def\Diagram#1{\eq{
+\begindc{\commdiag}[10]
+#1
+\enddc%
+}%
+}
+
+\def\Itemize#1{\begin{itemize}#1\end{itemize}}
+\def\Item[#1]{\item[#1]}
+
+\def\AllReferences{}
+
+
+
+\def\Shrink{\small}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\BeginDocument
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\parindent=5pt
+\baselineskip=13pt
+\parskip=5pt
+
+
+
+
+
+\begin{document}
+
+\AllReferences
+
+
+%%%%%%%%%%%%%%%%%%%%% Publisher's Area please ignore %%%%%%%%%%%%%%%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Giorno 25: potenze e radici}
+
+Tra i numeri naturali abbiamo definito il prodotto. Da piccoli (e noi abbiamo dimostrato) che $2\cdot 3= 2+2+2=3+3$.
+Quindi possiamo (e da piccoli fate così) definire il prodotto di naturali come somme iterate.
+Poi si dimostrano le proprietà del prodotto (associativa, commutativa, 1 è elemento neutro, e distributiva).
+
+Poi si passa agli interi e si ridefiniscono somma e prodotto 
+\eq{
+(a,b)+(c,d)= (a+c, b+d)
+\qquad\qquad
+(a,b)(c,d)= (ac+bd, ad+bc)
+}
+che godono delle stesse proprietà (più l'esistenza dell'opposto, l'inverso per la somma).
+
+Poi si passa ai razionali e si ridefiniscono somma e prodotto 
+\eq{
+(a,b)+(c,d)=(ad+bc,bd)
+\qquad\qquad
+(a,b)(c,d)= (ac, bd)
+}
+
+\Note{Occhio che quando definiamo gli interi, $(a, b)$ è una coppia di naturali, quando definiamo i razionali, $(a, b)$ è una coppia di interi.
+E anche la relazione di equivalenza è diversa.}
+
+Queste godono delle stesse proprietà (più l'esistenza dell'inverso per il prodotto).
+Prima o poi dovete fare i conti col fatto che il matematichese usa un numero finito di caratteri per parlare di strutture infinite e quindi prima o poi bisogna cominciare a fare economia (che gli informatici chiamano {\it overloading}).
+Di norma (in questo caso e poi pure più in generale -prodotti e somme di vettori, di matrici) operazioni che hanno le stesse proprietà tendono ad avere nomi uguali (somma di naturali, somma di interi, somma di razionali, somma di reali, somma di complessi, \dots) e sono distinte solo dal tipo degli argomenti a cui si applicano.
+
+Notate che si fa una certa fatica a ricondurre $\frac[2/3]\frac[5/7]$ a una somma di 10 fette di torta da $\frac[1/21]$. 
+La metafora del prodotto come somma iterata funziona coi naturali, spendono un certo numero di mesi per spiegarvela, poi alla fine {\it dovete} abbadonarla.
+
+
+\ms
+Nei numeri naturali (a parte lo zero) possiamo iterare il prodotto $aaa=a^3$ e definire le {\it potenze} $a^n= aa\dots a$, $n$ volte (con $n>0$).
+Abbiamo delle proprietà ovvie
+\eq{
+0^n=0
+\qquad
+a^1=a
+\qquad
+a^n a^m= a^{n+m}
+\qquad
+\(a^n\)^m= a^{nm}
+}
+oltre a $(ab)^n= a^n b^n$ (che però dipende anche dalla commutatività del prodotto mentre quelle sopra no).
+
+Sempre tra i numeri naturali, possiamo definire la radice che non è una operazione ben definita (non la potete fare sempre, come capita per la divisione e la sottrazione).
+Diciamo che $2$ è quel numero che elevato al quadrato dà 4 e scriviamo $2=\sqrt{2}$.
+Scriviamo $3=\sqrt{9}$ siccome $3^2=9$, scriviamo $5=\sqrt{25}$.
+
+Possiamo definite le radici cubiche $\cbrt{27}=3$ perché $3^3=27$, e così via.
+
+Quando un numero non è un quadrato perfetto possiamo dire che $\sqrt{10}= 3$ col resto di 1, intendendo che $3^2 +1=10$, solo che il resto $r$ di $\sqrt{n}$  ora non è più $0\le r<n$ come per le divisioni ma è $0\le r< (\sqrt{n}+1)^2-\sqrt{n}^2= 2\sqrt{n}+1$.
+
+\Note{Ad esempio, $n=9, 10, 11, 12, 13, 14, 15$ hanno tutti $\sqrt{n}=3$ con resti rispettivamente $0, 1, 2, 3, 4,5, 6$, cioè $0\le r<7= 2\sqrt{n}+1$.
+Le radici tra interi non hanno virgole, come le divisioni, hanno un resto.
+
+Non hanno neanche segno, queste si chiamano radici quadrate aritmetiche e sono sempre positive.
+Un numero naturale ha sempre una sola radice (aritmetica, positiva) e un resto.
+}
+
+
+
+Se vogliamo estendere le potenze ai razionali, possiamo vedere facilmente che (sempre con $n\in \N$ e $n>0$)
+\eq{
+\(\frac[1/a]\)^1=\frac[1/a]
+\qquad
+\(\frac[1/a]\)^n \(\frac[1/a]\)^m= \(\frac[1/a]\)^{n+m}
+\qquad
+\(\(\frac[1/a]\)^n\)^m= \(\frac[1/a]\)^{nm}
+}
+cosicché possiamo estendere la definizione alle basi razionali
+\eq{
+\(\frac[a/b]\)^n = \frac[a^n/b^n]
+}
+
+\Note{siccome $\frac[a/b]=\frac[ak/bk]$ sono la stesso numero razionale dobbiamo controllare che questa definizione non dipenda dal rappresentante, cioè
+\eq{
+\(\frac[ak/bk]\)^n = \frac[(ak)^n/(bk)^n]
+= \frac[a^n k^n/b^nk^n]
+= \frac[a^n/b^n]
+= \(\frac[a/b]\)^n 
+}
+}
+
+Con questa definizione, abbiamo immediatamente che $\(\frac[1/a]\)^n = \frac[1/a^n]$ che suggerisce di porre $\(\frac[1/a]\)^n= a^{-n}$ così abbiamo che 
+\eq{
+1=\(\frac[a/a]\)^n
+=\(\frac[1/a]\)^n a^n= a^{-n} a^n = a^{n-n}= a^0 
+}
+In questo modo estendiamo la definizione di potenza a esponenti interi e otteniamo che dobbiamo porre $a^0=1$ per ogni base $a\not= 0$.
+
+Ora possiamo confrontare le proprietà delle potenze con quelle delle radici
+\eq{
+{}^n\<\sqrt{0}=0
+\qquad
+{}^1\<\sqrt{a}=a
+\qquad
+{}^n\<\<\sqrt{a} \>  {}^m\<\<\sqrt{a} = {}^{nm}\<\<\sqrt{a^{m+n} }
+\qquad
+{}^m\<\sqrt{{}^n\<\sqrt{a} }= {}^{nm}\<\sqrt{a} 
+}
+che suggerisce di porre $ {}^m\<\<\sqrt{a}  = \(a\)^{\frac[1/m]}$ estendendo gli esponenti ad essere numeri razionali (e in questo caso si pone $a>0$ per evitare i problemi con le radici pari di numeri negativi).
+
+A questo punto abbiamo trasceso la definizione originale di potenza come prodotto iterato, abbiamo estero $a^q$, con $a>0$ razionale e $q\in \Q$.
+Valgono ancora le proprietà delle potenze
+\eq{
+a^q a^p= a^{q+p}
+\qquad
+\(a^q\)^p= a^{qp}
+}
+abbiamo $0^q=1$ quando $q\not=0$ (mentre, vedremo che $0^0$ resta indeterminato).
+
+
+\subsection*{Estrarre le radici quadrate a mano}
+
+Notate che $\sqrt{100n}= 10\sqrt{n}$ e il resto  $R=100r$, infatti partiamo da $\(\sqrt{n}\)^2+r= n $ e abbiamo
+\eqs{
+\sqrt{100n}^2+ R=& 100n\cr
+(10\sqrt{n})^2+ R=& 100n\cr
+100(\sqrt{n})^2+ R=& 100n\cr
+100(n-r)+ R=& 100n\cr
+\red{100n}-100r+ R=& \red{100n}\cr
+R=& 100r\cr
+}
+
+Questo suggerisce un algoritmo per trovare la radice quadrata $\sqrt{n}$.
+
+Scriviamo $n$ isolando coppie di cifre come se scrivessimo il numero in base 100.
+\Note{
+se $n=32677=  3\cdot 100^2+ 26\cdot100 + 77$
+}
+
+Facciamo la radice della cifra più alta $\sqrt{3}= 1^2 +2$. 
+Queste le sappiamo fare con le tabelline cercando il più grande quadrato perfetto minore di $n$.
+
+\Note{Leggete bene questa frase!}
+
+Quindi ora sappiamo che $(n=32677, n_1=1, r_1=22677)$
+\eq{
+n= (n_1 100)^2 + r_1
+}
+che è la nostra prima approssimazione della radice $\sqrt{n}\simeq n_1 100$.
+Se vogliamo migliorare l'approssimazione vorremmo trovare le decine $n_2 10$.
+Se abbiamo $r_1=2n_1 100 n_2 10+ (n_2 10)^2+ r_2$ (con $r_2\ge0$) allora possiamo scrivere
+ \eq{
+n= (n_1 100)^2 + 2n_1 100 n_2 + (n_2)^2+ r_2 = (n_1 100+n_2 10)^2 + r_2
+}
+Dobbiamo quindi cercare la più grande cifra $n_2$ per cui vale $r_1\le 2n_1 100 n_2 10+ (n_2 10)^2$, nel nostro caso $(n_2=8,  r_2= 277)$
+\eq{
+22677 \le 2000 n_2 + (n_2)^2 100
+\qquad
+226 \cdot 100 +77 \le n_2 (20+n_2)100 = 224\cdot 100
+}
+
+Quindi abbiamo 
+\eq{
+n=  (n_1 100+n_2 10)^2 + r_2
+}
+che stima $\sqrt{n}\simeq n_1 100+n_2 10$.
+
+Se troviamo $r_2 = 2(n_1 100+n_2 10)n_3 + (n_3)^2 + r_3$ con ($r_3\ge0$) allora possiamo completare la stima con le unità
+\eqs{
+n= & (n_1 100+n_2 10)^2 +2(n_1 100+n_2 10)n_3 + (n_3)^2 + r_3=\cr
+=& (n_1 100+n_2 10 + n_3)^2  + r_3
+}
+
+\Note{Nel nostro caso abbiamo 
+\eq{
+277 \le n_3( 360  + n_3) 
+}
+che produce $n_3=0$, $r_3= 277$.
+
+Quindi $32677= 180^2+277$, cioè $\sqrt{32677}=180$ (con un resto di $277$
+che infatti è compreso tra 0 e $2\cdot 180+1=361$).
+
+}
+
+Se qualcuno a scuola è stato esposto a questo algoritmo può vedere che, primo, lo aveva imparato a memoria senza capirlo,
+secondo, spero che ora si intraveda che c'è una logica dietro come c'è una logica dietro la divisione che corrisponde a dare stime e poi migliorarle.
+
+\EndDocument
+\end
+
+
