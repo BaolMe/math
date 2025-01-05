@@ -33,7 +33,10 @@
 %\usepackage{graphicx}
 %\numberwithin{equation}{section} % This line resets equation numbering when starting a new section.
 %\renewcommand{\theequation}{Eq. \thesection.\arabic{equation}} % This line ads "Eq." in front of your equation numbering.
+\usepackage{hyperref}
 
+
+\def\http#1#2{\href{#1}{#2}}
 
 
 
@@ -278,6 +281,7 @@
 \def\dvec#1{\vtop{\hbox{$#1$}\vskip-10pt\hbox{$\scriptstyle\rightharpoondown$}}}
 \def\Cprod{\diamond}
 \def\obullet{\odot}
+\def\cbrt{{}^3\kern-5pt\sqrt}
 
 
 
@@ -574,7 +578,7 @@ E se si vuole definire precisamente i numeri naturali abbiamo 2 strade, quella a
 
 Poi se definiamo i numeri naturali in qualche modo il resto diventa più semplice. Ora abbiamo una cosa su cui costruire il resto.
 Se volete questa è la challenge della matematica del 1800, trovare delle basi solide su cui costruire la matematica stessa.
-
+Una challenge che nessuno ha mai vinto davvero, ma abbiamo imparato un botto provandoci.
 
 
 
@@ -582,12 +586,12 @@ Se volete questa è la challenge della matematica del 1800, trovare delle basi s
 
 
 
-Non so ci avete pensato, che possiamo contare per sempre. Dato un numero, posso sempre scrivere e dare un nome al successivo.
+Non so se ci avete pensato, che possiamo contare per sempre. Dato un numero, posso sempre scrivere e dare un nome al successivo.
 Curiosamente non è sempre stato così.
 
-Io ricordo distintamente quando da piccolo ho realizzato la cosa. Scherzando, ma poi non tanto, dico spesso agli studenti che quella è stata la prima e unica
+Io ricordo distintamente quando da piccolo ho realizzato la cosa. Scherzando, ma poi non tanto, dico spesso agli studenti che quella è stata la prima (e unica)
 esperienza spirituale della mia vita. Per questo mi ha stupito realizzare che non tutti da piccoli sono passati per quell'esperienza.
-L'ho chiesto al forum e alcuni hanno stentato a arrivare al punto, qualcuno ha dovuto essere convinto che sa il nome delnumero 66 354 427 745 367.
+L'ho chiesto al forum e alcuni hanno stentato a arrivare al punto, qualcuno ha dovuto essere convinto che sa il nome del numero 66 354 427 745 367.
 In fondo è sempre bello quando il mondo ti stupisce.
 
 I romani avevano un numero finito di simboli con cui potevano scrivere un numero finito di numeri.
@@ -610,16 +614,16 @@ che arrivavano a un certo numero) e poi si dovevano fermare.
 Noi abbiamo lo zero, la notazione posizionale e la lingua (a parte i numeri 3, 11 e 20)
 è costruita in modo analogo.
 Conti fino a 10 poi 
-10-n arrivi fino a  20, 
-20-n arrivi fino a 30, 40, 50, ..., cento.
+10-$n$ arrivi fino a  20, 
+20-$n$ arrivi fino a 30, 40, 50, ..., cento.
 
-Poi si ricomincia con 1cento-nn, 2-cento--nn, ..., 9-cento--99.
+Poi si ricomincia con 1cento-$nn$, 2-cento-$nn$, ..., 9-cento-99.
 
-Poi viene 1000 e si ricomincia 1-mille-nnn, 2-mille-nnn, ... nnn-mille-nnn.
-Poi viene 1 milione e si ricomincia, 1-milione-nnnnnn, fino a nnn-mille-nnn-milioni-nnnnnn,
-poi viene 1miliardo e si ricomincia fino a  nnn-milioni-nnn-mila-nnn-miliardi-nnn-milioni-nnn-mila-nnn.
+Poi viene 1000 e si ricomincia 1-mille-$nnn$, 2-mille-$nnn$, ... $nnn$-mille-$nnn$.
+Poi viene 1 milione e si ricomincia, 1-milione-$nnnnnn$, fino a $nnn$-mille-$nnn$-milioni-$nnnnnn$,
+poi viene 1miliardo e si ricomincia fino a  $nnn$-milioni-$nnn$-mila-$nnn$-miliardi-$nnn$-milioni-$nnn$-mila-$nnn$.
 
-Voi potete dire che dieci cento mille milione miliardi funzionano come i romani.
+Voi potete dire che dieci, cento, mille, milione, miliardi, funzionano come i romani.
 E forse è questo che trae in inganno i bambini, in fondo chi ha bisogno di contare fino a 1 miliardo?
 
 Ma qui viene la novità, 1000-milioni-di-miliardi non hanno un nome vero 
@@ -629,7 +633,7 @@ Si chiamano
 1 miliardo-di-miliardi 
 
 E si ricomincia. E poi 
-1-milione di miliardi di miliardi-nnnnnnnnn
+1-milione di miliardi di miliardi-$nnnnnnnnn$
 e così finché avete voglia.
 
 
@@ -638,26 +642,21 @@ e così finché avete voglia.
 
 
 
-\Abstract
-Esistono infiniti numeri naturali.
-\EndAbstract
-
-\bs
 
 Che differenza c'è tra numeri {\it cardinali}, {\it ordinali} e {\it numerali}?
 
 I cardinali servono per contare gli oggetti (zero, uno, due, ...),
 gli ordinali servono per l'ordine (primo, secondo, terzo, ...) definiscono maggiore e minore, le operazioni di somma e prodotto in $\N$.
 
-I numerali sono diversi modi di rappresentare un numero: 11 si può scrivere 11 in base 10, 1011 in binario, $B$ in esadecimale, $X$ in romano.
-Quando i carcerati contano i giorni sul muro della cella le 4 stanghette verticali tagliate da una stanghetta obliqua sono un numerale per 5.
+I numerali sono diversi modi di rappresentare un numero: 11 si può scrivere 11 in base 10, $(1011)_{(2)}$ in binario, $(B)_{(16)}$ in esadecimale, $X$ in romano.
+Quando i carcerati contano i giorni sul muro della cella le 4 stanghette verticali tagliate da una stanghetta obliqua sono un numerale per il numero 5.
 
 Non ci occupiamo di numerali, sono solo rappresentazioni.
 Esistono cardinali (uno, due, tre, ...) e ordinali (primo, secondo, terzo, ...).
 
 Il problema è che finché parliamo di numeri finiti, cardinali e ordinali sono in corrispondenza 1-a-1.
 Ok dovremo dare definizioni per bene. Lo faremo.
-Ma se è così, serve uno solo dei 2 l'altro non serve.
+Ma se è così, serve uno solo dei due, l'altro non serve.
 
 MA quando consideriamo insiemi infiniti i numeri ordinali sono molti di più.
 Quindi gli ordinali sono molto meglio.
@@ -668,7 +667,7 @@ Per essere sinceri questi primi giorni servono a far capire che ci sono un sacco
 Ancora non abbiamo detto COSA è un numero naturale.
 
 Qui i matematici si dividono in 2. Metà predilige le proprietà, le enuncia
-e se non si cura di cosa sia un numero. L'altra metà definisce cosa è un numero naturale
+e non si cura di cosa {\it sia} un numero. L'altra metà definisce cosa è un numero naturale
 (in genere come classe di equivalenza di insiemi finiti)
 e poi usando questa rappresentazione definire le operazioni (eg somma e prodotto)
 e per dimostrare le proprietà (eg commutativa, associativa, ...).
@@ -682,7 +681,7 @@ Nell'800 Peano ha dato i seguenti assiomi per i numeri naturali.
 1) 0 è un numero naturale.
 
 \quad
-2) esiste una funzione $s: \N\arr \N$ e diciamo che $s(n)$ è il successore di $n$.
+2) esiste una funzione $s: \N\arr \N$ e diciamo che $s(n)$ è il {\it successore} di $n$.
 
 \quad
 3) se $x$ diverso da $y$ allora $s(x)$ è diverso da $s(y)$
@@ -2912,6 +2911,769 @@ Solo che quest'ultimo paragrafo copre i secoli da Cardano (1500) a Euler (1800) 
 
 Per ora siamo contenti che sappiamo risolvere tutte le equazioni di primo e secondo grado come già sapeva fare Al-Khwārizmī.
 
+
+\section*{Giorno 25: potenze e radici}
+
+Tra i numeri naturali abbiamo definito il prodotto. Da piccoli (e noi abbiamo dimostrato) che $2\cdot 3= 2+2+2=3+3$.
+Quindi possiamo (e da piccoli fate così) definire il prodotto di naturali come somme iterate.
+Poi si dimostrano le proprietà del prodotto (associativa, commutativa, 1 è elemento neutro, e distributiva).
+
+Poi si passa agli interi e si ridefiniscono somma e prodotto 
+\eq{
+(a,b)+(c,d)= (a+c, b+d)
+\qquad\qquad
+(a,b)(c,d)= (ac+bd, ad+bc)
+}
+che godono delle stesse proprietà (più l'esistenza dell'opposto, l'inverso per la somma).
+
+Poi si passa ai razionali e si ridefiniscono somma e prodotto 
+\eq{
+(a,b)+(c,d)=(ad+bc,bd)
+\qquad\qquad
+(a,b)(c,d)= (ac, bd)
+}
+
+\Note{Occhio che quando definiamo gli interi, $(a, b)$ è una coppia di naturali, quando definiamo i razionali, $(a, b)$ è una coppia di interi.
+E anche la relazione di equivalenza è diversa.}
+
+Queste godono delle stesse proprietà (più l'esistenza dell'inverso per il prodotto).
+Prima o poi dovete fare i conti col fatto che il matematichese usa un numero finito di caratteri per parlare di strutture infinite e quindi prima o poi bisogna cominciare a fare economia (che gli informatici chiamano {\it overloading}).
+Di norma (in questo caso e poi pure più in generale -prodotti e somme di vettori, di matrici) operazioni che hanno le stesse proprietà tendono ad avere nomi uguali (somma di naturali, somma di interi, somma di razionali, somma di reali, somma di complessi, \dots) e sono distinte solo dal tipo degli argomenti a cui si applicano.
+
+Notate che si fa una certa fatica a ricondurre $\frac[2/3]\frac[5/7]$ a una somma di 10 fette di torta da $\frac[1/21]$. 
+La metafora del prodotto come somma iterata funziona coi naturali, spendono un certo numero di mesi per spiegarvela, poi alla fine {\it dovete} abbadonarla.
+
+
+\ms
+Nei numeri naturali (a parte lo zero) possiamo iterare il prodotto $aaa=a^3$ e definire le {\it potenze} $a^n= aa\dots a$, $n$ volte (con $n>0$).
+Abbiamo delle proprietà ovvie
+\eq{
+0^n=0
+\qquad
+a^1=a
+\qquad
+a^n a^m= a^{n+m}
+\qquad
+\(a^n\)^m= a^{nm}
+}
+oltre a $(ab)^n= a^n b^n$ (che però dipende anche dalla commutatività del prodotto mentre quelle sopra no).
+
+Sempre tra i numeri naturali, possiamo definire la radice che non è una operazione ben definita (non la potete fare sempre, come capita per la divisione e la sottrazione).
+Diciamo che $2$ è quel numero che elevato al quadrato dà 4 e scriviamo $2=\sqrt{2}$.
+Scriviamo $3=\sqrt{9}$ siccome $3^2=9$, scriviamo $5=\sqrt{25}$.
+
+Possiamo definite le radici cubiche $\cbrt{27}=3$ perché $3^3=27$, e così via.
+
+Quando un numero non è un quadrato perfetto possiamo dire che $\sqrt{10}= 3$ col resto di 1, intendendo che $3^2 +1=10$, solo che il resto $r$ di $\sqrt{n}$  ora non è più $0\le r<n$ come per le divisioni ma è $0\le r< (\sqrt{n}+1)^2-\sqrt{n}^2= 2\sqrt{n}+1$.
+
+\Note{Ad esempio, $n=9, 10, 11, 12, 13, 14, 15$ hanno tutti $\sqrt{n}=3$ con resti rispettivamente $0, 1, 2, 3, 4,5, 6$, cioè $0\le r<7= 2\sqrt{n}+1$.
+Le radici tra interi non hanno virgole, come le divisioni, hanno un resto.
+
+Non hanno neanche segno, queste si chiamano radici quadrate aritmetiche e sono sempre positive.
+Un numero naturale ha sempre una sola radice (aritmetica, positiva) e un resto.
+}
+
+
+
+Se vogliamo estendere le potenze ai razionali, possiamo vedere facilmente che (sempre con $n\in \N$ e $n>0$)
+\eq{
+\(\frac[1/a]\)^1=\frac[1/a]
+\qquad
+\(\frac[1/a]\)^n \(\frac[1/a]\)^m= \(\frac[1/a]\)^{n+m}
+\qquad
+\(\(\frac[1/a]\)^n\)^m= \(\frac[1/a]\)^{nm}
+}
+cosicché possiamo estendere la definizione alle basi razionali
+\eq{
+\(\frac[a/b]\)^n = \frac[a^n/b^n]
+}
+
+\Note{siccome $\frac[a/b]=\frac[ak/bk]$ sono la stesso numero razionale dobbiamo controllare che questa definizione non dipenda dal rappresentante, cioè
+\eq{
+\(\frac[ak/bk]\)^n = \frac[(ak)^n/(bk)^n]
+= \frac[a^n k^n/b^nk^n]
+= \frac[a^n/b^n]
+= \(\frac[a/b]\)^n 
+}
+}
+
+Con questa definizione, abbiamo immediatamente che $\(\frac[1/a]\)^n = \frac[1/a^n]$ che suggerisce di porre $\(\frac[1/a]\)^n= a^{-n}$ così abbiamo che 
+\eq{
+1=\(\frac[a/a]\)^n
+=\(\frac[1/a]\)^n a^n= a^{-n} a^n = a^{n-n}= a^0 
+}
+In questo modo estendiamo la definizione di potenza a esponenti interi e otteniamo che dobbiamo porre $a^0=1$ per ogni base $a\not= 0$.
+
+Ora possiamo confrontare le proprietà delle potenze con quelle delle radici
+\eq{
+{}^n\<\sqrt{0}=0
+\qquad
+{}^1\<\sqrt{a}=a
+\qquad
+{}^n\<\<\sqrt{a} \>  {}^m\<\<\sqrt{a} = {}^{nm}\<\<\sqrt{a^{m+n} }
+\qquad
+{}^m\<\sqrt{{}^n\<\sqrt{a} }= {}^{nm}\<\sqrt{a} 
+}
+che suggerisce di porre $ {}^m\<\<\sqrt{a}  = \(a\)^{\frac[1/m]}$ estendendo gli esponenti ad essere numeri razionali (e in questo caso si pone $a>0$ per evitare i problemi con le radici pari di numeri negativi).
+
+A questo punto abbiamo trasceso la definizione originale di potenza come prodotto iterato, abbiamo estero $a^q$, con $a>0$ razionale e $q\in \Q$.
+Valgono ancora le proprietà delle potenze
+\eq{
+a^q a^p= a^{q+p}
+\qquad
+\(a^q\)^p= a^{qp}
+}
+abbiamo $0^q=1$ quando $q\not=0$ (mentre, vedremo che $0^0$ resta indeterminato).
+
+
+\subsection*{Estrarre le radici quadrate a mano}
+
+Notate che $\sqrt{100n}= 10\sqrt{n}$ e il resto  $R=100r$, infatti partiamo da $\(\sqrt{n}\)^2+r= n $ e abbiamo
+\eqs{
+\sqrt{100n}^2+ R=& 100n\cr
+(10\sqrt{n})^2+ R=& 100n\cr
+100(\sqrt{n})^2+ R=& 100n\cr
+100(n-r)+ R=& 100n\cr
+\red{100n}-100r+ R=& \red{100n}\cr
+R=& 100r\cr
+}
+
+Questo suggerisce un algoritmo per trovare la radice quadrata $\sqrt{n}$.
+
+Scriviamo $n$ isolando coppie di cifre come se scrivessimo il numero in base 100.
+\Note{
+se $n=32677=  3\cdot 100^2+ 26\cdot100 + 77$
+}
+
+Facciamo la radice della cifra più alta $\sqrt{3}= 1^2 +2$. 
+Queste le sappiamo fare con le tabelline cercando il più grande quadrato perfetto minore di $n$.
+
+\Note{Leggete bene questa frase!}
+
+Quindi ora sappiamo che $(n=32677, n_1=1, r_1=22677)$
+\eq{
+n= (n_1 100)^2 + r_1
+}
+che è la nostra prima approssimazione della radice $\sqrt{n}\simeq n_1 100$.
+Se vogliamo migliorare l'approssimazione vorremmo trovare le decine $n_2 10$.
+Se abbiamo $r_1=2n_1 100 n_2 10+ (n_2 10)^2+ r_2$ (con $r_2\ge0$) allora possiamo scrivere
+ \eq{
+n= (n_1 100)^2 + 2n_1 100 n_2 + (n_2)^2+ r_2 = (n_1 100+n_2 10)^2 + r_2
+}
+Dobbiamo quindi cercare la più grande cifra $n_2$ per cui vale $r_1\le 2n_1 100 n_2 10+ (n_2 10)^2$, nel nostro caso $(n_2=8,  r_2= 277)$
+\eq{
+22677 \le 2000 n_2 + (n_2)^2 100
+\qquad
+226 \cdot 100 +77 \le n_2 (20+n_2)100 = 224\cdot 100
+}
+
+Quindi abbiamo 
+\eq{
+n=  (n_1 100+n_2 10)^2 + r_2
+}
+che stima $\sqrt{n}\simeq n_1 100+n_2 10$.
+
+Se troviamo $r_2 = 2(n_1 100+n_2 10)n_3 + (n_3)^2 + r_3$ con ($r_3\ge0$) allora possiamo completare la stima con le unità
+\eqs{
+n= & (n_1 100+n_2 10)^2 +2(n_1 100+n_2 10)n_3 + (n_3)^2 + r_3=\cr
+=& (n_1 100+n_2 10 + n_3)^2  + r_3
+}
+
+\Note{Nel nostro caso abbiamo 
+\eq{
+277 \le n_3( 360  + n_3) 
+}
+che produce $n_3=0$, $r_3= 277$.
+
+Quindi $32677= 180^2+277$, cioè $\sqrt{32677}=180$ (con un resto di $277$
+che infatti è compreso tra 0 e $2\cdot 180+1=361$).
+
+}
+
+Se qualcuno a scuola è stato esposto a questo algoritmo può vedere che, primo, lo aveva imparato a memoria senza capirlo,
+secondo, spero che ora si intraveda che c'è una logica dietro come c'è una logica dietro la divisione che corrisponde a dare stime e poi migliorarle.
+
+
+
+\newpage
+\NewSection{Sesta settimana}
+
+Ora bisogna cominciare a puntate ai numeri reali, che comparta un po' di limiti, almeno delle successioni.
+Questo ci consente di discutere Zenone e i sui argomenti che sono un punto di partenza perfetto per i limiti di successioni $a:\N\arr \Q$.
+
+Poi i limiti delle funzioni reali secondo me vanno fatti nell'ambito della topologia, perché sono proprio meglio della definizione classica in analisi
+(che poi in un certo senso è un caso particolare delle definizioni in topologia).
+
+
+\section*{Giorno 26: Zenone e paradossi}
+
+Zenone è filosofo greco del quinto secolo ac.
+Noto soprattutto per i paradossi omonimi atti a dimostrare l'impossibilità del moto.
+Questi argomenti sono interessanti da diversi punti di vista. Mostrano che non c'era ancora una distinzione netta tra verità logica e verità fisica, oltre che i greci non sapevano contare davvero.
+Hanno avuto una buona comprensione delle frazioni, un'ottima geometria, ma poca algebra, una pessima comprensione degli infiniti, per non parlare di zero e numeri negativi.
+Oh, mica gli se ne fa una colpa, è solo evidenza che a quel tempo mancavano ancora gli strumenti per affrontare decentemente questi argomenti.
+
+Non credo sia essenziale analizzare ognuno dei paradossi, ce ne basta uno, diciamo quello noto come {\it il paradosso di Achille e la tartaruga}.
+Zenone argomenta che se Achille (noto velocista dell'antichità) venisse sfidato alla corsa da una tartaruga (che è considerata una velocista solo da Bruno Lauzi), e Achille divertito concedesse un certo vantaggio alla tartaruga, diciamo $10$ metri (pollici, passi, cubiti, \dots) allora non potrebbe mai raggiungere la tartaruga.
+
+L'argomento va così: per correre i primi 10 metri Achille impiegherebbe un tempo $t_1$ e un questo tempo la tartaruga percorrerebbe uno spazio $s_1$.
+Poi Achille impiegherebbe un tempo $t_2$ per percorrere lo spazio $s_1$ che lo separa dalle tartaruga, ma in quel tempo  la tartaruga percorrerebbe uno spazio $s_2$.
+Quindi Achille impiegherebbe un tempo $t_3$ per percorrere lo spazio $s_2$ che lo separa dalle tartaruga, ma in quel tempo  la tartaruga percorrerebbe uno spazio $s_3$.
+E via così.
+Quindi il tempo impiegato da Achille per solo raggiungere la tartaruga sarebbe $T=t_1+t_2+t_3+\dots$
+che sarebbe infinito (perché è evidente che la somma di infiniti numeri è infinita per Zenone) e quindi possiamo dire che Achille non raggiungerebbe mai la tartaruga, tanto meno riuscirebbe a superarla.
+Quindi, conclude Zenone, nulla può muoversi!
+
+\Note{Detto così il ragionamento è un po' balzano, ma è preciso rispetto agli argomenti che ci servono dopo.
+Zenone comunque era meno cretino di quanto si potrebbe pensare. I suoi argomenti hanno ispirato Democrito e alla fine hanno portato agli atomisti che in un certo senso hanno descritto un mondo più simile a come lo descriviamo noi oggi rispetto a quello degli altri filosofi.
+
+Anche se alla fine noi dovremmo diffidare da questi argomenti logici che pretendono di dimostrare logicamente qualcosa di reale senza riconoscere che la logica e la fisica parlan0o di 2 cose diverse. Non riconoscere questa separazione è una sorta di monoteismo logico che, come tutti i monoteismi, finisce per avere torto marcio.}
+
+Ma qui a noi basta molto meno. Facciamo un modello più preciso. Achille corre a velocità $w$ e la tartaruga a velocità $v<w$.
+abbiamo che $t_1= \frac[s_1/ w]$ e  la tartaruga in questo tempo percorre $s_2= vt_1= \frac[vs_1/ w]$.
+Quindi Achille percorre lo spazio $s_2$ in un tempo $t_2=  \frac[s_2/ w] = \frac[vs_1/ w^2]$ e e  la tartaruga in questo tempo percorre $s_3= vt_2= \frac[v^2s_1/ w^2]$.
+E via così $t_3=   \frac[v^2s_1/ w^3]$ e $s_4= \frac[v^3s_1/ w^3]$,
+$t_4=   \frac[v^3s_1/ w^4]$ e $s_5= \frac[v^4s_1/ w^4]$.
+Quindi il tempo impiegato da Achille a raggiungere la tartaruga sarebbe veramente somma di infiniti contributi
+\eqs{
+T=& \Frac[s_1/ w]+ \Frac[vs_1/ w^2] +  \Frac[v^2s_1/ w^3] + \Frac[v^3s_1/ w^4]+\dots + \Frac[v^{k-1}s_1/ w^k] +\dots =\cr
+=&  \Frac[s_1/w] \( 1+ \Frac[v/ w] + \Frac[v^2/ w^2] +  \Frac[v^3/ w^3]+\dots + \Frac[v^{k}/ w^k] +\dots \)
+}
+
+Quello che non sta né in cielo né in terra è la conclusione che la somma di infiniti contributi sia necessariamente infinita, cosa talmente evidente che Zenone non ci spende più di una parola.
+
+\Note{Mettiamo da parte un po' di algebra. 
+Consideriamo la quantità $1-z^{k+1}$ che si annulla per $z=1$, quindi il polinomio $1-z^{k+1}$ si può scrivere come il prodotto di $(1-z)$ per un polinomio di grado $k$. 
+Controllate che 
+\eq{
+\(1-z^{k+1}\)= (1-z)(1+z+z^2+\dots+ z^k)
+}
+come si vede sviluppando il prodotto. Qui non ci sono infiniti, solo $k$ termini con  $k$ qualunque ma finito.
+
+Quindi possiamo scrivere
+\eq{
+\( 1+ \Frac[v/ w] + \Frac[v^2/ w^2] +  \Frac[v^3/ w^3]+\dots + \Frac[v^{k}/ w^k] \) = \Frac[{1-\frac[v/w]}/{1-\(\frac[v/w]\)^{k+1}}]
+}
+e se assumiamo che Achille abbia una velocità maggiore di quella della tartaruga ($w>v$) allora $0<z= \frac[v/w] <1$.
+}
+
+Quindi possiamo scrivere il tempo impiegato a percorrere $k$ passi come
+\eq{
+T_k= t_1+ t_2+\dots+t_k 
+=  \Frac[s_1/w] \Frac[{1-z}/{1-z^{k+1}}]
+}
+Intanto vediamo che per ogni $k$ finito, $T_k$ è finito, siccome $z<1$ il denominatore $1-z^{k+1}$ non si annulla mai.
+
+Ora il punto è mostrare che anche per $k$ {\it che tende ad infinito} $T_k$ resta finito.
+
+\Note{Poniamo $z=\frac[v/w]<1$ e
+mostriamo che per ogni $k$ abbiamo che  $T_k< 2\Frac[s_1/w] $.
+\eqs{
+& \Frac[s_1/w] \( 1+ z+ z^2 +  z^3+\dots + z^k\)  < 2\Frac[s_1/w] \cr
+&1+ z + z^2+  z^3+\dots + z^k  < 2 \cr
+&z+ z^2+  z^3+\dots + z^k  < 1 \cr
+&z\( 1 + z+  z^2+\dots + z^{k-1} \) < 1 \cr
+&z\Frac[1-z/{1-z^k}]< 1 \cr
+}
+Ora possiamo ricordare che $z<1$, quindi $z^k<1$, e quindi $1-z^k>0$.
+Quindi possiamo semplificare
+\eq{
+z-z^2< 1-z^k
+\qquad\iff\quad
+1> z(1+z^{k-1}) -z^2> z-z^2>z
+}
+Visto che $z<1$ (e $z^2<z$), questa è soddisfatta.
+}
+
+
+Ora possiamo dire che, visto che $T_k<2$ per ogni $k$, è un po' difficile credere che la somma degli infiniti contributi $T=\sum_{k=1}^\infty t_k$
+sia infinito.
+
+E infatti non lo è, se diamo le definizioni e creiamo un contesto in cui sappiamo dimostrare qualcosa di queste somme infinite.
+Cosa che facciamo tra un po'.
+
+Va detto che questi argomenti non erano del tutto sconosciuti ai greci. Archimede (terzo secolo ac) faceva qualcosa tipo quello che abbiamo fatto qui sopra, con dimostrazioni geometriche
+(ma consentendo di sommare infinite quantità). Ma diciamo che questo tipo di ragionamenti non erano condivisi da tutti a quei tempi, non rientrano in Euclide (che consentiva solo numeri finiti).
+
+Da un punto di vista moderno, questo tipo di ragionamenti, che Archimede chiamava per {\it esaustione}, sono equivalenti alla nostra analisi e calcolo differenziale (che però sono di 1800 anni dopo). 
+
+I famosi teoremi di Archimede sul galleggiamento e stabilità delle coppe in acqua sono qualcosa che noi facciamo facendo qualche integrale che infatti è definito (da Riemann) come somma di infiniti contributi infinitesimi.
+
+Tra l'altro se guardate la \http{https://maddmaths.simai.eu/news-2/due-liceali-americane-hanno-trovato-una-nuova-dimostrazione-del-teorema-di-pitagora/}{notizia}
+e provate a ripercorrere la dimostrazione, vedrete che non si tratta di una dimostrazione nel senso di Euclide, ma contiene un processo di esaustione come avrebbe fatto Archimede.
+
+\ms
+Prima di procedere con la teoria generale diamo un altro esempio. Considerate la somma infinita
+\eq{
+s=1+ \Frac[1/2]+ \Frac[1/4] +\dots  + \Frac[1/2^k] + \dots
+}
+e leggetela così. 
+Camminate per una misura 1, poi per una misura $\frac[1/2]$ (cioè $\frac[1/2]$ meno di quello che serve per arrivare a 2),
+ poi per una misura $\frac[1/4]$ (cioè $\frac[1/4]$ meno di quello che serve per arrivare a 2),
+ poi per una misura $\frac[1/8]$ (cioè $\frac[1/8]$ meno di quello che serve per arrivare a 2),
+ e via così.
+
+Così è più evidente che al passo $k$ manca $\frac[1/2^k]$ per arrivare a 2 e quindi non raggiungete mai $2$, ci si avvicina indefinitamente a 2 sempre percorrendo 
+ad ogni passo metà dello spazio quello che manca per arrivare a $2$.
+
+Come nel caso precedente, questo mostra che è ragionevole asepttarsi che in qualche senso da precisare la somma di infiniti numeri sempre più piccoli possa restare finito.
+
+
+
+\section*{Giorno 27: serie, successioni e limiti}
+
+
+Una {\it successione} (nei numeri razionali) è una funzione $a:\N\arr \Q: k\mapsto a_k$. 
+Ad esempio, dato $z\in \Q$, $a:k\mapsto z^k$ è una successione, $b:k\mapsto \frac[z/k+1]$ pure.
+
+Un {\it intervallo} di $\Q$ è un sottoinsieme $B\in \Q$ tale che se $q_0, q_1\in B$ allora per ogni $q\in \Q$ tale che $q_0<q<q_1$ abbiamo che $q\in B$.
+Ad esempio, $(q_0, q_1)=\{q\in \Q: q_0<q<q_1\}$ sono intervalli.
+
+Una {\it intorno di $q\in\Q$} è un intervallo che contiene $q\in \Q$. 
+
+Un {\it aperto} in $\Q$ è un sottoinsieme $U\subset \Q$ tale che per ogni $q\in U$ esiste un intorno $B_q$ di $q$ contenuto in $B_q\subset U$.
+
+\Note{Si noti che $\Emptyset$ è un aperto di $\Q$, e che $\Q$ è pure un aperto di $\Q$.
+
+L'intersezione di 2 aperti $U_1\inter U_2$ è un aperto.
+
+L'unione di 2 aperti $U_1\union U_2$ è un aperto.
+
+Data una famiglia $U_\al$ con $\al\in I$ di aperti, magari una famiglia infinita (numerabile o non numerabile), allora
+\eq{
+U=\union_{\al\in I} U_\al = \{q\in \Q: \exists \al\in I: q\in U_\al\}
+}
+è pure un aperto.
+
+Infatti se $q\in U$, allora $q\in U_\al$ per qualche $\al\in I$. Ma $U_\al$ è aperto, quindi per ogni $q_\al\in U_\al$ esiste un intorno $V_\al \subset U_\al$.
+Ma se $V_\al \subset U_\al$, allora $V_\al \subset U_\al\subset U$.
+In particolare esiste un intorno $V$ di $q$ contenuto in $U_\al\subset U$.
+Quindi $U$ contiene un intorno di di ogni suo punto e, per definizione, è aperto.
+
+[Se lo leggete 1 parola al minuto invece che i soliti 1 parole al secondo, credo dovrebbe essere sufficientemente convincente.]
+
+Questo definisce una topologia su $\Q$, detta la {\it topologia standard}, o la {\it topologia delle palle}.
+Per ora non sappiamo cosa sia una topologia (che corrisponde a definire gli aperti di un insieme). 
+Per ora prendetelo come un modello di quello che diventerà un sistema assiomatico dopo. 
+Ma nel modello possiamo dimostrare le proprietà come teoremi.
+Le proprietà enunciate sopra diventeranno gli assiomi della topologia, che però si applica a insiemi molto più generali di $\Q$.
+
+Poi questo è un modello di topologia è infatti ha anche teoremi che sono dimostrati in questo caso che non sono veri in generale ma solo per specifici tipi di topologie.
+Ad esempio questo modello è una topologia metrica, ma esistono topologie non metriche che possono non condividere tutte le proprietà di quelle metriche. 
+}
+
+Possiamo fare circa la stessa cosa in $\N$. Un {\it intorno di $\infty$} è un sottoinsieme $I_n=\{N\in \N: n<N\}\subset \N$.
+
+Ora data una successione $a:\N\arr \Q$ diciamo che 
+\eq{
+\lim_{k\arr \infty} a_k = q\in \Q
+} e diciamo che il limite all'infinito della successione è uguale a $q\in \Q$ se
+per ogni intorno $B_q$ esiste un intorno $I_n$ tale che per ogni $n\in I_k$ abbiamo che $a_n\in B_q$.
+
+\Note{Ricordate quando vi dicevo che i quantificatori sono importanti? nella definizione di limite di una successione ce ne sono 3 e se non li ricordate come sono la definizione viene compromessa.
+Per la stessa ragione, un testo matematico è ridondante per quel che riguarda il quantificatori rispetto ai testi non matematici.
+I lettori tendono a saltare le cose che non si aspettano e quindi a non capire una mazza di quello che c'è scritto. Prendetevi il tempo perché il 90\% delle difficoltà viene dal voler leggere un testo matematico come se fosse una poesia.
+}
+
+Ad esempio, consideriamo la successione $a:k\mapsto a_k=1-\frac[3/k]$ e prendiamo $q=1$.
+Vogliamo mostrare che $\lim_{k\arr \infty} a_k = 1$. 
+Dobbiamo quindi mostrare che per ogni intorno $(q_0, q_1)$ (che è un intorno di 1 se e solo se $q_0<1<q_1$)
+esiste un intorno di infinito $I_n$ tale che $a_N \in (q_0, q_1)$  quando $N\in I_n$, cioè ogni qual volta che $n<N$.
+
+\Note{Se deve essere $a_k \in (q_0, q_1)$, significa che deve essere $q_0<1-\frac[3/k]<q_1$.
+Siccome per ogni $k\in \N$ abbiamo che $a_k=1-\frac[3/k]<1<q_1$ allora $a_k<q_1$ è sempre verificata.
+
+Se deve essere $q_0<a_k= 1-\frac[3/k]$, questo equivale a chiedere
+\eqs{
+q_0< 1-\frac[3/k]
+\qquad
+ \frac[3/k]< 1-q_0
+\qquad
+ \frac[3/k]< 1-q_0
+\qquad\qquad
+k> \frac[3/1-q_0]
+}
+Siccome $q_0<1$, allora $1-q_0>0$, allora $\frac[3/1-q_0]>0$. Qualunque sia il valore di $\frac[3/1-q_0] \in \Q$ esistono sempre interi positivi $k> \frac[3/1-q_0]$
+Basta quindi prendere $n> \frac[3/1-q_0]$ come uno di questi interi per vere che $N\in I_n$ implichi che $a_N\in (q_0, q_1)$.
+Questo è quanto dovevamo mostrare per affermare che $\lim_{k\arr \infty} a_k = 1$.
+
+\ms
+Se invece proviamo a mostrare che $\lim_{k\arr \infty} a_k = 0$, dovremmo mostrare che esiste un intorno di $I_0= (q_0, q_1)$ con $q_0<0<q_1$ tale che 
+esiste un intorno di infinito $I_n$ tale che $N\in I_n$ implica che $a_N\in I_0$, cioè $q_0<a_N<q_1$.
+come sopra $a_N>q_0$ è sempre vero, visto che $a_N>0$ e $q_0<0$.
+
+Invece per avere $a_N<q_1$ dovrebbe essere $k< \frac[3/1-q_1]$. 
+Ma all'aumentare di $k$ questo limite viene violato, e quindi presto o tardi $a_N\ge q_1$ e così non possiamo concludere che $\lim_{k\arr \infty} a_k = 0$.
+
+In generale possiamo mostrare che se $\lim_{k\arr \infty} a_k = q$ allora non può essere $\lim_{k\arr \infty} a_k = q'\not=q$.
+}
+
+Quando diciamo che $\lim_{k\arr \infty} a_k = q$ stiamo dicendo che al crescere di $k$ il valore di $a_k$ non può che restare vicino (a piacere) a $q$,
+dove stare vicino significa stare in ogni intorno piccolo a piacere di $q$.
+
+\ms
+
+Data una successione $a:N\arr \Q$ possiamo definire una {\it serie}, che denotiamo con $\sum_{k=0}^\infty a_k$, che corrisponde alla somma dei termini della successione $a_n$.
+Ad esempio la serie 
+\eq{
+1+z+z^2+\dots+z^k+ \dots = \sum_{k=0}^\infty z^k
+}
+corrisponde alla serie associata alla successione $a:\N\arr \Q: k\mapsto z^k$.
+
+Viceversa data una serie $\sum_{k=0}^\infty a_k$ possiamo associare ad essa la {\it successione delle ridotte} $R:\N\arr \Q: n\mapsto R_n= \sum_{k=0}^n a_k$.
+Se la successione delle ridotte ha un limite $\lim_{n\arr \infty} R_n= q$ allora diciamo per definizione che la serie converge e poniamo $\sum_{k=0}^\infty a_k= q$.
+
+Ovviamente non tutte le serie convergono a un valore finito. Ad esempio la serie $\sum_{k=0}^\infty a_k= 1+1+1+\dots$ non converge ad un numero razionale finito, cioè la successione delle ridotte cresce arbitrariamente (e diciamo che diverge).
+La  serie $\sum_{k=0}^\infty a_k= 1-1+1-1+\dots+ (-1)^k+\dots$ non converge perché la successione delle ridotte resta finita ma non ammette limite (e si dice che la serie {\it oscilla} in questo caso tra 1 e 0).
+
+Quindi abbiamo serie che divergono, serie che oscillano ma esistono pure serie (ad esempio $\sum_{k=0}^\infty z^k $) che convergono ad un numero razionale preciso (in questo caso $ \Frac[1/1-z]$ se $-1<z<1$ e $z\not=0$).
+
+Per ora basta così. 
+La situazione necessita di più attenzione però. Dobbiamo imparare quando le serie e le successioni convergono e possibilmente saper calcolare il loro limite $q$.
+Ma per ora è chiaro che l'argomento di Zenone si fonda sulla convinzione (non dimostrata e qui contraddetta) che ogni serie diverga solo perché suona bene che la somma di infiniti numeri positivi cresce sempre quindi di sicuro arriva ad infinito.
+
+Tra l'altro qui stiamo facendo serie e successioni in $\Q$ e in $\Q$ mostreremo che ci sono anche serie che rallentano abbastanza velocemente per non divergere ma lo stesso non convergono a un numero razionale. Questo definirà i numeri reali. Infatti si possono scrivere successioni di numeri razionali che convergerebbero a $\sqrt{2}$ che non essendo un numero razionale significa che oscillano (non esiste il limite in $\Q$).
+
+
+
+\section*{Giorno 28: criteri di convergenza per successioni}
+
+Data una successione $a:\N\arr \Q$ come facciamo a sapere se converge (cioè se esiste il limite $\lim_{k\arr \infty} a_k=q$)?
+
+In $\Q$ abbiamo una distanza $d(q_1, q_2)= |q_1-q_2|$.
+
+Una  {\it successione di Cauchy} è una successione $a:k\arr a_k$ tale che per ogni $\ep>0$ esiste un $n\in \N$ tale che per ogni $N,K>n$ si ha $d(a_N, a_K)<\ep$.
+
+In pratica significa che quando la successione arriva a $a_n$ poi tutti i punti seguenti non si allontanano da $a_n$ più di $\ep/2$, e se rimpiccioliamo $\ep$ basta alzare $n$ e questo resta vero.  
+Significa che se pensate una successione come un punto che passeggia in $\Q$, alla fine questo si muove poco quanto vogliamo, la sua velocità diventa sempre più piccola.
+
+Data una successione $a_k$, possiamo costruire infinite successioni $\De:\N\arr \Q: i \mapsto a_{k(i+1)}- a_{i(k)}$ con $k:\N\arr\N$ una funzione crescente, cioè $k(i+1)>k(i)$.
+Una successione è di Cauchy se tutte queste successione ha limite $q=0$.
+
+
+\ni{\bf Teorema}: se esiste il limite $\lim_{k\arr \infty} a_k=q$ allora la successione è di Cauchy.
+
+\Note{Dim: se esiste il limite allora per ogni intorno $I_q=(q-\ep, q+\ep)$ di $q$ esiste un $n\in N$ tale che per qualunque $N>n$ abbiamo che $a_N\in I_q$, cioè
+$d(a_N, q)<\ep$.
+Ma allora $d(a_N, a_K)< d(a_N, q)+ d(a_K, q)< 2\ep$ (disuguaglianza triangolare), cioè $d(a_N, a_K)$ è reso piccolo a piacere.
+}
+
+Purtroppo in $\Q$ non è vero il viceversa (che invece è vero per successioni reali). Esistono successioni di Cauchy che non convergono.
+
+\Note{Prendete la successione $a: k\mapsto \frac[\sqrt{2\>10^{2k}}/10^k]$. 
+questo corrisponde alla successione $1$, $1.4$, $1.41$, $1.414$, $1.4142$, $1.41421$, \dots,  $\sqrt{2}$.
+Questa successione è di Cauchy, ma avrebbe un limite $\sqrt{2}$ ma abbiamo visto che questo numero non è un numero razionale.
+
+In pratica il motivo per cui le successioni di Cauchy non convergono in $\Q$ quando convergono a un numero irrazionale.
+I numeri irrazionali sono buchi in $\Q$ e una successione può avvicinarsi al buco tanto quanto ci pare, arriverebbe al buco che però non è un numero razionale e quindi non possiamo dire che la successione converge in $\Q$. Ok dai è un cavillo legale. Lo è ma in matematica bisogna scrivere le leggi senza cavilli.
+
+Ok, vi ho risparmiato qualche dettaglio ma se non vi torna lo scrivo meglio,
+}
+
+E qui viene l'idea: prendiamo l'insieme delle successioni di Cauchy $a:\N\arr \Q$ e le chiamiamo {\it numeri reali}.
+L'insieme dei numeri reali lo denotiamo con $\R$.
+Le successioni costanti in $\Q$ sono sempre di Cauchy, quindi abbiamo che $\Q$ è un sottoinsieme di $\R$.
+
+Ad ogni successione in $\Q$, possiamo quindi associare una successione $a:\N\arr \R$ in $\R$.
+In $\R$ ogni successione di Cauchy converge per costruzione (il limite è il numero di $\R$) rappresentato dalla successione stessa.
+
+Bel piano, ma c'è solo un problema, che ci sono infinite successioni di Cauchy che tendono allo stesso numero reale.
+Ma questo problema sappiamo già come curarlo, definiamo una relazione di equivalenza tra successioni di equivalenza.
+Diciamo che 2 successioni di Cauchy sono equivalenti se e solo se la successione che otteniamo prendendo gli elementi pari alla prima e quelli dispari dalla seconda successione è essa stessa una successione di Cauchy.
+
+\Note{Questo è vero se le 2 successioni hanno lo stesso limite (in $\R$), quindi è un modo di esprimere che le 2 successioni hanno lo stesso limite.}
+
+A questo punto un numero reale è una classe di equivalenza di successioni di Cauchy equivalenti.
+Quindi i numeri irrazionali (inclusi i trascendenti) sono numeri reali (è facile costruire una successione di Cauchy razionale che converge ad un numero reale fissato come abbiamo fatto per 
+$\sqrt{2}$).
+
+Se tornate indietro a quando abbiamo definito i numeri decimali $\frac[n/10^k]$ (con $k$ cifre decimali).
+Un numero irrazionale è quindi una successione di numeri decimale infinita come abbiamo fatto per $\sqrt{2}$.
+
+\Note{
+Qui c'è un solo problema. Considerate i numeri $2.600000\dots$ e $2.59999999\dots$. 
+Possiamo definire la successione $\De$ come sopra
+\eq{
+2\quad 
+2 \quad
+2.5 \quad
+2.6 \quad
+2.59 \quad
+2.6 \quad
+2.599 \quad
+2.6 \quad
+2.5999 \quad
+2.6 \quad\dots
+}
+che è di Cauchy, quindi le 2 successioni che corrispondono alle espressioni decimali $2.600000\dots$ e $2.59999999\dots$ sono lo stesso numero reale $\frac[5/2]$
+(che è pure razionale).
+
+In altre parole le espressioni decimali infinite non sono i numeri reali. Ogni numero reale è una successione infinita di numeri decimali (se è razionale la successione è periodica da un certo punto in poi). Ma le espressioni che finiscono in $\bar 9$ e quelle che finiscono in $\bar 0$ sono lo stesso numero.
+
+Quando fate l'argomento diagonale di Cantor, dovete assicurare di non ottenere una successione che finisce con $\bar 9$.
+}
+
+
+Se vi ricordate, vi hanno massacrato con una regola per convertire i numeri periodici in frazioni che nessuno ricorda come l'algoritmo per estrarre a mano la radice quadrata.
+Proviamo a rifarlo qui? Non è che dobbiamo cercare su wiki!
+
+Se prendiamo $q=3.45\overline{123}$ e vogliamo scriverlo come frazione, non è che possiamo farlo in tanti modi. Come abbiamo fatto in altri casi simili andiamo per approssimazioni successive.
+La prima approssimazione è certamente $q_1=\frac[345/10^2]$ e resta $q-q_1=0.00\overline{123}$. 
+Quindi possiamo approssimare il primo periodo come $q_2= q_1+\frac[123/10^5]$ e avanza $q-q_2=0.00000\overline{123}$.
+
+Se approssimiamo al secondo periodo abbiamo $q_3= q_2+\frac[123/10^8]$ e resta $q-q_3=0.00000000\overline{123}$.
+Quindi abbiamo una serie
+\eq{
+q= \frac[345/10^2] +\frac[123/10^5] +\frac[123/10^8]  +\frac[123/10^{11}] +\frac[123/10^{14}] + \dots   
+= \frac[345/10^2] +\frac[123/10^5] ( 1 +\frac[1/10^3]  +\frac[1/10^{6}]  +\frac[1/10^{9}] + \dots   )
+}
+che sappiamo sommare (visto che nella forma $1+z+z^2+z^3+\dots=\frac[1/1-z]$)
+\eq{
+q= \frac[345/10^2] +\frac[123/10^5] \frac[1/1-0.001]
+= \frac[345/10^2] +\frac[123/10^5] \frac[10^3/10^3-1]
+= \frac[1/10^2] \( 345+ \frac[123/999]\) 
+}
+
+Scommetto che se cercate su wiki trovate una prescrizione generale fatta di antiperiodi, periodi, $10^k$ e $99999$ che corrisponde a quello che abbiamo fatto qui.\
+
+Quando si dice sprecare gli anni migliori dell'infanzia per niente.
+
+C'è comunque un altro modo di definire i numeri reali, dovuto a Dedekind. Quello delle sequenze di Cauchy è più generale (potete ripeterlo su ogni spazio topologico metrico per ottenere uno spazio senza buchi  che si chiama uno spazio completo). Ma le classi di Dedekind sono carine che meritano un giorno per loro.
+
+
+\section*{Giorno 29: sezioni di Dedekind}
+
+Una {\it sezione di Dedekind} è un sottoinsieme $A\subset\Q$, $A$ non vuoto e non $A=\Q$, tale che se $a\in A$ allora ogni $a'<a$ è in $a'\in A$ pure lui
+e, infine, $A$ non ha massimo, cioè non esiste un $a\in A$ tale che $a'\le a$ per ogni $a'\in A$.
+
+Ogni sezione di Dedekind corrisponde ad un numero reale. 
+Ad esempio $A=\{q\in \Q: q^2\le 2\}$ è una sezione di Dedekind e corrisponde al numero irrazionale $\sqrt{2}$.
+Anche per ogni $p\in \Q$ possiamo definire $A_p=\{q\in \Q: q< p\}$ che è una sezione di Dedekind e corrisponde al numero razionale $\Q$.
+
+Quindi definiamo $\R$ l'insieme delle sezioni di Dedekind.
+Abbiamo $\Q\subset \R$, abbiamo che $r_1\le r_2$ se e solo se  $r_1\subset r_2$.
+
+Date 2 sezioni di Dedekind $r_1$ e $r_2$ possiamo definire $A=\{q= q_1+q_2: q_1\in r_1, q_2\in r_2\}$ che è una sezione di Dedekind che chiamiamo $r_1+r_2$.
+Questo definisce la somma di 2 numeri reali estendendo la somma dei razionali.
+
+Date 2 sezioni di Dedekind $r_1$ e $r_2$ possiamo definire $A=\{q= q_1q_2: q_1\in r_1, q_2\in r_2\}$ che è una sezione di Dedekind che chiamiamo $r_1r_2$.
+Questo definisce il prodotto di 2 numeri reali estendendo il prodotto dei razionali.
+
+A questo punto possiamo estendere le potenze alle basi reali, ma soprattutto agli esponenti reali.
+Prendiamo $r\in \R$, una successione $a:\N\arr \Q$ con $\lim_{n\arr\infty}=r$ e definiamo
+\eq{
+b^r= \lim_{n\arr \infty} b^{a_n}
+} 
+dove $b\in \R$ è un reale strettamente positivo.
+
+Tutte queste operazioni ereditano per costruzione le proprietà delle operazioni in $\Q$.
+
+Un insieme con 2 operazioni (somma e prodotto), entrambe associative, entrambe commutative, entrambe con elemento neutro ($0$ e $1$)
+entrambe dotate di inverso (l'inverso di $r\in \R$ rispetto alla somma è l'opposto $-a$, rispetto al prodotto è il reciproco $\frac[1/a]$ con $a$ non nullo)
+e col prodotto che è distributivo rispetto alla somma si chiama un {\it campo}.
+Quindi $\Q$ e $\R$ sono campi. Siccome quando fate i conti (ad esempio risolvete un'equazione o semplificate una espressione) usate solo le proprietà elencate sopra,
+risolvere un'equazione in $\Q$, in $\R$ o in qualunque altro campo è la medesima cosa.
+
+ \Note{Se abbiamo un insieme con 2 operazioni con tutte le proprietà per essere un campo tranne che il prodotto non è commutativo, abbiamo un {\it corpo}.
+ risolvere un'equazione in un corpo è quasi come risolverla in un campo ma bisogna mantenere l'ordine dei fattori nei prodotti.
+ Ad esempio
+ \eq{
+ ax+b=0
+\qquad
+ ax=-b
+\qquad
+ x=-a^{-1}b
+ }
+ e non $x=-ba^{-1}$. Nei corpi non ci sono le frazioni, perché $ba^{-1}\not=a^{-1}b$ mentre entrambe sarebbero la frazione $\frac[b/a]$.
+ }
+
+Quindi ora possiamo aggiungere un pezzo di discorso al perché ci piace astrarre.
+Abbiamo costruito i numeri razionali e i numeri reali, abbiamo definito le operazioni abbiamo {\it dimostrato} le proprietà delle operazioni, e con queste proprietà abbiamo imparato a risolvere delle classi di equazioni (ad esempio lineari e quadratiche). Questo è ciò che facciamo in un {\it modello}. 
+In un certo senso è una costruzione concreta, sappiamo che un numero reale è una sezione di Dedekind (o una successione di Cauchy in $\Q$) e sappiamo cosa significa fare le somme e i prodotti.
+
+\Note{Ok, i modelli possono non essere unici. Le successioni di Cauchy e le sezioni di Dedekind sono 2 modelli diversi dei numeri reali, ma le operazioni definite nei modelli si corrispondono e 
+possiamo passare da una all'altra rappresentazione quando ci va. Un numero reale come successione è in realtà una  {\it classe} di successioni equivalenti, 
+mentre lo stesso numero reale come sezione di Dedekind è {\it una} sezione di Dedekind.
+Quindi può essere che vi piaccia di più il modello delle sezioni di Dedekind, che vi sembri più concreto.}
+
+Anche per i naturali, gli interi e i razionali abbiamo usato modelli. Gli interi sono stati definiti come classi di insiemi finiti. 
+Poi abbiamo definito gli interi come classi di coppie di naturali e i razionali come classi di coppie di interi.
+Questo ha il vantaggio che se sapete cosa sono i naturali, quello che è definito con i naturali è ben definito comunque. Non dovete più capire gli insiemi per capire i razionali.
+
+ Poi ad ogni livello possiamo {\it invece del modello} dare una descrizione assiomatica in cui non ci occupiamo più di cosa siano gli oggetti ma deriviamo (o assumiamo) le proprietà.
+ Se valgono le proprietà allora sappiamo risolvere le equazioni. Il punto è che molte proprietà sono in comune tra numeri naturali, interi, razionali e reali.
+ In particolare le proprietà di reali e razionali sono le stesse perché sono entrambi campi. E quindi io so risolvere le equazioni in qualunque campo.
+ 
+ Quindi {\it conviene} definire un campo in astratto senza specificare se si parla di numeri reali o razionali (o complessi, o faremo $\Z_p$) perché nel momento stesso che so che è un campo
+ so che posso risolvere le equazioni (o altri problemi) nello stesso modo. Gli algoritmi che sviluppiamo per calcolare, non dipendono da cosa siamo gli oggetti che manipoliamo, dipendono dalle proprietà delle operazioni che definiamo. 
+ 
+ \Note{Se tutti i frutti rossi fossero velenosi non avrebbe tanto senso ricordare che ci sono mele rosse e mele gialle, invece di definire mele avrebbe più senso definire frutti rossi e frutti gialli.}
+
+Dal punto di vista iniziale abbiamo che concreto è bello. All'inizio piacciono di sicuro di più i modelli che i sistemi assiomatici.
+Ora la situazione, sotto un'altro aspetto, astratto e bello. È molto più importante sapere che sto in un campo invece che sapere se sto maneggiando numeri razionali o reali.
+
+Se so che sono in un campo posso risolvere equazioni lineari come
+\eq{
+ax=-bx+c
+\qquad
+ax+bx=c
+\qquad
+(a+b)x=c
+}
+e se $a+b\not=0$ allora $x=\frac[c/a+b]$.
+
+\Note{Notate che $\frac[c/a+b]$ è una frazione, non necessariamente un numero razionale. Per quanto ne sappiamo $c$ e $a+b$ possono essere reali, complessi e non interi.
+Possono essere conigli se sui conigli abbiamo 2 operazioni che rendono l'insieme  dei conigli un campo.}
+
+Questa attitudine mentale, porta anche un'altra conseguenza.
+Quando astraiamo non ci importa più del vero e del falso, ci importa se le cose possono essere derivate dalle proprietà che assumiamo come assiomi dei campi.
+Un algoritmo non è vero o falso. È vero o falso {\it in un campo}.
+
+\Note{
+Ora se siamo in un campo, possiamo usare le proprietà che sono vere in un campo. Non interessa che
+\eq{
+\frac[1\not6/\not64]=\frac[1/4]
+}
+sia vero, non è una cosa che potete usare in un campo (tanto è vero che non credo sia vero in base 8, lo è?).
+
+È parte essenziale di quest'attitudine astratta che uno non può fare quello che vuole tranne quando ciò è falso, al contrario può fare solo quello che può dimostrare.
+Quando definite un sistema assiomatico, sapete poche cose e siete vincolati a usare solo gli assiomi. Mano mano che dimostrate teoremi aumentano le cose che sapete 
+e siete più liberi di fare. I teoremi non sono lì per darvi cose da ricordare e dover dimostrare, sono lì per rendervi liberi.
+}
+
+
+Infine notiamo che per ora la nostra strada verso l'astrazione è lastricata dei aumentare i problemi (le equazioni) che sappiamo risolvere.
+Siamo passati agli interi per poter risolvere le equazioni tipo $3x+3=0$, ai razionali per poter risolvere $6x+3=0$, ai reali per poter risolvere $x^2=2$.
+
+Poi discuteremo $x^2+1=0$.
+
+Per ora introduciamo altri campi e poi le algebre.
+
+
+
+\section*{Giorno 30: classi di resto}
+
+Gli interi $\Z$ non formano campo. Abbiamo una somma ben fatta, il prodotto è associativo, commutativo, ha 1 come elemento neutro ma non abbiamo inverso rispetto al prodotto.
+Ad esempio $2\in \Z$ non ha reciproco, visto che $\frac[1/2]$ non è intero.
+
+Se prendiamo un numero intero $n\in \Z$ possiamo definire equivalenti 2 intero $a, b$ se e solo se esiste un $k\in\Z$ tale che  $b= a + kn$.
+Questa è una relazione di equivalenza e le corrispondenti classi di equivalenza $[a]=\{\dots, a-2n, a-n, a, a+n, a+2n, \dots\}$.
+In pratica $[0]$ sono i multipli di $n$, $[1]$ sono i numeri $kn+1$, e via così.
+
+Questo è quello che facciamo all'asilo quando impariamo a leggere l'orologio analogico, in quel caso con $n=12$ (o $n=24$).
+Se parliamo di $n=12$ (che già non si dovrebbe), passate 10 ore dopo le 5 non sono le 15, sono le 3, o meglio la classe $[3]= \{\dots, -9, 3, 15, 27, \dots\}$ che sono quando l'orologio segna le 3.
+
+\Note{La prossima volta che incontro una maestra che chiede che senso abbia insegnare a leggere l'orologio analogico ai bambini quando sui telefonini c'è l'orologio digitale, la sprango.}
+
+Quando sommiamo le ore non sommiamo i numeri. Se calcoliamo 5+10 sull'orologio non fa $15$, fa $[15 \mod 12]=[3]$.
+Quindi possiamo definire l'insieme delle classi di equivalenza $\Z_n$, che ha $n$ elementi, e ridefiniamo le operazioni come
+\eq{
+[a]+[b]= [a+b]= [a+b\mod n]
+\qquad\qquad
+[a][b]= [ab]= [ab\mod n]
+}
+
+Uno può dimostrare che queste nuove operazioni ereditano da $\Z$ le proprietà, associativa, esistenza degli elementi neutri $[0]$ e $[1]$ e dell'opposto $[-a]= [-a\mod n]= [n-a]$.
+Per ora non ci pronunciamo sul reciproco.
+
+Facciamo 3 esempi.
+
+\Note{
+$(n=2)$: in $\Z_2$ abbiamo 2 classi $[0]$ e $[1]$. Sono i pari e i dispari. Le somme sono
+\eqs{
+&[0]+[0]=[0] \qquad  [0]+[1]=[1] \cr
+&[1]+[0]=[1] \qquad  [1]+[1]=[0] \cr
+}
+mentre i prodotti sono
+\eqs{
+&[0][0]=[0] \qquad  [0][1]=[0] \cr
+&[1][0]=[0] \qquad  [1][1]=[1] \cr
+}
+Si noti che $[1]$ è il reciproco di 1, quindi $Z_2$ è un campo.
+
+$(n=3)$: in $\Z_3$ abbiamo 3 classi $[0]$, $[1]$ e $[2]$. Le somme sono
+\eqs{
+&[0]+[0]=[0] \qquad  [0]+[1]=[1]  \qquad  [0]+[2]=[2] \cr
+&[1]+[0]=[1] \qquad  [1]+[1]=[2]  \qquad  [1]+[2]=[0] \cr
+&[2]+[0]=[2] \qquad  [2]+[1]=[0]  \qquad  [2]+[2]=[1] \cr
+}
+mentre i prodotti sono
+\eqs{
+&[0][0]=[0] \qquad  [0][1]=[0]  \qquad  [0][2]=[0] \cr
+&[1][0]=[0] \qquad  [1][1]=[1]  \qquad  [1][2]=[2]  \cr
+&[2][0]=[0] \qquad  [2][1]=[2]  \qquad  [2][2]=[1]  \cr
+}
+Si noti che $[2]$ è il reciproco di $[2]$, quindi $Z_3$ è un campo con 3 elementi.
+
+Quindi siamo tentati di dire che $\Z_n$ è un campo, non sapessimo che la natura è maligna.
+
+$(n=4)$: in $\Z_4$ abbiamo 4 classi $[0]$, $[1]$, $[2]$ e $[3]$. Le somme sono
+\eqs{
+&[0]+[0]=[0] \qquad  [0]+[1]=[1]  \qquad  [0]+[2]=[2] \qquad  [0]+[3]=[3] \cr
+&[1]+[0]=[1] \qquad  [1]+[1]=[2]  \qquad  [1]+[2]=[3] \qquad  [1]+[3]=[0] \cr
+&[2]+[0]=[2] \qquad  [2]+[1]=[3]  \qquad  [2]+[2]=[0] \qquad  [2]+[3]=[1] \cr
+&[3]+[0]=[3] \qquad  [3]+[1]=[0]  \qquad  [3]+[2]=[1] \qquad  [3]+[3]=[2] \cr
+}
+mentre i prodotti sono
+\eqs{
+&[0][0]=[0] \qquad  [0][1]=[0]  \qquad  [0][2]=[0] \qquad  [0][3]=[0] \cr
+&[1][0]=[0] \qquad  [1][1]=[1]  \qquad  [1][2]=[2] \qquad  [1][3]=[3] \cr
+&[2][0]=[0] \qquad  [2][1]=[2]  \qquad  [2][2]=[0] \qquad  [2][3]=[2] \cr
+&[3][0]=[0] \qquad  [3][1]=[3]  \qquad  [3][2]=[2] \qquad  [3][3]=[1] \cr
+}
+Si noti che $[3]$ è il reciproco di $[3]$, ma non esiste il reciproco di $[2]$, quindi $\Z_4$ non è un campo.
+Si noti che $[2][2]=[0]$, cioè $[2]|[0]$, esistono divisori dello zero.
+
+Quando non esiste il reciproco di ogni elemento non nullo, quell'insieme si chiama un {\it anello}. 
+Ogni $\Z_n$ è un {\it anello} ma qualcuno (ad esempio $\Z_2$ e $\Z_3$) è anche un campo.
+
+}
+
+In un anello, può capitare che alcuni elementi siano invertibili (e altri no se no sarebbe un campo). 
+Gli elementi invertibili si chiamano {\it unità}. In $\Z$, sia $1$ che $-1$ sono unità. In un campo ogni elemento non nullo è una unità.
+
+Ovviamente abbiamo sempre che $[0][a]=[0]$. Ma in un anello può capitare che esistano 2 elementi entrambi non nulli tali che $[a][b]=[0]$.
+Abbiamo visto che $[2][2]=[0]$ in $\Z_4$. Analogamente, $[3][2]=[0]$ in $\Z_6$. In questi casi diciamo che quell'anello ammette {\it divisori dello zero}.
+Quindi $[2]$ è divisore dello zero in $\Z_4$, in $\Z_6$ e $[3]$ è anche divisore dello zero in $\Z_6$ (e in $\Z_9$).
+
+In realtà se $n=ab$ (con $[a]$ e $[b]$ non nulli e non unità in $\Z_n$) allora $[a]$ e $[b]$ sono divisori dello zero in  $\Z_n$.
+Se consideriamo un primo $p$, allora in $\Z_p$ non possiamo costruire divisori dello zero in questo modo. Questo purtroppo non impedisce che possano esistere divisori dello zero construiti in questo modo. Uno deve {\it dimostrare} che in $\Z_p$ non  esistono divisori dello zero (che è abbastanza laborioso in generale, mentre è facile controllarlo in $\Z_5$ o in $\Z_{17}$ dove basta provarlo per tutti gli elementi che oltretutto sono finiti).
+
+Poi è abbastanza facile mostrare che se $X$ è un campo allora non esistono divisori dello zero.
+
+\Note{dim: se $X$ è un campo consideriamo l'equazione $ax=0$ con $a\not=0$. 
+Siccome siamo in un campo e $a\not=0$ allora esiste $a^{-1}$ e possiamo moltiplicare ambo i membri (a sinistra) per $a^{-1}$ e otteniamo l'equazione equivalente
+$x=a^{-1}0=0$. Quindi l'unica possibilità è che $x=0$ e quindi non sono divisori dello zero.
+In un campo non ci sono divisori dello zero.
+
+Notate bene: ho detto che campo è $X$? No. Quello che ho scritto vale in {\it ogni} campo, non ha nessuna importanza cosa siano gli elementi di $X$.
+La generalità del risultato viene {\it completamente} dal fatto che è un ragionamento astratto.
+
+} 
+
+Questo basta a concludere che $\Z_n$ non è un campo quando $n\in \Z$ non è primo.
+Comunque (anche se è un po' più complicato da dimostrare) è vero che se consideriamo un primo $p\in \Z$, allora $\Z_p$ è un campo (cioè $\Z_p$ è un campo se e solo se $p\in\Z$ è primo).
+
+Tanto per essere chiari se chiedete ad un matematico di mostrare se $\Z_{72871}$ è un campo, gli scatta nel cervello il; teorema $\Z_p$ è un campo se e solo se $p$ è primo e la risposta è: 
+basta controllare se $p$ è primo. Per un matematico la matematica non è rispondere al problema è fare il teorema che ti consente di rispondere a classi di domande.
+Vi ricordate quando abbiamo definito numeri per poter risolvere classi di equazioni? 
+Quella è matematica, non passare la maturità.
+
+\Note{Come esercizio sui quantificatori è vero che se uno fa matematica poi risolve facilmente i problemi, ma risolvere i problemi non è fare matematica più di quanto fare l'amore sia riprodursi.
+
+Come probabilmente Feynmann non ha mai detto:
+
+{\it La fisica è come il sesso: certo, può dare qualche risultato concreto, ma non è per questo che la facciamo.}
+}
+
+Comunque era per mostrare che ci sono campi che non sono $\Q$ o $\R$.
+Ira prendete $\Z_{13}$ e considerate l'equazione $[7]x= [2]$.
+Siccome so che $\Z_{13}$ è un campo, allora $[7]$ deve ammettere un inverso. Infatti $[7][2]=[14]=[1]$, quindi in $\Z^{13}$ abbiamo che $[7]^{-1}=[2]$.
+Quindi l'equazione ha soluzione $x= [2][2]=[4]$, e {\it vedrete che $[4]$ è la soluzione cercata}.
+
+\Note{Significa {\it controllate} che $[7][4]=[2]$ in $\Z_{13}$.}
+
+Ora \http{https://www.youtube.com/watch?v=o2g76SPcQ78&t=200s}{brindate}, sapete risolvere equazioni {\it in un campo qualunque}. 
 
 
 
