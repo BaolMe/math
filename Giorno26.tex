@@ -561,8 +561,8 @@
 
 
 %%%%%%%%%%%%%%%%%%%%% Publisher's Area please ignore %%%%%%%%%%%%%%%
-%
-%
+%  Cari polli, volevo vedere se quando leggete controllate i conti o bevete qualunque boiata io scriva.
+%   questo è quello giusto!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Giorno 26: Zenone e paradossi}
@@ -612,7 +612,7 @@ come si vede sviluppando il prodotto. Qui non ci sono infiniti, solo $k$ termini
 
 Quindi possiamo scrivere
 \eq{
-\( 1+ \Frac[v/ w] + \Frac[v^2/ w^2] +  \Frac[v^3/ w^3]+\dots + \Frac[v^{k}/ w^k] \) = \Frac[{1-\frac[v/w]}/{1-\(\frac[v/w]\)^{k+1}}]
+\( 1+ \Frac[v/ w] + \Frac[v^2/ w^2] +  \Frac[v^3/ w^3]+\dots + \Frac[v^{k}/ w^k] \) = \Frac[{1-\(\frac[v/w]\)^{k+1}}/{1-\frac[v/w]}]
 }
 e se assumiamo che Achille abbia una velocità maggiore di quella della tartaruga ($w>v$) allora $0<z= \frac[v/w] <1$.
 }
@@ -620,7 +620,7 @@ e se assumiamo che Achille abbia una velocità maggiore di quella della tartarug
 Quindi possiamo scrivere il tempo impiegato a percorrere $k$ passi come
 \eq{
 T_k= t_1+ t_2+\dots+t_k 
-=  \Frac[s_1/w] \Frac[{1-z}/{1-z^{k+1}}]
+=  \Frac[s_1/w] \Frac[{1-z^{k+1}}/{1-z}]
 }
 Intanto vediamo che per ogni $k$ finito, $T_k$ è finito, siccome $z<1$ il denominatore $1-z^{k+1}$ non si annulla mai.
 
@@ -630,19 +630,26 @@ Ora il punto è mostrare che anche per $k$ {\it che tende ad infinito} $T_k$ res
 mostriamo che per ogni $k$ abbiamo che  $T_k< 2\Frac[s_1/w] $.
 \eqs{
 & \Frac[s_1/w] \( 1+ z+ z^2 +  z^3+\dots + z^k\)  < 2\Frac[s_1/w] \cr
-&1+ z + z^2+  z^3+\dots + z^k  < 2 \cr
-&z+ z^2+  z^3+\dots + z^k  < 1 \cr
-&z\( 1 + z+  z^2+\dots + z^{k-1} \) < 1 \cr
-&z\Frac[1-z/{1-z^k}]< 1 \cr
+&1<1+ z + z^2+  z^3+\dots + z^k  < 2 \cr
+&1<\Frac[{1-z^k}/1-z]< 2 \cr
 }
-Ora possiamo ricordare che $z<1$, quindi $z^k<1$, e quindi $1-z^k>0$.
-Quindi possiamo semplificare
+Per la disuguaglianza a sinistra
 \eq{
-z-z^2< 1-z^k
-\qquad\iff\quad
-1> z(1+z^{k-1}) -z^2> z-z^2>z
+\Frac[{1-z^k}/1-z]-1= \Frac[{1-z^k-1+z}/1-z]=z\Frac[{1-z^{k-1}}/1-z]>0
 }
-Visto che $z<1$ (e $z^2<z$), questa è soddisfatta.
+che è verificata in quanto $1-z>0$, $z>0$ e $1>z>z^{k-1}$ (e quindi $1-z^{k-1}>0$).
+
+Per la disuguaglianza a destra abbiamo
+\eq{
+\Frac[{1-z^k}/1-z]-2 
+=\Frac[{1-z^k}-2+2z^k/1-z] 
+=-\Frac[{1-z^k}/1-z] 
+< 0
+}
+Quindi è vero che per ogni $k\in \N$ abbiamo
+\eq{
+1<\Frac[{1-z^k}/1-z]< 2 
+}
 }
 
 
