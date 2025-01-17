@@ -564,20 +564,60 @@
 
 \section*{Giorno 29: sezioni di Dedekind}
 
-Una {\it sezione di Dedekind} è un sottoinsieme $A\subset\Q$, $A$ non vuoto e non $A=\Q$, tale che se $a\in A$ allora ogni $a'<a$ è in $a'\in A$ pure lui
+Una {\it sezione di Dedekind} (sinistra) è un sottoinsieme $A\subset\Q$, $A$ non vuoto e non $A=\Q$, tale che se $a\in A$ 
+allora per ogni $a'<a$ abbiamo che $a'\in A$ pure lui
 e, infine, $A$ non ha massimo, cioè non esiste un $a\in A$ tale che $a'\le a$ per ogni $a'\in A$.
 
-Ogni sezione di Dedekind corrisponde ad un numero reale. 
-Ad esempio $A=\{q\in \Q: q^2\le 2\}$ è una sezione di Dedekind e corrisponde al numero irrazionale $\sqrt{2}$.
-Anche per ogni $p\in \Q$ possiamo definire $A_p=\{q\in \Q: q< p\}$ che è una sezione di Dedekind e corrisponde al numero razionale $\Q$.
+Un sottoinsieme $\bar A\subset \Q$ è una {\it sezione di Dedekind destra} se e solo se 
+$\Q-\bar A$ è una sezione di Dedekind sinistra.
 
-Quindi definiamo $\R$ l'insieme delle sezioni di Dedekind.
+\Note{
+Notate che una sezione di Dedekind destra può avere o no minimo. 
+Infatti $A=\{q\in \Q: q<\frac[3/2]\}$ e $B=\{q:\in\Q: q<\sqrt{2}\}$ sono entrambe sezioni di Dedekind sinistre
+e, considerate le corrispondenti sezioni destre, $\bar A=\{q\in \Q: q\ge \frac[3/2]\}$ ha un minimo $\frac[3/2]$ mentre $\bar B=\{q:\in\Q: q>\sqrt{2}\}$ non ha minimo.
+}
+
+Ogni sezione di Dedekind corrisponde ad un numero reale. 
+Ad esempio 
+\eq{
+A=\{q\in \Q: q\le \sqrt{2}\}=\{q\in \Q: q\le 0\}\union \{q\in \Q:  q>0 \hbox{ .and. } q^2<2\}
+} 
+è una sezione di Dedekind e corrisponde al numero irrazionale $\sqrt{2}$.
+Anche per ogni $p\in \Q$ possiamo definire 
+\eq{
+A_p=\{q\in \Q: q< p\}
+} che è una sezione di Dedekind e corrisponde al numero razionale $p\in\Q$ pensato come numero reale.
+
+Quindi definiamo $\R$ l'insieme delle sezioni di Dedekind (sinistre).
 Abbiamo $\Q\subset \R$, abbiamo che $r_1\le r_2$ se e solo se  $r_1\subset r_2$.
+
+\Note{
+Se prendiamo $p\in \Q$ e un sottoinsieme $I_p=\{q\in \Q: q> p\}\subset \Q$ questa non è una sezione destra perché $\Q-I_p$ non è una sezione sinistra (ammettendo $p$ come massimo). Allora definiamo $(I_p)$ come la più piccola sezione di Dedekind destra che contiene $I_p$,
+in questo caso $(I_p)=\{q\in \Q: q\ge  p\}$ e quindi $\Q-(I_p)$ è una sezione di Dedekind sinistra, in questo caso $A_p$.
+}
 
 Date 2 sezioni di Dedekind $r_1$ e $r_2$ possiamo definire $A=\{q= q_1+q_2: q_1\in r_1, q_2\in r_2\}$ che è una sezione di Dedekind che chiamiamo $r_1+r_2$.
 Questo definisce la somma di 2 numeri reali estendendo la somma dei razionali.
 
-Date 2 sezioni di Dedekind $r_1$ e $r_2$ possiamo definire $A=\{q= q_1q_2: q_1\in r_1, q_2\in r_2\}$ che è una sezione di Dedekind che chiamiamo $r_1r_2$.
+\Note{
+Se $r\in \R$ è una sezione di Dedekind sinistra e $\bar r=\Q-r$ la corrispondente sezione di Dedekind destra
+abbiamo che o $0\in \bar r$ oppure $0\in r$, mai $0$ appartiene ad entrambe visto che $r\inter \bar r=\Emptyset$
+o a nessuna delle 2 visto che  $r\union \bar r=\Q$.
+}
+
+
+Date 2 sezioni di Dedekind $r_1$ e $r_2$ possiamo definire prodotto $r_1r_2$.
+
+\Note{Per ogni fattore consideriamo le sezioni $r_1$ e $\bar r_1=\Q-r_1$ ($r_2$ e $\bar r_2=\Q-r_2$) e scegliamo quella che non contiene lo 0.
+Poi definiamo il prodotto $r_1\cdot r_2$ come la classe sinistra
+\eqs{
+\hbox{se }0\not\in r_1\union r_2: &\quad 			r_1 r_2 =\Q-\(\{q_1\cdot q_2\in\Q: q_1\in r_1, q_2\in r_2\}\)\cr
+\hbox{se }0\not\in r_1\union \bar r_2: &\quad		r_1 r_2 =\{q_1\cdot q_2: q_1\in r_1, q_2\in \bar r_2\}\cr
+\hbox{se }0\not\in \bar r_1\union r_2: &\quad 		r_1 r_2 =\{q_1\cdot q_2: q_1\in \bar r_1, q_2\in r_2\}\cr
+\hbox{se }0\not\in \bar r_1\union \bar r_2: &\quad 	 r_1 r_2 =\Q-\( \{q_1\cdot q_2: q_1\in \bar r_1, q_2\in \bar r_2\}\)
+}
+}
+
 Questo definisce il prodotto di 2 numeri reali estendendo il prodotto dei razionali.
 
 A questo punto possiamo estendere le potenze alle basi reali, ma soprattutto agli esponenti reali.
