@@ -1,0 +1,695 @@
+% !TEX TS-program = latex
+% !TEX spellcheck = it-IT
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage{tikz} % LATEX
+\usetikzlibrary {automata}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Trim Size: 9.75in x 6.5in
+%% Text Area: 8in (include Runningheads) x 5in
+%% ws-ijgmmp.tex   :   2-9-08
+%% Tex file to use with ws-ijgmmp.cls written in Latex2E.
+%% The content, structure, format and layout of this style file is the
+%% property of World Scientific Publishing Co. Pte. Ltd.
+%% Copyright 1995, 2002 by World Scientific Publishing Co.
+%% All rights are reserved.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage{pictexwd,dcpic}
+\usepackage{csquotes}
+\usepackage{nopageno}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{pictex, dcpic}
+\usepackage{color}
+%\usepackage{graphicx}
+%\numberwithin{equation}{section} % This line resets equation numbering when starting a new section.
+%\renewcommand{\theequation}{Eq. \thesection.\arabic{equation}} % This line ads "Eq." in front of your equation numbering.
+
+
+
+
+%
+%    Macros.    Version 1.2.0.beta
+%    The best use is to paste all of them into the papers
+%     1/8/2005
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			Greek		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\al{\alpha}
+\def\be{\beta}
+\def\de{\delta}
+\def\ga{\gamma}
+\def\up{\upsilon}
+\def\ep{\epsilon}
+\def\io{\iota}
+\def\te{\theta}
+\def\la{\lambda}
+\def\ze{\zeta}
+\def\om{\omega}
+\def\si{\sigma}
+\def\vp{\varphi}
+\def\vpi{\varpi}
+\def\ka{\kappa}
+\def\vs{\varsigma}
+\def\vr{\varrho}
+
+\def\De{\Delta}
+\def\Ga{\Gamma}
+\def\Te{\Theta}
+\def\La{\Lambda}
+\def\Om{\Omega}
+\def\Si{\Sigma}
+\def\Up{\Upsilon}
+
+\def\boldDe{\bf\Delta}
+\def\boldGa{\bf\Gamma}
+\def\boldTe{\bf\Theta}
+\def\boldLa{\bf\Lambda}
+\def\boldOm{\bf\Omega}
+\def\boldSi{\bf\Sigma}
+\def\boldUp{\bf\Upsilon}
+\def\boldXi{\bf\Xi}
+\def\boldPi{\bf\Pi}
+\def\boldPhi{\bf\Phi}
+\def\boldPsi{\bf\Psi}
+
+\def\boldal{\bf\al}
+\def\boldbe{\bf\be}
+\def\boldga{\bf\ga}
+\def\boldde{\bf\de}
+\def\boldep{\bf\ep}
+\def\boldze{\bf\ze}
+\def\boldeta{\bf\eta}
+\def\boldte{\bf\te}
+\def\boldio{\bf\io}
+\def\boldka{\bf\ka}
+\def\boldla{\bf\la}
+\def\boldmu{\hbox{\greekbold\char "16}}
+\def\boldnu{\hbox{\greekbold\char "17}}
+\def\boldxi{\hbox{\greekbold\char "18}}
+\def\boldpi{\hbox{\greekbold\char "19}}
+\def\boldrho{\hbox{\greekbold\char "1A}}
+\def\boldsi{\bf\si}
+\def\boldtau{\hbox{\greekbold\char "1C}}
+\def\boldup{\hbox{\greekbold\char "1D}}
+\def\boldphi{\hbox{\greekbold\char "1E}}
+\def\boldchi{\hbox{\greekbold\char "1F}}
+\def\boldpsi{\hbox{\greekbold\char "20}}
+\def\boldom{\hbox{\greekbold\char "21}}
+\def\boldvep{\hbox{\greekbold\char "22}}
+\def\boldvte{\hbox{\greekbold\char "23}}
+\def\boldvpi{\hbox{\greekbold\char "24}}
+\def\boldvrho{\hbox{\greekbold\char "25}}
+\def\boldvsi{\hbox{\greekbold\char "26}}
+\def\boldvphi{\hbox{\greekbold\char "27}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			Cal			 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \def\calA{{\hbox{\cal A}}}
+ \def\calU{{\hbox{\cal U}}}
+ \def\calB{{\hbox{\cal B}}}
+ \def\calC{{\hbox{\cal C}}}
+ \def\calI{{\hbox{\cal I}}}
+ \def\calQ{{\hbox{\cal Q}}}
+ \def\calP{{\hbox{\cal P}}}
+ \def\calL{{\hbox{\cal L}}}
+ \def\calE{{\hbox{\cal E}}}
+ \def\calW{{\hbox{\cal W}}}
+ \def\calV{{\hbox{\cal V}}}
+ \def\calS{{\hbox{\cal S}}}
+ \def\calF{{\hbox{\cal F}}}
+ \def\calR{{\hbox{\cal R}}}
+ \def\calO{{\hbox{\cal O}}}
+ \def\calM{{\hbox{\cal M}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			gothic		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \def\su{{\mathfrak{su}}}
+ \def\gl{{\mathfrak{gl}}}
+ \def\gotg{{\mathfrak{g}}}
+ \def\goth{{\mathfrak{h}}}
+ \def\gotm{{\mathfrak{m}}}
+ \def\gotk{{\mathfrak{k}}}
+ \def\spin{{\mathfrak{spin}}}
+ \def\slC{{\mathfrak{sl}}}
+ \def\O{{\mathfrak{O}}}
+ \def\Set{{\mathfrak{Set}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%			Bbb			 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \def\one{\mathbb{I}}
+ \def\A{\mathbb{A}}
+ \def\B{\mathbb{B}}
+ \def\C{\mathbb{C}}
+ \def\D{\mathbb{D}}
+ \def\E{\mathbb{E}}
+ \def\F{\mathbb{F}}
+ \def\G{\mathbb{G}}
+ \def\H{\mathbb{H}}
+ \def\J{\mathbb{J}}
+ \def\K{\mathbb{K}}
+ \def\I{\mathbb{I}}
+ \def\L{\mathbb{L}}
+ \def\M{\mathbb{M}}
+ \def\N{\mathbb{N}}
+ \def\O{\mathbb{O}}
+ \def\P{\mathbb{P}}
+ \def\Q{\mathbb{Q}}
+ \def\R{\mathbb{R}}
+ \def\S{\mathbb{S}}
+ \def\T{\mathbb{T}}
+ \def\U{\mathbb{U}}
+ \def\V{\mathbb{V}}
+ \def\X{\mathbb{X}}
+ \def\Y{\mathbb{Y}}
+ \def\W{\mathbb{W}}
+ \def\Z{\mathbb{Z}}
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%		MathRoman		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\Tr{{\hbox{Tr}}}
+\def\Con{{\hbox{Con}}}
+\def\Aut{{\hbox{Aut}}}
+\def\Div{{\hbox{Div}}}
+\def\ad{{\hbox{ad}}}
+\def\Ad{{\hbox{Ad}}}
+\def\Re{{\hbox{Re}}}
+\def\Im{{\hbox{Im}}}
+\def\Card{{\hbox{Card}}}
+\def\Iso{{\hbox{Iso}}}
+\def\Geo{{\hbox{Geo}}}
+\def\Int{{\hbox{Int}}}
+\def\Inv{{\hbox{Inv}}}
+\def\Spin{{\hbox{Spin}}}
+\def\SO{{\hbox{SO}}}
+\def\SU{{\hbox{SU}}}
+\def\SL{{\hbox{SL}}}
+\def\GL{{\hbox{GL}}}
+\def\det{{\hbox{det}}}
+\def\Hom{{\hbox{Hom}}}
+\def\End{{\hbox{End}}}
+\def\Euc{{\hbox{Euc}}}
+\def\Lor{{\hbox{Lor}}}
+\def\Diff{{\hbox{Diff}}}
+\def\di{{\hbox{d}}}
+\def\id{{\hbox{\rm id}}}
+\def\diag{{\hbox{diag}}}
+\def\rank{{\hbox{rank}}}
+\def\span{{\hbox{span}}}
+\def\Sim{{\hbox{Sim}}}
+
+\def\Obj{{\hbox{Obj}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%		OtherSymbols		 %%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\ip{\hbox to4pt{\leaders\hrule height0.3pt\hfill}\vbox to8pt{\leaders\vrule width0.3pt\vfill}\kern 2pt}
+
+% inner product
+\def\QDE{\hfill\hbox{\ }\vrule height4pt width4pt depth0pt} 
+\def\del{\partial}
+\def\na{\nabla}
+\def\inter{\cap}
+\def\Vec{\mathfrak{X}}
+\def\Lie{\hbox{\LieFont \$}}
+
+\def\arr{\rightarrow}
+\def\larr{\longrightarrow}
+\def\harr{\hookrightarrow}
+\def\hlarr{\lhook\joinrel\longrightarrow}
+\def\then{\Rightarrow}
+\def\semidirect{\hbox{\Bbb \char111}}
+\def\binomial#1#2{\left(\Matrix{#1\cr #2\cr}\right)}
+
+\def\barJ{\bar J}
+
+\def\sSU{{\hbox{SU}}}
+\def\so{{so}}
+%\def\N{{{\mathbb N}}}
+
+\def\file#1{{\tt #1}}
+\def\calH{{{\cal H}}}
+\def\calJ{{{\cal J}}}
+\def\calA{{{\cal A}}}
+\def\calV{{{\cal V}}}
+\def\calG{{{\cal G}}}
+\def\calP{{{\cal P}}}
+\def\calK{{{\cal K}}}
+\def\calD{{{\cal D}}}
+\def\scalD{{{\cal D}}}
+
+\def\Loop{{\hbox{Loop}}}
+\def\Hoop{{\hbox{Hoop}}}
+\def\Sym{{\hbox{Sym}}}
+\def\sR{{\R}}
+\def\dCor{dCor}
+\def\epm{\hbox{$^\pm$}}
+\def\dunion{\coprod}
+
+\def\nab#1{{\buildrel #1\over \na}}
+\def\frac[#1/#2]{\hbox{$#1\over#2$}}
+\def\Frac[#1/#2]{{#1\over#2}}
+\def\({\left(}
+\def\){\right)}
+\def\[{\left[}
+\def\]{\right]}
+\def\^#1{{}^{#1}_{\>\cdot}}
+\def\_#1{{}_{#1}^{\>\cdot}}
+\def\Label=#1{{\buildrel {\hbox{\fiveSerif \ShowLabel{#1}}}\over =}}
+\def\<{\kern -1pt}
+\def\Bar{\>|\>}
+\def\Dal{\hbox{\tenRelazioni  \char003}}
+
+\def\uvec#1{\vbox{\hbox{$\scriptstyle\rightharpoonup$}\vskip-9pt\hbox{$#1$}}}
+\def\dvec#1{\vtop{\hbox{$#1$}\vskip-10pt\hbox{$\scriptstyle\rightharpoondown$}}}
+\def\Cprod{\diamond}
+\def\obullet{\odot}
+\def\cbrt{{}^3\kern-5pt\sqrt}
+
+
+
+%%%%%%%%%%%%			frames 				%%%%%%%%%%%%%%%%%%%
+
+\def\red#1{{\color{red}{#1}}}
+\def\blue#1{{\color{blue}{#1}}}
+\def\green#1{{\color{green}{#1}}}
+
+\def\Red{\color{red}}
+\def\Blue{\color{blue}}
+\def\Green{\color{green}}
+
+
+\def\frame#1{\vbox{\hrule\hbox{\vrule\vbox{\kern2pt\hbox{\kern2pt#1\kern2pt}\kern2pt}\vrule}\hrule\kern-4pt}} 
+\def\redframe#1{\red{\frame{#1}}} 
+\def\greenframe#1{\green{\frame{#1}}} 
+\def\blueframe#1{\blue{\frame{#1}}} 
+
+\def\uline#1{\underline{#1}}
+\def\uuline#1{\underline{\underline{#1}}}
+\def\Box to #1#2#3{\frame{\vtop{\hbox to #1{\hfill #2 \hfill}\hbox to #1{\hfill #3 \hfill}}}}
+
+
+
+\def\ubal{\underline{\al}\kern1pt}
+\def\obal{\overline{\al}\kern1pt}
+
+\def\ubR{\underline{R}\kern1pt}
+\def\obR{\overline{R}\kern1pt}
+\def\ubom{\underline{\om}\kern1pt}
+\def\obxi{\overline{\xi}\kern1pt}
+\def\ubu{\underline{u}\kern1pt}
+\def\ube{\underline{e}\kern1pt}
+\def\obe{\overline{e}\kern1pt}
+\def\Limit{\>{\buildrel{r\arr\infty}\over \longrightarrow}\,}
+\def\union{\cup}
+\def\Emptyset{\varnothing}
+
+
+
+
+\def\Uvec#1{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{#1}\hfil$\crcr}}}
+\def\Dvec#1{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{#1}\hfil$\crcr}}}
+
+
+%   u 
+\def\uvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+\def\dvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+%\def\uvecu{\Uvec{u}}
+%\def\dvecu{\Dvec{u}}
+
+%   be
+\def\uvecbe{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern3pt$\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{\be}\hfil$\crcr}}}
+\def\dvecbe{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern1pt$\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-10pt\nointerlineskip}
+     $\hfil\displaystyle{\be}\hfil$\crcr}}}
+
+%   n
+\def\uvecn{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{n}\hfil$\crcr}}}
+\def\dvecn{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{n}\hfil$\crcr}}}
+
+%   m
+\def\uvecm{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{m}\hfil$\crcr}}}
+\def\dvecm{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{m}\hfil$\crcr}}}
+
+%   N
+\def\uvecN{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern3pt$\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{N}\hfil$\crcr}}}
+\def\dvecN{\vbox{\mathsurround=0pt\ialign{##\crcr
+     \kern0pt$\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-10pt\nointerlineskip}
+     $\hfil\displaystyle{N}\hfil$\crcr}}}
+
+%   u
+\def\uvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+\def\dvecu{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{u}\hfil$\crcr}}}
+
+%   w
+\def\uvecw{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{w}\hfil$\crcr}}}
+\def\dvecw{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{w}\hfil$\crcr}}}
+
+%   v
+\def\uvecv{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoonup$\crcr\noalign{\kern1pt\nointerlineskip}
+     $\hfil\displaystyle{v}\hfil$\crcr}}}
+\def\dvecv{\vbox{\mathsurround=0pt\ialign{##\crcr
+     $\scriptscriptstyle\rightharpoondown$\crcr\noalign{\kern-7pt\nointerlineskip}
+     $\hfil\displaystyle{v}\hfil$\crcr}}}
+
+\def\astA{{}^\ast A}
+\def\circA{{}^\circ A}
+\def\astk{{}^\ast k}
+\def\circk{{}^\circ k}
+\def\astK{{}^\ast K}
+\def\circK{{}^\circ K}
+\def\astL{{}^\ast L}
+\def\circL{{}^\circ L}
+\def\astal{{}^\ast \al}
+\def\circal{{}^\circ \al}
+\def\astsi{{}^\ast \si}
+\def\circsi{{}^\circ \si}
+\def\aste{{}^\ast e}
+\def\circe{{}^\circ e}
+\def\astte{{}^\ast \te}
+\def\circte{{}^\circ \te}
+\def\astGa{{}^\ast \Ga}
+\def\circGa{{}^\circ \Ga}
+\def\Lie{\pounds}
+
+\long\def\Hide#1{}
+\long\def\HideMarked#1{\hfill{$\triangleright$}}
+\def\rtau{\tau}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\def\NormalStyle{\leftskip=2cm\rightskip=0cm\normalsize\parindent=5pt\parskip=3pt\normalbaselineskip=14pt\baselineskip=\normalbaselineskip}
+%\def\AbstractStyle{\leftskip=3cm\rightskip=1cm\scriptsize\parindent=0pt\parskip=0pt\normalbaselineskip=11pt\baselineskip=\normalbaselineskip}
+%\def\NoteStyle{\leftskip=3cm\rightskip=1cm\scriptsize\parindent=0pt\parskip=0pt\normalbaselineskip=11pt\baselineskip=\normalbaselineskip}
+
+\def\ShowLabel#1{\ref{#1}}
+
+\def\Bibliography{\begin{thebibliography}{199}\footnotesize\References}
+\def\EndBibliography{\end{thebibliography}}
+\def\bib#1#2{\bibitem{#1}#2}
+\def\Ref#1{\cite{#1}}
+
+
+\def\NewSection#1{\section{#1}}
+\def\NewSubSection#1{\subsection*{#1}}
+\def\NewAppendix#1#2{\section*{Appendix #1: #2}}
+\def\Acknowledgements{\section*{Acknowledgements}}
+\def\bs{\bigskip}
+\def\ms{\medskip}
+\def\ss{\smallskip}
+\def\ni{\noindent}
+
+\long\def\Note#1{\blockquote{\footnotesize {\bf Nota:}~#1\par}}
+\long\def\Ex#1{\blockquote{\footnotesize {\bf Esercizio:}~#1\par}}
+
+\def\eq#1{\begin{equation}#1\end{equation}}
+\def\eqLabel#1#2{\begin{equation}#1\label{#2}\end{equation}}
+
+
+\def\Cases#1{\begin{cases}#1\end{cases}}
+\def\Matrix#1{\begin{matrix}#1\end{matrix}}
+\def\Align#1{\begin{aligned}#1\end{aligned}}
+
+\def\eqs#1{\eq{\Align{#1}}}
+\def\eqsLabel#1#2{\eq{\Align{#1}\label{#2}}}
+
+
+
+
+\def\Abstract{\AbstractStyle{\bf Abstract. }}
+\def\EndAbstract{\par\NormalStyle}
+
+\def\TitleScript{}
+\def\TitleLine#1{\def\TitleScript{#1}}
+\def\MoreTitleLine#1{\edef\TitleScript{\TitleScript\\#1}}
+
+\def\AuthorScript{}
+\def\AuthorLine#1{\def\AuthorScript{#1}}
+\def\MoreAuthorLine#1{\edef\AuthorScript{\AuthorScript\\#1}}
+
+\def\AddressScript{}
+\def\AddressLine#1{\def\AddressScript{#1}}
+\def\MoreAddressLine#1{\edef\AddressScript{\AddressScript\\#1}}
+
+\date{}
+
+\def\BeginDocument{\begin{document}}
+
+\def\MakeTitle{
+\begin{center}
+{\Large\bf\sffamily\baselineskip=2pt\TitleScript}\\
+\vskip 10pt
+{\small by {\it \AuthorScript}}\\
+\vskip 10pt
+{\small \AddressScript}
+\end{center}
+\ms
+}
+
+\def\EndDocument{\end{document}}
+
+\def\Figure[#1]#2{\begin{figure}[htbp] %  figure placement: here, top, bottom, or page
+   \centering
+   \includegraphics[#1]{#2} }
+\def\Caption#1{\caption{#1}}
+\def\EndFigure{\end{figure}}
+
+\def\Diagram#1{\eq{
+\begindc{\commdiag}[10]
+#1
+\enddc%
+}%
+}
+
+\def\Itemize#1{\begin{itemize}#1\end{itemize}}
+\def\Item[#1]{\item[#1]}
+
+\def\AllReferences{}
+
+
+
+\def\Shrink{\small}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\BeginDocument
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\parindent=5pt
+\baselineskip=13pt
+\parskip=5pt
+
+
+
+
+
+\begin{document}
+
+\AllReferences
+
+
+%%%%%%%%%%%%%%%%%%%%% Publisher's Area please ignore %%%%%%%%%%%%%%%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Giorno 34: soluzioni dei polinomi cubici}
+
+La stessa tecnica che abbiamo usato per risolvere le equazioni quadratiche, un po' più complicata, ci porta a risolvere le equazioni cubiche $ax^3+bx^2+ cx+d=0$.
+
+\Note{Cominciamo a mostrare che sappiamo risolvere $x^3 +c=0$, che corrisponde alla definizione di radice cubica $x=-\> \cbrt{c}$.
+
+Perché senza il $\pm$ davanti?
+
+}
+
+Quindi basterebbe completare i cubi $(A+B)^3= A^3+3A^2B+3AB^2+ B^3$.
+
+\Note{Purtroppo non è facilissimo da fare:
+\eqs{
+ax^3+bx^2+ cx+d=& ax^3 + 3aB x^2 + 3aB^2x +aB^3 + C=\cr
+=&a(x^3 + 3B x^2 + 3B^2x +B^3) + C=\cr
+=& a(x+B)^3+C=0
+}
+Quindi bisognerebbe solo trovare $B$ in modo che valgano
+\eq{
+aB^3+C=d
+\qquad\qquad
+3aB=b
+\qquad\qquad
+3aB^2=c
+}
+La prima determina $C=d-aB^3$, ma le altre 2 in generale sono 2 equazioni per una incognita $B$, in generale non ci sono soluzioni visto che ognuna delle 2 equazioni determinato $B$ a 2 valori  in generale  diversi.
+
+Ma almeno abbiamo imparato un po' meno, cioè a scrivere un polinomio di 3 grado come
+\eq{
+ax^3+bx^2+ cx+d= a(x+B)^3 +Dx + C=0
+}
+per cui bisogna  trovare $B, C, D$ in modo che valgano
+\eq{
+3aB=b
+\qquad\qquad
+aB^3+C=d
+\qquad\qquad
+3aB^2+D=c
+}
+e possiamo scegliere $B=\frac[b/3a]$ e poi $D=c-\frac[b^2/3a]$ e $C= d-\frac[b^3/27a^2]$
+
+Con queste scelte abbiamo
+\eqs{
+ &ax^3+3a\frac[b/3a]x^2 + \blue{3a\frac[b^2/9a^2]x} +\red{ a\frac[b^3/27a^3]} +cx-\blue{\frac[b^2/3a] x} + d-\red{\frac[b^3/27a^2]}=\cr
+&\quad =ax^3+bx^2+ cx+d\cr
+}
+
+In altre parole siamo sempre in grado di ridurci ad un polinomio $x^3-Bx-C=0$  senza il termine $x^2$, che è detta {\it cubica depressa}.
+\hfill :o)
+}
+
+Se sapessimo risolvere una cubica depressa sapremmo risolvere una cubica qualsiasi.
+Ma questo è {\it ``facile''} (perché qualcuno---credo il solito Euler- ha scoperto una radice per noi nella forma $x=\cbrt{p}+ \cbrt{q}$). 
+Infatti elevando al cubo
+\eq{
+x^3= 3\cbrt{pq}x + p+q
+}
+e quindi basta avere 
+\eq{
+B=3\cbrt{pq} 
+\qquad
+C=p+q
+}
+che possiamo risolvere $q=C-p$, $B=3\cbrt{pC-p^2}$,
+$27p^2- 27 pC+ B^3=0$ che possiamo risolvere per $p$ risolvendo l'equazione quadratica.
+Otteniamo
+\eq{
+p= \frac[C/2]+\sqrt{  \frac[C^2/4]  -\frac[B^3/27] }
+\qquad
+q= \frac[C/2]- \sqrt{ \frac[C^2/4]  -\frac[B^3/27] }
+}
+
+possiamo anche verificare direttamente che
+\eq{
+x_\ast=\cbrt{\frac[C/2]+\sqrt{  \frac[C^2/4]  -\frac[B^3/27] }} + \cbrt{\frac[C/2]- \sqrt{ \frac[C^2/4]  -\frac[B^3/27] }}
+}
+è soluzione di $x^3=Bx+C$.
+
+Una volta che abbiamo trovato una soluzione possiamo dividere il polinomio $x^3-Bx-C$ per $(x-x_\ast)$ e ottenere un polinomio quadratico che sappiamo risolvere. 
+
+\Note{
+Si noti che ad esempio per $x^3=6x+4$ le formula fornisce la soluzione
+\eq{
+x_\ast=\cbrt{2+\sqrt{  4  -8 }} + \cbrt{2- \sqrt{ 4  -8}}
+}
+che non ha senso visto che non esiste nessun numero razionale (o reale) il cui quadrato è $-4$.
+
+Questo anche se il polinomio  $x^3=6x+4$  di sicuro ha una radice reale (come tutti i polinomi di grado dispari ma per un teorema che non possiamo ancora enunciare).
+
+Ma pure peggio di così se consideriamo $p_3=x^3-15x+4=0$ che ha evidentemente una soluzione in $x=-4$, quindi fattorizza $(x+4)$ come
+$x^3-15x+4= (x+4)(x^2-4x+1)$ come si ottiene effettuando la divisione (o si verifica facendo il prodotto).
+A questo punto $x^2-4x+1=0$ ha altre 2 soluzioni reali visto che $\De= 16-4=12>0$, più precisamente le soluzioni sono
+\eq{
+x_1=2+ \sqrt{3}
+\qquad\qquad\qquad
+x_2=2- \sqrt{3}
+}
+Quindi abbiamo la fattorizzazione
+\eq{
+x^3-15x+4= (x+4)(x-2-\sqrt{3})(x-2+\sqrt{3})
+}
+cioè il polinomio $p_3$ ha 3 soluzioni reali ben definite.
+
+Ma comunque 
+se applichiamo la formula abbiamo
+\eq{
+x_\ast=\cbrt{-2+\sqrt{ 4  -5^3 }} + \cbrt{-2- \sqrt{4 -5^3 }}
+}
+che non si può calcolare (senza introdurre i numeri complessi) e non corrisponde a nessuna delle 3 soluzioni note (che sono ovviamente tutte le soluzioni essendo 3).
+
+Quando introdurremi i numeri complessi avremo
+\eq{
+x_\ast=-\cbrt{2-11 i\>} - \cbrt{2+ 11i\>}  =-4
+}
+che infatti è una soluzione.
+Come faccia $x_\ast$ a poter essere calcolato passando attraverso formule insensate tra i numeri reali, dando poi un risultato vero è ciò che ha portato alla scoperta/invenzione dei numeri reali.
+
+[Provate a chiedere a un fisico (che faccia meccanica quantistica) se secondo lui i numeri complessi esistono oppure sono un'invenzione matematica e vedete cosa vi risponde.]
+
+}
+
+Una cosa simile si può fare coi polinomi di grado 4.
+Poi si {\it dimostra} che non esiste una formula analoga che possa dare le soluzioni di un polinomio di grado uguale a superiore a 5.
+La dimostrazione al momento è oltre le nostre possibilità.
+Ma il risultato è talmente strano che va detto.
+
+\EndDocument
+\end
+
+
